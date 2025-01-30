@@ -107,47 +107,47 @@
 
       <!-- <div data-aos="fade-up" data-aos-duration="900" style="height: 100xp; overflow: hidden;" class="waves" ><svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;"><path d="M-1.97,33.06 C343.40,138.66 353.55,62.67 500.84,13.33 L502.54,157.41 L0.00,150.00 Z" style="stroke: none; fill: rgba(255, 255, 255, 0);"></path></svg></div> -->
     </section>
-    <div id="modal-fondo"></div>
+    <div id="modal-fondo" onclick="cerrarModal()"></div>
 
     <div style="display: none; border-radius: 10px; background-color: white;" id="formModal" tabindex="-1">
-      <div class="form-modal">
+      <div class="form-modal" onclick="event.stopPropagation()">
         <div class="">
-          <div class="modal-header">
-            <h4 style="text-align: center;" class="espaciado" id="formModalLabel">Formulario de Suscripción</h5>
+          <div class="modal-header" style="margin-bottom: 4%;">
+            <h3 style="text-align: center; color: black;" class="espaciado" id="formModalLabel">Formulario de Suscripción</h5>
           </div>
           <div class="modal-body">
             <form id="subscriptionForm">
-              <div class="mb-3 espaciado">
+              <div class="mb-4 espaciado" style="margin-bottom: 2%;">
                 <label for="login" class="form-label" style="color:black;">Login</label>
                 <input type="text" class="form-control" id="login"
                   style="padding: .375rem .75rem; border-color: #dee2e6;" required>
               </div>
-              <div class="mb-3 espaciado">
+              <div class="mb-4 espaciado" style="margin-bottom: 2%;">
                 <label for="apellido" class="form-label" style="color:black;">Apellido</label>
                 <input type="text" class="form-control" id="apellido"
                   style="padding: .375rem .75rem; border-color: #dee2e6;" required>
               </div>
-              <div class="mb-3 espaciado">
+              <div class="mb-4 espaciado" style="margin-bottom: 2%;">
                 <label for="nombre" class="form-label" style="color:black;">Nombre</label>
                 <input type="text" class="form-control" id="nombre"
                   style="padding: .375rem .75rem; border-color: #dee2e6;" required>
               </div>
-              <div class="mb-3 espaciado">
+              <div class="mb-4 espaciado" style="margin-bottom: 2%;">
                 <label for="cedula" class="form-label" style="color:black;">Cédula</label>
                 <input type="text" class="form-control" id="cedula"
                   style="padding: .375rem .75rem; border-color: #dee2e6;" required>
               </div>
-              <div class="mb-3 espaciado">
+              <div class="mb-4 espaciado" style="margin-bottom: 2%;">
                 <label for="telefono" class="form-label" style="color:black;">Teléfono</label>
                 <input type="text" class="form-control" id="telefono"
                   style="padding: .375rem .75rem; border-color: #dee2e6;" required>
               </div>
-              <div class="mb-3 espaciado">
+              <div class="mb-4 espaciado" style="margin-bottom: 2%;">
                 <label for="correo" class="form-label" style="color:black">Correo Electrónico</label>
                 <input type="text" class="form-control" id="correo"
                   style="padding: .375rem .75rem; border-color: #dee2e6;" required>
               </div>
-              <div class="mb-3 espaciado">
+              <div class="mb-4 espaciado" style="margin-bottom: 2%;">
                 <label for="rol" class="form-label" style="color:black">Rol</label>
                 <select class="form-select" id="rol" style="padding: .375rem .75rem; border-color: #dee2e6;" required>
                   <option value="Seleccione su rol" disabled selected>Seleccione su rol</option>
@@ -155,22 +155,24 @@
                   <option value="Odontologo">Odontólogo</option>
                 </select>
               </div>
-              <div class="mb-3 espaciado">
+              <div class="mb-4 espaciado" style="margin-bottom: 2%;">
                 <label for="contrasena" class="form-label" style="color:black">Contraseña</label>
-                <input type="text" class="form-control" id="contrasena"
-                  style="padding: .375rem .75rem; border-color: #dee2e6;" required>
+                <input type="password" class="form-control" id="contrasena"
+                  style="width: 97%; font-size: 18px;border: 1px solid #ced4da; border-radius: 5px; padding: .375rem .75rem; border-color: #dee2e6;" required>
               </div>
-              <div class="mb-3 espaciado">
+              <div class="mb-4 espaciado" style="margin-bottom: 2%;">
                 <label for="confirmarContrasena" class="form-label" style="color:black">Confirmar Contraseña</label>
-                <input type="text" class="form-control" id="confirmarContrasena"
-                  style="padding: .375rem .75rem; border-color: #dee2e6;" required>
+                <input type="password" class="form-control" id="confirmarContrasena"
+                style="width: 97%; font-size: 18px;border: 1px solid #ced4da; border-radius: 5px; padding: .375rem .75rem; border-color: #dee2e6;" required>
               </div>
-              <div class="form-boton espaciado">
-                <a onclick="cerrarModal()" class="leer">Cerrar</a>
-                <div style="width: 5%;">
-
+              <div class="form-boton espaciado" style="justify-content: center; width: 100%; display: flex; align-items: center; flex-direction: row;">
+                <div style="width: 50%; text-align: center;">
+                  <a onclick="cerrarModal()" style="width: 50%;" class="leer" >Cerrar</a>
                 </div>
-                <a id="submitSuscripcion" class="leer">Enviar</a>
+                
+                <div style="width: 50%; text-align: center;">
+                  <a id="submitSuscripcion" style="width: 50%;" class="leer">Enviar</a>
+                </div>
               </div>
             </form>
           </div>
@@ -460,9 +462,13 @@
     <script>
       AOS.init();
     </script>
+
     <script src="tilt.jquery.js"></script>
     <script>
-
+      function cerrarModal() {
+        document.getElementById('formModal').style.display = 'none';
+        document.getElementById('modal-fondo').style.display = 'none';
+      }
       function abrirModal() {
         document.getElementById('formModal').style.display = 'block';
         document.getElementById('modal-fondo').style.display = 'block';
@@ -664,7 +670,7 @@
               });
           }
 
-          const response = await fetch('24.199.103.63:85/api/User', {
+          const response = await fetch('http://24.199.103.63:85/api/User', {
             method: 'POST',
 
             headers: {
