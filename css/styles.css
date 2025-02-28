@@ -1,0 +1,313 @@
+/*Backgrounds All page*/
+
+.custom-bg_1 {
+  background-image: url('/img/background.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 50px 0;
+}
+
+.custom-bg_1-1 {
+  background-image: url('/img/background-testimonios.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 10px 0;
+}
+
+.custom-bg_2 {
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.7)), 
+              url('/img/background\ para\ telefono\ responsive\ 2.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.custom-bg_3 {
+  background-image: url('/img/Background_banner.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 10px 0;
+}
+
+.custom-bg_4 {
+  background-image: url('/img/Background-testiModal.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.custom-bg_5 {
+  background-image: url('/img/ContFormulari-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.custom-bg_6 {
+  background-image: url('/img/Banner-Imple.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 500px;
+  border-bottom-right-radius: 50% 10%
+}
+
+/*NAvbar*/
+
+.navbar-custom {
+  transition: background-color 0.5s, top 0.5s;
+}
+
+.navbar-scrolled {
+  background-color: rgba(255, 255, 255, 0.9) !important; /* Fondo blanco opaco */
+}
+
+
+
+/*Index CSS*/
+
+.custom-size-top-logo {
+    width: 100px;
+    height: auto;
+}
+
+.custom-width {
+  width: 100%;
+}
+
+/*Accordion*/
+.capsula{
+padding: 2rem;
+margin-bottom: 1,5rem;
+
+}
+
+.el_titulo{
+  font-size: 30px;
+  text-align: center;
+  padding-top: 20px;
+}
+
+.item {
+  border-radius: 7px;
+  box-shadow: 0px 12px 14px 0px rgba(0,0,0,0.0);
+  -webkit-box-shadow: 0px 12px 14px 0px rgba(0,0,0,0.0);
+  -moz-box-shadow: 0px 12px 14px 0px rgba(0,0,0,0.0);
+  margin:15px;
+  display: flex;
+  justify-content: center;
+  height: auto;
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+  position:relative;
+  transition: 400ms ease-in-out width;
+}
+.item::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-color: rgba(23, 23, 23, 0.292);
+  
+  transition: 300ms ease-in-out background-color;
+}
+
+.item:nth-child(1) {
+  position: relative; /* Asegura que el contenedor sea relativo para posicionar la superposición */
+  background-image: url(/img/medico_2.jpg);
+  background-size: cover;
+
+}
+
+.item:nth-child(1)::before {
+  content: "";
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.item:nth-child(2) {
+  background-image:url(/img/banner-medico-medico-estetoscopio.jpg);
+  background-size: cover;
+}
+.item:nth-child(2)::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.item:nth-child(3) {
+  background-image:url(/img/InCMO.jpg);
+  background-size: cover;
+}
+
+.item:nth-child(3)::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.content {
+  transition: 300ms ease-in-out transform;
+}
+
+.content p {
+  display: flex;
+  font-size: 15.9px;
+  text-align: justify;
+  flex-direction: column;
+  height: 0;
+  overflow:hidden;
+  transition: 500ms ease-in-out height,
+              500ms ease-in-out padding;
+}
+
+.leer2{
+border: 1px solid #fff;
+color: #187fb6;
+width: 90px;
+height: 30px;
+margin-top: 15px;
+text-align: center;
+text-decoration: none;
+display: inline-block;
+font-size: 15px;
+background-color: #fff;
+border-radius: 10px;
+transition: .6s;
+
+}
+
+.leer2:hover {
+  color: #ffffff;
+}
+.newh2 {
+  text-align: center;
+  color: white;
+  text-shadow: 0 0 .3rem rgba(48, 48, 48, 0.813);
+  margin-top: 0,5rem;
+  margin-bottom: 0,5rem;
+  transform: scale(1);
+  transition: 800ms ease-in-out transform;
+}
+.item:hover {
+  width: 600px;
+  
+}
+
+.item:hover .content {
+  transform: rotate(0);
+}
+
+.item:hover h2 {
+  transform: scale(1);
+}
+.item:hover p {
+  height: 350px;
+  width: 250px;
+}
+
+/*Carrosel*/
+
+.carousel-inner {
+  max-width: 400px;
+  max-height: 300px;
+  margin: auto;
+  padding: 3%;
+
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-color: black;
+}
+
+.carousel-indicators button {
+  background-color: black;
+}
+
+.carousel-custom-space {
+  max-height: 300px;
+
+}
+
+/*Formulario*/
+
+.form-container {
+  max-width: 600px;
+  margin: auto;
+}
+.btn-lg {
+  padding: 10px 20px;
+  font-size: 1.25rem;
+  width: 100%;
+}
+
+/*Footer*/
+
+.social-icon {
+  font-size: 2rem;
+  margin-right: 20px;
+}
+
+.custom-size-botom-logo{
+  width: 100px;
+}
+
+
+
+/*Productos CSS*/
+
+.h1morebig {
+  font-size: 4rem;
+}
+
+.imgbordercir {
+  border-radius: 15px; /* Bordes redondeados */
+  box-shadow: 5px 4px 8px rgba(0, 0, 0, 0.1); /* Sombra alrededor de la imagen */
+}
+
+.hr-blue {
+  border: 4px solid blue;
+  width: 100%;
+
+}
+
+
+/* Planes CSS */
+
+.borderCard {
+  border-color: white !important;
+  border-width: 4px !important;
+}
+
+.img-small {
+  max-width: 40%;
+  height: auto;
+  max-height: 150px;
+  align-items: center;
+}
+
+.bg-card {
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.7)), 
+              url('/img/Background-planes.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 10px 0;
+}
+
+.price-tag {
+  border: 2px solid white;
+  border-radius: 15px;
+  padding: 3px 8px;
+  display: inline-block;
+}
+
+

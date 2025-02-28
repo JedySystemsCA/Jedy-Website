@@ -243,18 +243,18 @@
           <div class="container my-5">
             <div class="form-container">
 <!--Direccion envio Formulario-->
-              <form action="mailto:pruebas@jedysystems.com" method="post" enctype="text/plain">
+              <form>
                 <div class="mb-3">
                   <label for="email" class="form-label text-white">Correo</label>
-                  <input type="email" class="form-control" id="email" placeholder="nombre@ejemplo.com" required>
+                  <input type="email" class="form-control" id="emailCorreo" placeholder="nombre@ejemplo.com" required>
                 </div>
                 <div class="mb-3">
                   <label for="empresa" class="form-label text-white">Nombre de la empresa</label>
-                  <input type="text" class="form-control" id="empresa" placeholder="Nombre de la empresa" required>
+                  <input type="text" class="form-control" id="empresaCorreo" placeholder="Nombre de la empresa" required>
                 </div>
                 <div class="mb-3">
                   <label for="producto" class="form-label text-white">Productos</label>
-                  <select class="form-select" id="producto" required>
+                  <select class="form-select" id="productoCorreo" required>
                     <option value="APS">APS</option>
                     <option value="CLINICO">CLÍNICO</option>
                     <option value="CMO">CMO</option>
@@ -262,7 +262,7 @@
                 </div>
                 <div class="mb-3">
                   <label for="mensaje" class="form-label text-white">Mensaje</label>
-                  <textarea class="form-control" id="mensaje" rows="3" placeholder="Escribe tu mensaje aquí (opcional)"></textarea>
+                  <textarea class="form-control" id="mensajeCorreo" rows="3" placeholder="Escribe tu mensaje aquí (opcional)"></textarea>
                 </div>
                 <div class="mb-3">
                   <label class="form-label text-white">Solicite su demo o la versión completa</label>
@@ -280,7 +280,7 @@
                   </div>
                 </div>
                 <div class="text-center">
-                  <button type="submit" class="btn btn-primary btn-lg" id="submitemail">Enviar</button>
+                  <button type="submit" class="btn btn-primary btn-lg" id="submitEmailCorreo">Enviar</button>
                 </div>
               </form>
             </div>
