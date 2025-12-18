@@ -84,8 +84,61 @@
       color: #333;
     }
     
-    .icon-white {
-      color: #333 !important;
+    /* Estilo para los iconos con fondo circular azul */
+    .icon-circle-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 60px;
+      height: 60px;
+      background-color: rgba(77, 171, 247, 0.15);
+      border-radius: 50%;
+      margin-right: 15px;
+      flex-shrink: 0;
+    }
+    
+    .icon-circle-large {
+      width: 80px;
+      height: 80px;
+    }
+    
+    /* Color azul para los iconos */
+    .icon-blue {
+      color: #4dabf7 !important;
+      font-size: 1.8rem;
+    }
+    
+    .icon-large {
+      font-size: 2.5rem !important;
+    }
+    
+    /* Estilos para los iconos de los valores */
+    .value-icon-container {
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+    
+    .value-icon {
+      color: #4dabf7;
+      background-color: rgba(77, 171, 247, 0.15);
+      width: 50px;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      margin-right: 15px;
+      flex-shrink: 0;
+    }
+    
+    /* Color blanco para el texto */
+    .text-white-custom {
+      color: #fff !important;
+    }
+    
+    .value-description.text-white-custom {
+      color: #fff !important;
     }
     
     .title-white {
@@ -122,13 +175,14 @@
           <li class="nav-item">
             <a class="nav-link custom-color" href="/Contacto.html">Contacto</a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link custom-color" href="/SobreNosotros.html">Sobre Nosotros</a>
+          </li>
         </ul>
       </div>
     </div>
   </nav>
 </header>
-
-
 
 <!--Banner-->
   <div class="custom-bg_3 pb-3 pt-5 mt-4">
@@ -140,7 +194,7 @@
         </div>
         <span>
           <div>
-            <img src="/img/icon-product-removebg-preview.png" class="w-150" alt="Botiquín de primeros auxilios digital, representando el software de telemedicina Jedy Health">
+            <img src="/img/mision_vision.png" class="w-150" alt="Botiquín de primeros auxilios digital, representando el software de telemedicina Jedy Health">
           </div>
         </span>
       </section>
@@ -158,7 +212,9 @@
       <!-- Visión -->
       <div class="mb-5 pt-4">
         <div class="d-flex align-items-center mb-4">
-          <i class="fas fa-eye fa-2x me-3 icon-primary"></i>
+          <div class="icon-circle-container bg-light ">
+            <i class="fas fa-eye icon-blue"></i>
+          </div>
           <h2 class="section-title mb-0 text-white">Nuestra Visión</h2>
         </div>
         <div class="p-0">
@@ -171,7 +227,9 @@
       <!-- Misión -->
       <div class="mb-5 pt-4">
         <div class="d-flex align-items-center mb-4">
-          <i class="fas fa-bullseye fa-2x me-3 icon-white"></i>
+          <div class="icon-circle-container bg-light">
+            <i class="fas fa-bullseye icon-blue"></i>
+          </div>
           <h2 class="section-title mb-0 text-white">Nuestra Misión</h2>
         </div>
         <div class="p-0">
@@ -185,7 +243,9 @@
               </p>
             </div>
             <div class="col-md-4 text-center">
-              <img src="/img/icon-product-removebg-preview.png" class="img-fluid w-75" alt="Icono representativo de Jedy Health">
+              <div class="bg-light rounded-circle d-flex align-items-center justify-content-center mx-auto" style="width: 250px; height: 250px;">
+                <img src="/img/SobreNosotrosImg1_estetosocopio.png" class="img-fluid w-75" alt="Icono representativo de Jedy Health">
+              </div>
             </div>
           </div>
         </div>
@@ -194,7 +254,9 @@
       <!-- Valores -->
       <div class="pt-4">
         <div class="d-flex align-items-center mb-4">
-          <i class="fas fa-heart fa-2x me-3 icon-white"></i>
+          <div class="icon-circle-container bg-light">
+            <i class="fas fa-heart icon-blue"></i>
+          </div>
           <h2 class="section-title mb-0 text-white">Valores que nos guían</h2>
         </div>
         <div class="p-0">
@@ -203,32 +265,32 @@
           <div>
             <div class="value-item">
               <div class="value-title text-white">Empatía activa</div>
-              <div class="value-description">Escuchamos, comprendemos y actuamos con sensibilidad ante las realidades de cada persona.</div>
+              <div class="value-description text-dark-custom"><strong>Escuchamos, comprendemos y actuamos con sensibilidad ante las realidades de cada persona.</strong></div>
             </div>
             
             <div class="value-item">
               <div class="value-title text-white">Innovación con propósito</div>
-              <div class="value-description">Usamos la tecnología para mejorar vidas, no solo procesos.</div>
+              <div class="value-description text-dark-custom"><strong>Usamos la tecnología para mejorar vidas, no solo procesos.</strong></div>
             </div>
             
             <div class="value-item">
               <div class="value-title text-white">Confianza y transparencia</div>
-              <div class="value-description">Protegemos la información médica con ética, claridad y responsabilidad.</div>
+              <div class="value-description text-dark-custom"><strong>Protegemos la información médica con ética, claridad y responsabilidad.</strong></div>
             </div>
             
             <div class="value-item">
               <div class="value-title text-white">Accesibilidad inclusiva</div>
-              <div class="value-description">Creamos soluciones que llegan a todos, sin barreras tecnológicas, económicas o geográficas.</div>
+              <div class="value-description text-dark-custom"><strong>Creamos soluciones que llegan a todos, sin barreras tecnológicas, económicas o geográficas.</strong></div>
             </div>
             
             <div class="value-item">
               <div class="value-title text-white">Colaboración transformadora</div>
-              <div class="value-description">Unimos a médicos, pacientes y aliados para construir una salud más conectada y humana.</div>
+              <div class="value-description text-dark-custom"><strong>Unimos a médicos, pacientes y aliados para construir una salud más conectada y humana.</strong></div>
             </div>
             
             <div class="value-item">
               <div class="value-title text-white">Excelencia en cada detalle</div>
-              <div class="value-description">Cada consulta, cada dato, cada decisión cuenta. Buscamos calidad en todo lo que hacemos.</div>
+              <div class="value-description text-dark-custom"><strong>Cada consulta, cada dato, cada decisión cuenta. Buscamos calidad en todo lo que hacemos.</strong></div>
             </div>
           </div>
           
@@ -237,7 +299,9 @@
       
       <!-- Mensaje final -->
       <div class="text-center mt-5 pt-5">
-        <i class="fas fa-hands-helping fa-3x icon-white mb-4"></i>
+        <div class="icon-circle-container icon-circle-large d-inline-flex mb-4 bg-light">
+          <i class="fas fa-hands-helping icon-blue icon-large"></i>
+        </div>
         <h3 class="text-white mb-4">Juntos construimos el futuro de la salud en Venezuela</h3>
         <p class="vision-mision-text mt-3 mb-4 text-white">
           En Jedy Health, creemos que la tecnología médica debe ser humana, accesible y transformadora. 
