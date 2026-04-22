@@ -1,0 +1,167 @@
+/* --------------------------------------------------------------------------
+   [Jedy Health] - Estilos Premium y Micro-interacciones
+   Variables, animaciones de scroll, efectos glassmorphism y hover complejos
+   -------------------------------------------------------------------------- */
+
+/* 1. Variables CSS nativas (Design System) */
+:root {
+  --primary: #1b448c;
+  --primary-dark: #12315e;
+  --secondary: #3BB5AB;
+  --secondary-dark: #2e9189;
+  --surface-light: #f8fafc;
+  --surface-white: #ffffff;
+  --text-dark: #0f172a;
+  --text-muted: #475569;
+  --glass-bg: rgba(255, 255, 255, 0.92);
+  --shadow-md: 0 20px 35px -12px rgba(0, 0, 0, 0.08), 0 2px 6px rgba(0,0,0,0.02);
+  --shadow-lg: 0 25px 40px -12px rgba(0, 0, 0, 0.12);
+}
+
+/* 2. Animaciones de Scroll (Reveal Effects) */
+.reveal {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 0.7s cubic-bezier(0.2, 0.9, 0.4, 1.1), transform 0.7s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* 3. Micro-interacciones en tarjetas (Hover complejo) */
+.card-hover {
+  transition: all 0.3s ease;
+  background: var(--surface-white);
+  border-radius: 1.5rem;
+  border: 1px solid rgba(59, 181, 171, 0.1);
+}
+
+.card-hover:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg);
+  border-color: rgba(59, 181, 171, 0.3);
+}
+
+/* 4. Efecto de brillo en botones CTA */
+.btn-glow {
+  transition: all 0.25s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-glow::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+  transition: left 0.5s ease;
+}
+
+.btn-glow:hover::after {
+  left: 100%;
+}
+
+.cta-btn {
+  background: var(--secondary);
+  color: white;
+  font-weight: 600;
+  box-shadow: 0 8px 18px rgba(59, 181, 171, 0.3);
+  transition: all 0.3s ease;
+}
+
+.cta-btn:hover {
+  background: var(--secondary-dark);
+  transform: scale(1.02);
+  box-shadow: 0 12px 22px rgba(59, 181, 171, 0.4);
+}
+
+/* 5. Estilos de Glassmorphism para navegación */
+.glass-nav {
+  background: rgba(255, 255, 255, 0.86);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(27, 68, 140, 0.08);
+  transition: all 0.2s;
+}
+
+/* 6. Estilos específicos para inputs modernos */
+.input-modern {
+  transition: all 0.2s;
+  border: 1px solid #e2e8f0;
+  border-radius: 1rem;
+  padding: 0.75rem 1rem;
+  background-color: white;
+  width: 100%;
+}
+
+.input-modern:focus {
+  border-color: var(--secondary);
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(59, 181, 171, 0.2);
+}
+
+.input-modern:hover {
+  border-color: var(--secondary);
+}
+
+/* 7. Estilos para radio buttons personalizados */
+.radio-custom:checked {
+  background-color: var(--secondary);
+  border-color: var(--secondary);
+}
+
+/* 8. Gradientes decorativos */
+.gradient-soft {
+  background: linear-gradient(135deg, rgba(27,68,140,0.02) 0%, rgba(59,181,171,0.02) 100%);
+}
+
+/* 9. Estilos adicionales para mejorar accesibilidad y contraste */
+.text-white\/80 {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.text-white\/90 {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* 10. Animaciones suaves para enlaces */
+a {
+  transition: all 0.2s ease;
+}
+
+/* 11. Mejora de scroll behavior */
+html {
+  scroll-behavior: smooth;
+}
+
+/* 12. Estilos para el footer */
+footer a {
+  transition: color 0.2s ease;
+}
+
+/* 13. Efecto de carga para imágenes */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* 14. Clase para texto primario */
+.text-primary {
+  color: var(--primary);
+}
+
+.text-secondary {
+  color: var(--secondary);
+}
+
+.bg-primary {
+  background-color: var(--primary);
+}
+
+.bg-secondary {
+  background-color: var(--secondary);
+}

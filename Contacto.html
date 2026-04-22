@@ -3,227 +3,522 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contacto</title>
-  <link rel="shortcut icon" href="/img/logo_nuevo_jedyhealth-removebg-preview ico ico ico.ico">
-  <link rel="stylesheet" href="css/styles.css">
-  <!--Bootstrap-->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous"> 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-  <!-- FontAwesome -->
-  <link rel="stylesheet" href="css/fontawesome-free-6.7.2-web/css/all.css">
-  <link rel="stylesheet" href="css/fontawesome-free-6.7.2-web/css/brands.css">
-  <link rel="stylesheet" href="css/fontawesome-free-6.7.2-web/css/solid.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Contacto | Jedy Health - ERP Médico Avanzado</title>
+  <meta name="description" content="Contáctanos para obtener más información sobre nuestras soluciones ERP para el sector salud. Te ayudaremos a transformar la gestión de tu clínica o consultorio.">
+  <meta name="theme-color" content="#1b448c">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="img/Logo_jedyhealth.ico">
+  <link rel="shortcut icon" href="img/Logo_jedyhealth.ico">
+  
+  <!-- Preconnect y fuentes optimizadas -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Estilos Personalizados -->
+  <link rel="stylesheet" href="css/style.css">
+  
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Montserrat', sans-serif;
+      overflow-x: hidden;
+      background-color: #ffffff;
+    }
+    
+    .container-custom {
+      max-width: 1280px;
+      margin-left: auto;
+      margin-right: auto;
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+    }
+    
+    @media (min-width: 640px) {
+      .container-custom {
+        padding-left: 2rem;
+        padding-right: 2rem;
+      }
+    }
+    
+    /* Estilos específicos para la animación del menú */
+    #mainHeader {
+      transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      will-change: transform;
+    }
+    
+    .header-hidden {
+      transform: translateY(-100%);
+    }
+    
+    #mainHeader.glass-nav {
+      transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), background 0.2s, backdrop-filter 0.2s;
+    }
+    
+    /* Estilos para el mapa responsivo */
+    .map-container {
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+      overflow: hidden;
+      border-radius: 1rem;
+    }
+    
+    .map-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    /* Estilos para efecto glass-nav */
+    .glass-nav {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    }
+    
+    /* Estilos para los reveals */
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.8s ease;
+    }
+    
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    
+    .btn-glow {
+      transition: all 0.3s ease;
+    }
+    
+    .btn-glow:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 25px -5px rgba(59, 181, 171, 0.3);
+    }
+  </style>
 </head>
-<body>
 
-<!-- NAV -->
-<header>
-  <nav id="navbar" class="navbar navbar-expand-lg navbar-light fixed-top navbar-custom">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="/index.html">
-        <img src="/img/logo_nuevo_jedyhealth-removebg-preview.png" class="custom-size-top-logo" alt="Logotipo de Jedy health">
+<body class="antialiased">
+
+  <!-- Sticky Navigation con efecto Glassmorphism y ocultamiento al scroll -->
+  <header class="fixed top-0 left-0 w-full z-50 transition-all duration-300 glass-nav" id="mainHeader">
+    <div class="container-custom mx-auto flex items-center justify-between py-4 md:py-5">
+      <!-- Logo -->
+      <a href="index.html" class="flex items-center gap-3 z-10">
+        <img src="img/Logo_JedyHealth.png" alt="Logotipo Jedy Health" class="h-10 w-auto">
+        <span class="font-bold text-xl tracking-tight text-primary hidden sm:inline">Jedy<span class="text-secondary">Health</span></span>
       </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item">
-            <a class="nav-link custom-color" aria-current="page" href="/index.html">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link custom-color" href="/Productos.html">Productos</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link custom-color" href="/Planes.html">Planes</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link custom-color" href="/Testimonios.html">Testimonios</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link custom-color" href="/SobreNosotros.html">Sobre Nosotros</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link custom-color" href="/Contacto.html">Contacto</a>
-          </li>
-        </ul>
+      
+      <!-- Desktop Navigation -->
+      <nav class="hidden md:flex items-center space-x-8">
+        <a href="index.html" class="text-sm font-medium text-slate-700 hover:text-primary transition">Inicio</a>
+        <a href="Productos.html" class="text-sm font-medium text-slate-700 hover:text-primary transition">Productos</a>
+        <a href="Planes.html" class="text-sm font-medium text-slate-700 hover:text-primary transition">Planes</a>
+        <a href="Testimonios.html" class="text-sm font-medium text-slate-700 hover:text-primary transition">Testimonios</a>
+        <a href="SobreNosotros.html" class="text-sm font-medium text-slate-700 hover:text-primary transition">Nosotros</a>
+        <a href="Contacto.html" class="text-sm font-medium text-primary border-b-2 border-secondary transition">Contacto</a>
+      </nav>
+      
+      <div class="flex items-center gap-4">
+        <a href="https://cmo.jedysystems.com/" class="hidden md:inline-flex px-5 py-2 rounded-full border border-primary/20 text-primary font-semibold text-sm hover:bg-primary/5 transition">Acceder</a>
+        <button class="md:hidden text-primary focus:outline-none" id="mobileMenuBtn">
+          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M3 6h18v2H3V6zm0 5h18v2H3v-2zm0 5h18v2H3v-2z"/>
+          </svg>
+        </button>
       </div>
     </div>
-  </nav>
-</header>
+    
+    <!-- Mobile menu -->
+    <div id="mobileMenu" class="hidden md:hidden bg-white/95 backdrop-blur-lg border-t border-slate-100 py-4 px-6 flex flex-col space-y-3">
+      <a href="index.html" class="py-2 text-slate-800 font-medium">Inicio</a>
+      <a href="Productos.html" class="py-2 text-slate-800 font-medium">Productos</a>
+      <a href="Planes.html" class="py-2 text-slate-800 font-medium">Planes</a>
+      <a href="Testimonios.html" class="py-2 text-slate-800 font-medium">Testimonios</a>
+      <a href="SobreNosotros.html" class="py-2 text-slate-800 font-medium">Nosotros</a>
+      <a href="Contacto.html" class="py-2 text-primary font-semibold">Contacto</a>
+      <a href="https://cmo.jedysystems.com/" class="py-2 text-primary font-semibold">Acceder →</a>
+    </div>
+  </header>
 
-<!--Baner-->
-<div class="custom-bg_3">
-  <div class="container my-5">
-      <section class="d-flex justify-content-between align-items-center">
+  <main>
+    <!-- Hero Section de Contacto -->
+    <section class="relative pt-32 md:pt-40 pb-16 md:pb-20 overflow-hidden">
+      <div class="absolute inset-0 bg-gradient-to-br from-primary/5 via-white to-secondary/5 -z-10"></div>
+      <div class="container-custom mx-auto">
+        <div class="text-center max-w-4xl mx-auto reveal">
+          <div class="inline-flex items-center rounded-full bg-secondary/10 px-4 py-1.5 text-secondary text-sm font-semibold mb-6">
+            <span class="w-2 h-2 rounded-full bg-secondary mr-2"></span> Estamos para ayudarte
+          </div>
+          <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight tracking-tight text-primary">Conecta con <span class="text-secondary">nuestro equipo</span></h1>
+          <p class="text-slate-600 text-lg md:text-xl mt-6 leading-relaxed max-w-3xl mx-auto">¿Tienes preguntas sobre nuestras soluciones? Nuestros especialistas en salud digital están listos para asesorarte y llevar tu institución al siguiente nivel.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sección de Información de Contacto + Mapa -->
+    <section class="py-12 bg-white">
+      <div class="container-custom mx-auto">
+        <div class="grid lg:grid-cols-2 gap-12 items-stretch">
+          <!-- Información de contacto -->
+          <div class="reveal">
+            <div class="bg-slate-50 rounded-2xl p-8 md:p-10 h-full">
+              <h2 class="text-3xl font-bold text-primary mb-6">Información de contacto</h2>
+              <p class="text-slate-600 text-lg mb-8 leading-relaxed">Puedes comunicarte con nosotros a través de cualquiera de estos medios. Estamos disponibles de lunes a viernes de 8:00 AM a 6:00 PM.</p>
+              
+              <div class="space-y-6">
+                <!-- Email -->
+                <div class="flex items-start gap-4 group">
+                  <div class="w-12 h-12 rounded-xl bg-secondary/10 flex items-center justify-center group-hover:bg-secondary/20 transition">
+                    <i class="fas fa-envelope text-secondary text-xl"></i>
+                  </div>
+                  <div>
+                    <h3 class="font-semibold text-slate-800 text-lg">Correo electrónico</h3>
+                    <a href="mailto:info@jedysystems.com" class="text-slate-600 hover:text-secondary transition">info@jedysystems.com</a>
+                  </div>
+                </div>
+                
+                <!-- Teléfono -->
+                <div class="flex items-start gap-4 group">
+                  <div class="w-12 h-12 rounded-xl bg-secondary/10 flex items-center justify-center group-hover:bg-secondary/20 transition">
+                    <i class="fas fa-phone-alt text-secondary text-xl"></i>
+                  </div>
+                  <div>
+                    <h3 class="font-semibold text-slate-800 text-lg">Teléfono</h3>
+                    <a href="tel:+584140118000" class="text-slate-600 hover:text-secondary transition">+58 414-0118000</a>
+                  </div>
+                </div>
+                
+                <!-- Dirección -->
+                <div class="flex items-start gap-4 group">
+                  <div class="w-12 h-12 rounded-xl bg-secondary/10 flex items-center justify-center group-hover:bg-secondary/20 transition">
+                    <i class="fas fa-map-marker-alt text-secondary text-xl"></i>
+                  </div>
+                  <div>
+                    <h3 class="font-semibold text-slate-800 text-lg">Oficina principal</h3>
+                    <p class="text-slate-600">Caracas, Distrito Capital, Venezuela</p>
+                  </div>
+                </div>
+                
+                <!-- Horarios -->
+                <div class="flex items-start gap-4 group">
+                  <div class="w-12 h-12 rounded-xl bg-secondary/10 flex items-center justify-center group-hover:bg-secondary/20 transition">
+                    <i class="fas fa-clock text-secondary text-xl"></i>
+                  </div>
+                  <div>
+                    <h3 class="font-semibold text-slate-800 text-lg">Horario de atención</h3>
+                    <p class="text-slate-600">Lun - Vie: 8:00 AM - 6:00 PM</p>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- Redes sociales -->
+              <div class="mt-10 pt-6 border-t border-slate-200">
+                <h3 class="font-semibold text-slate-800 mb-4">Síguenos en redes sociales</h3>
+                <div class="flex gap-4">
+                  <a href="https://www.instagram.com/jedysystems/" target="_blank" class="w-10 h-10 rounded-full bg-slate-200 flex items-center justify-center hover:bg-secondary hover:text-white transition group">
+                    <i class="fab fa-instagram text-slate-600 group-hover:text-white"></i>
+                  </a>
+                  <a href="https://www.youtube.com/@jedysystems1565" target="_blank" class="w-10 h-10 rounded-full bg-slate-200 flex items-center justify-center hover:bg-secondary hover:text-white transition group">
+                    <i class="fab fa-youtube text-slate-600 group-hover:text-white"></i>
+                  </a>
+                  <a href="https://www.facebook.com/Jedysystemsca" target="_blank" class="w-10 h-10 rounded-full bg-slate-200 flex items-center justify-center hover:bg-secondary hover:text-white transition group">
+                    <i class="fab fa-facebook-f text-slate-600 group-hover:text-white"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Mapa -->
+          <div class="reveal">
+            <div class="bg-slate-50 rounded-2xl p-8 md:p-10 h-full">
+              <h2 class="text-2xl font-bold text-primary mb-6">Ubicación</h2>
+              <div class="map-container rounded-xl overflow-hidden shadow-md">
+                <iframe 
+                  title="Ubicación de Jedy Health en Caracas"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d125549.02256962482!2d-66.97276794951576!3d10.468549976493287!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8c2a58adcd824807%3A0x93dd2eae0a998483!2sCaracas%2C%20Distrito%20Capital!5e0!3m2!1ses!2sve!4v1696011827719!5m2!1ses!2sve" 
+                  allowfullscreen>
+                </iframe>
+              </div>
+              <p class="text-slate-500 text-sm mt-4 text-center">📍 Av. Principal, Caracas - Venezuela</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Formulario de Contacto para Conversión -->
+    <section class="py-20 relative">
+      <div class="absolute inset-0 gradient-soft -z-10"></div>
+      <div class="container-custom mx-auto max-w-5xl">
+        <div class="bg-primary rounded-3xl shadow-xl overflow-hidden border border-slate-100 reveal">
+          <div class="grid md:grid-cols-5">
+            <!-- Lado izquierdo: Beneficios -->
+            <div class="md:col-span-2 bg-gradient-to-br from-primary to-primary-dark p-8 md:p-10">
+              <div class="flex flex-col h-full justify-center">
+                <div class="text-5xl mb-6">💬</div>
+                <h3 class="text-2xl font-bold text-white mb-4">¿Listo para transformar tu gestión médica?</h3>
+                <p class="text-white/90 leading-relaxed mb-6">Completa el formulario y uno de nuestros asesores te contactará para ofrecerte la mejor solución para tu institución.</p>
+                <div class="space-y-3 text-sm text-white/80">
+                  <div class="flex items-center gap-2">
+                    <svg class="w-5 h-5 text-secondary" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                    <span>Respuesta en menos de 24 horas</span>
+                  </div>
+                  <div class="flex items-center gap-2">
+                    <svg class="w-5 h-5 text-secondary" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                    <span>Asesoría personalizada sin costo</span>
+                  </div>
+                  <div class="flex items-center gap-2">
+                    <svg class="w-5 h-5 text-secondary" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                    <span>Demo gratuita de nuestro software</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Lado derecho: Formulario -->
+            <div class="md:col-span-3 p-8 md:p-10 bg-white">
+              <h3 class="text-2xl font-bold text-primary mb-2">Envíanos un mensaje</h3>
+              <p class="text-gray-600 mb-6">Completa el formulario y te responderemos a la brevedad.</p>
+              
+              <form id="contactForm" class="space-y-5">
+                <div class="grid sm:grid-cols-2 gap-4">
+                  <div>
+                    <label class="block text-gray-700 font-medium mb-2">Nombre completo *</label>
+                    <input type="text" id="contactNombre" class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:border-secondary focus:ring-2 focus:ring-secondary/20 transition outline-none text-gray-800" placeholder="Tu nombre" required>
+                  </div>
+                  <div>
+                    <label class="block text-gray-700 font-medium mb-2">Correo electrónico *</label>
+                    <input type="email" id="contactEmail" class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:border-secondary focus:ring-2 focus:ring-secondary/20 transition outline-none text-gray-800" placeholder="nombre@ejemplo.com" required>
+                  </div>
+                </div>
+                
+                <div class="grid sm:grid-cols-2 gap-4">
+                  <div>
+                    <label class="block text-gray-700 font-medium mb-2">Teléfono</label>
+                    <input type="tel" id="contactTelefono" class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:border-secondary focus:ring-2 focus:ring-secondary/20 transition outline-none text-gray-800" placeholder="+58 414-1234567">
+                  </div>
+                  <div>
+                    <label class="block text-gray-700 font-medium mb-2">Empresa / Clínica *</label>
+                    <input type="text" id="contactEmpresa" class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:border-secondary focus:ring-2 focus:ring-secondary/20 transition outline-none text-gray-800" placeholder="Nombre de la institución" required>
+                  </div>
+                </div>
+                
+                <div>
+                  <label class="block text-gray-700 font-medium mb-2">Producto de interés</label>
+                  <select id="contactProducto" class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:border-secondary focus:ring-2 focus:ring-secondary/20 transition outline-none text-gray-800 bg-white">
+                    <option value="APS">APS - Atención Primaria de Salud</option>
+                    <option value="CLINICO">Clínico - ERP para clínicas</option>
+                    <option value="CMO">CMO - Consultorio médico</option>
+                    <option value="OTRO">Otro / No estoy seguro</option>
+                  </select>
+                </div>
+                
+                <div>
+                  <label class="block text-gray-700 font-medium mb-2">Mensaje</label>
+                  <textarea rows="4" id="contactMensaje" class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:border-secondary focus:ring-2 focus:ring-secondary/20 transition outline-none text-gray-800" placeholder="Cuéntanos sobre tus necesidades o preguntas..."></textarea>
+                </div>
+                
+                <div>
+                  <label class="block text-gray-700 font-medium mb-3">¿Qué te interesa?</label>
+                  <div class="flex flex-wrap gap-6">
+                    <label class="flex items-center gap-2 cursor-pointer">
+                      <input type="radio" name="contactVersion" value="demo" class="w-4 h-4 text-secondary focus:ring-secondary" checked> 
+                      <span class="text-gray-700">Solicitar demo gratuita</span>
+                    </label>
+                    <label class="flex items-center gap-2 cursor-pointer">
+                      <input type="radio" name="contactVersion" value="completa" class="w-4 h-4 text-secondary focus:ring-secondary"> 
+                      <span class="text-gray-700">Información de versión completa</span>
+                    </label>
+                    <label class="flex items-center gap-2 cursor-pointer">
+                      <input type="radio" name="contactVersion" value="soporte" class="w-4 h-4 text-secondary focus:ring-secondary"> 
+                      <span class="text-gray-700">Soporte técnico</span>
+                    </label>
+                  </div>
+                </div>
+                
+                <button type="submit" class="w-full py-3.5 rounded-xl font-bold text-white text-base transition-all btn-glow" style="background-color: #3BB5AB;">
+                  Enviar mensaje →
+                </button>
+                
+                <p class="text-xs text-gray-500 text-center mt-4">
+                  Al enviar este formulario, aceptas nuestra política de privacidad. Tus datos están seguros con nosotros.
+                </p>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sección de Preguntas Frecuentes (FAQ) -->
+    <section class="py-20 bg-slate-50">
+      <div class="container-custom mx-auto max-w-4xl">
+        <div class="text-center mb-12 reveal">
+          <span class="text-secondary font-semibold text-sm uppercase tracking-wider">Resolvemos tus dudas</span>
+          <h2 class="text-3xl md:text-4xl font-bold text-primary mt-2">Preguntas frecuentes</h2>
+          <p class="text-slate-600 mt-4">Encuentra respuestas rápidas a las preguntas más comunes</p>
+        </div>
+        
+        <div class="space-y-4 reveal">
+          <div class="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition">
+            <h3 class="font-semibold text-lg text-primary mb-2">¿Cuánto tiempo toma implementar el sistema?</h3>
+            <p class="text-slate-600">La implementación puede tomar entre 2 y 4 semanas, dependiendo del tamaño de tu institución y los módulos seleccionados. Ofrecemos acompañamiento completo durante todo el proceso.</p>
+          </div>
+          
+          <div class="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition">
+            <h3 class="font-semibold text-lg text-primary mb-2">¿Ofrecen soporte técnico?</h3>
+            <p class="text-slate-600">Sí, contamos con soporte técnico 24/7 para todos nuestros clientes. Nuestro equipo está disponible para resolver cualquier inconveniente de manera rápida y eficiente.</p>
+          </div>
+          
+          <div class="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition">
+            <h3 class="font-semibold text-lg text-primary mb-2">¿El sistema cumple con la legislación venezolana?</h3>
+            <p class="text-slate-600">Absolutamente. Nuestro software está diseñado cumpliendo con todos los requisitos fiscales y legales de Venezuela, incluyendo facturación fiscal y protección de datos.</p>
+          </div>
+          
+          <div class="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition">
+            <h3 class="font-semibold text-lg text-primary mb-2">¿Puedo acceder desde cualquier dispositivo?</h3>
+            <p class="text-slate-600">Sí, nuestra plataforma es 100% web y responsive. Puedes acceder desde computadoras, tablets o smartphones con conexión a internet.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer moderno -->
+  <footer class="bg-slate-900 text-white pt-16 pb-8">
+    <div class="container-custom mx-auto">
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-10">
         <div>
-          <h1 class="col-md-4 text-white h1morebig">Contacto</h1>
-        </div>
-        <span>
-          <div>
-            <img src="/img/icon_contacto-removebg-preview.png" class=" col-md-12 w-100" alt="Atención medicinal desde el telefono">
+          <div class="flex items-center gap-2">
+            <img src="img/Logo_JedyHealth.png" alt="Jedy Health Logo" class="h-8 w-auto">
+            <span class="font-bold text-xl">JedyHealth</span>
           </div>
-        </span>
-      </section>
-  </div>
-</div>
-
-<!--Contac Data-->
-<div class="container">
-    <div class="pt-4">
-      <main class="container my-5">
-        <div class="row pt-4">
-          <div class="col-12 col-md-6">
-            <h1 class="text-dark ls-4">Contactanos</h1>
-            <p class="text-dark fs-4">A través de esta sección podrás contactarnos por varios medios. Contarás también con la dirección de nuestras oficinas.</p>
-            <p class="text-dark fs-5 bg-secondary bg-opacity-50 px-2 py-1 rounded d-inline-block">
-              <i class="fas fa-envelope"></i> info@jedysystems.com
-            </p>
-            <p class="text-dark fs-5">
-              <i class="fas fa-map-marker-alt"></i> Caracas, Distrito Capital, Venezuela
-            </p>
-            <p class="text-dark fs-5">
-              <i class="fas fa-phone"></i> 0414-0118000
-            </p>            
-          </div>
-          <div class="col-12 col-md-6">
-            <iframe 
-              width="100%" 
-              height="300" 
-              frameborder="0" 
-              style="border:0" 
-              referrerpolicy="no-referrer-when-downgrade"
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d125549.02256962482!2d-66.97276794951576!3d10.468549976493287!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8c2a58adcd824807%3A0x93dd2eae0a998483!2sCaracas%2C%20Distrito%20Capital!5e0!3m2!1ses!2sve!4v1696011827719!5m2!1ses!2sve" 
-              allowfullscreen>
-            </iframe>
+          <p class="text-slate-400 mt-4 text-sm">ERP médico avanzado para el sector salud en Venezuela. Innovación y tecnología al servicio de los profesionales.</p>
+          <div class="flex space-x-4 mt-5">
+            <a href="https://www.instagram.com/jedysystems/" target="_blank" class="text-slate-400 hover:text-white transition"><i class="fab fa-instagram text-xl"></i></a>
+            <a href="https://www.youtube.com/@jedysystems1565" target="_blank" class="text-slate-400 hover:text-white transition"><i class="fab fa-youtube text-xl"></i></a>
+            <a href="https://www.facebook.com/Jedysystemsca" target="_blank" class="text-slate-400 hover:text-white transition"><i class="fab fa-facebook text-xl"></i></a>
           </div>
         </div>
-      </main>
-    </div>
-</div>
-  
-<!--Formulario de Contacto-->
-<div class="custom-bg_5">
-  <div class="bg-dark bg-opacity-50 py-2">
-  <div class="text-center pt-5">
-    <h3 class="text-white"><b>¡Comienza hoy mismo!</b></h3>
-  </div>
-  <div class="container my-5">
-    <div class="form-container">
-<!--Campos de envio Formulario-->
-      <form>
-        <div class="mb-3">
-          <label for="email" class="form-label text-white">Correo</label>
-          <input type="email" class="form-control" id="emailCorreo" placeholder="nombre@ejemplo.com" required>
-        </div>
-        <div class="mb-3">
-          <label for="empresa" class="form-label text-white">Nombre de la empresa</label>
-          <input type="text" class="form-control" id="empresaCorreo" placeholder="Nombre de la empresa" required>
-        </div>
-        <div class="mb-3">
-          <label for="producto" class="form-label text-white">Productos</label>
-          <select class="form-select" id="productoCorreo" required>
-            <option value="APS">APS</option>
-            <option value="CLINICO">CLÍNICO</option>
-            <option value="CMO">CMO</option>
-          </select>
-        </div>
-        <div class="mb-3">
-          <label for="mensaje" class="form-label text-white">Mensaje</label>
-          <textarea class="form-control" id="mensajeCorreo" rows="3" placeholder="Escribe tu mensaje aquí (opcional)"></textarea>
-        </div>
-        <div class="mb-3">
-          <label class="form-label text-white">Solicite su demo o la versión completa</label>
-          <div class="form-check">
-            <input class="form-check-input" type="radio" name="version" id="demo" value="demo" required>
-            <label class="form-check-label text-white" for="demo">
-              Versión demo
-            </label>
-          </div>
-          <div class="form-check">
-            <input class="form-check-input" type="radio" name="version" id="completa" value="completa" required>
-            <label class="form-check-label text-white" for="completa">
-              Versión completa
-            </label>
-          </div>
-        </div>
-        <div class="text-center">
-          <button type="submit" class="btn btn-primary btn-lg" id="submitEmailCorreo">Enviar</button>
-        </div>
-      </form>
-    </div>
-  </div>
-  </div>
-</div>
-  
-
-<!--Footer-->
-<footer class="bg-light text-dark py-4 mt-5">
-  <div class="container">
-    <div class="row align-items-center">
-
-<!--Logo and Social medias-->
-    <div class="col-md-4">
-      <a class="navbar-brand" href="/index.html">
-        <img src="/img/logo_nuevo_jedyhealth-removebg-preview.png" class="custom-size-botom-logo pb-4" alt="Logotipo de Jedy health">
-      </a>
-      <div class="d-flex align-items-center">
-        <p class="mb-0 ms-3">Síguenos en todas nuestras redes sociales:</p>
-      </div>
-      <ul class="list-inline mt-2">
-        <li class="list-inline-item">
-          <a href="https://www.instagram.com/jedysystems/" target="_blank">
-            <i class="fab fa-instagram social-icon"></i>
-          </a>
-        </li>
-        <li class="list-inline-item">
-          <a href="https://www.youtube.com/@jedysystems1565" target="_blank">
-            <i class="fab fa-youtube social-icon"></i>
-          </a>
-        </li>
-        <li class="list-inline-item">
-          <a href="https://www.facebook.com/Jedysystemsca" target="_blank">
-            <i class="fab fa-facebook social-icon"></i>
-          </a>
-        </li>
-      </ul>
-    </div>
-
-<!--Nav footer and Nav enlaces-->
-      <div class="col-md-6 d-flex justify-content-end">
-        <div class="me-5 ls-3">
-          <h6>Navegación</h6>
-          <ul class="list-unstyled">
-            <li><a href="/index.html" class="nav-link text-primary">Home</a></li>
-            <li><a href="/Productos.html" class="nav-link text-primary">Productos</a></li>
-            <li><a href="/Planes.html" class="nav-link text-primary">Planes</a></li>
-            <li><a href="/Testimonios.html" class="nav-link text-primary">Testimonios</a></li>
-            <li><a href="/Contacto.html" class="nav-link text-primary">Contacto</a></li>
+        <div>
+          <h6 class="font-semibold text-white">Navegación</h6>
+          <ul class="mt-3 space-y-2 text-slate-400 text-sm">
+            <li><a href="index.html" class="hover:text-white">Inicio</a></li>
+            <li><a href="Productos.html" class="hover:text-white">Productos</a></li>
+            <li><a href="Planes.html" class="hover:text-white">Planes</a></li>
+            <li><a href="Testimonios.html" class="hover:text-white">Testimonios</a></li>
           </ul>
         </div>
-        <div class="ls-3">
-          <h6>Enlaces</h6>
-          <ul class="list-unstyled">
-            <li><a href="/Contacto.html" class="nav-link text-primary">Contacta con nosotros</a></li>
-            <li><a href="#" class="nav-link text-primary">Política de privacidad</a></li>
+        <div>
+          <h6 class="font-semibold text-white">Enlaces legales</h6>
+          <ul class="mt-3 space-y-2 text-slate-400 text-sm">
+            <li><a href="terminos-condiciones.html" class="hover:text-white">Política de privacidad</a></li>
+            <li><a href="terminos-condiciones.html" class="hover:text-white">Términos de uso</a></li>
+            <li><a href="Contacto.html" class="hover:text-white">Contacto soporte</a></li>
+          </ul>
+        </div>
+        <div>
+          <h6 class="font-semibold text-white">Contacto directo</h6>
+          <ul class="mt-3 space-y-2 text-slate-400 text-sm">
+            <li>📧 info@jedysystems.com</li>
+            <li>📞 +58 414-0118000</li>
+            <li>📍 Caracas, Venezuela</li>
           </ul>
         </div>
       </div>
+      <hr class="border-slate-800 my-8">
+      <div class="text-center text-slate-500 text-sm">&copy; 2025 Jedy Systems. Todos los derechos reservados. Tecnología de vanguardia para la salud.</div>
     </div>
-    <hr>
-    <div class="row">
-      <div class="col text-center">
-        <p>&copy; Jedy Systems. Todos los derechos reservados.</p>
-      </div>
-    </div>
-  </div>
-</footer>
+  </footer>
 
-<!--JS Files-->
-<script src="js/nav_hiden.js"></script>
-<script src="js/send_file.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-
+  <!-- Fontawesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  
+  <!-- Scripts -->
+  <script src="js/menu-scroll.js"></script>
+  <script>
+    // Mobile menu toggle
+    const mobileBtn = document.getElementById('mobileMenuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    if(mobileBtn) {
+      mobileBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+      });
+    }
+    
+    // ScrollReveal manual
+    const reveals = document.querySelectorAll('.reveal');
+    function checkReveal() {
+      for(let el of reveals) {
+        const windowHeight = window.innerHeight;
+        const rect = el.getBoundingClientRect();
+        const revealPoint = 120;
+        if(rect.top < windowHeight - revealPoint) {
+          el.classList.add('visible');
+        }
+      }
+    }
+    
+    window.addEventListener('scroll', checkReveal);
+    window.addEventListener('load', checkReveal);
+    checkReveal();
+    
+    // Navbar sticky shadow
+    const header = document.getElementById('mainHeader');
+    window.addEventListener('scroll', () => {
+      if(window.scrollY > 20) {
+        header.classList.add('shadow-sm');
+      } else {
+        header.classList.remove('shadow-sm');
+      }
+    });
+    
+    // Form handling
+    const contactForm = document.getElementById('contactForm');
+    if(contactForm) {
+      contactForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const nombre = document.getElementById('contactNombre')?.value;
+        const email = document.getElementById('contactEmail')?.value;
+        
+        if(nombre && nombre.trim() !== '' && email && email.trim() !== '') {
+          alert(`✅ ¡Gracias ${nombre}! Hemos recibido tu mensaje. Un asesor de Jedy Health te contactará a la brevedad en: ${email}`);
+          contactForm.reset();
+        } else {
+          alert('Por favor completa los campos requeridos (Nombre y Correo electrónico).');
+        }
+      });
+    }
+    
+    // Smooth scroll para enlaces internos
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        const targetId = this.getAttribute('href');
+        if(targetId === "#") return;
+        const targetElem = document.querySelector(targetId);
+        if(targetElem) {
+          e.preventDefault();
+          targetElem.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+  </script>
 </body>
+
 </html>

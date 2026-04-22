@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Términos y Condiciones | Jedy Health - Política de Privacidad</title>
+  <meta name="description" content="Términos y Condiciones y Política de Privacidad de Jedy Health. Conoce cómo protegemos tus datos personales y de salud en nuestra plataforma Consultorio Médico Online.">
+  <meta name="theme-color" content="#1b448c">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="img/Logo_jedyhealth.ico">
+  <link rel="shortcut icon" href="img/Logo_jedyhealth.ico">
+  
+  <!-- Preconnect y fuentes -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Estilos Personalizados -->
+  <link rel="stylesheet" href="css/style.css">
+  
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Montserrat', sans-serif;
+      overflow-x: hidden;
+      background-color: #ffffff;
+    }
+    
+    .container-custom {
+      max-width: 1280px;
+      margin-left: auto;
+      margin-right: auto;
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+    }
+    
+    @media (min-width: 640px) {
+      .container-custom {
+        padding-left: 2rem;
+        padding-right: 2rem;
+      }
+    }
+    
+    #mainHeader {
+      transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      will-change: transform;
+    }
+    
+    .header-hidden {
+      transform: translateY(-100%);
+    }
+    
+    #mainHeader.glass-nav {
+      transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), background 0.2s, backdrop-filter 0.2s;
+    }
+    
+    .glass-nav {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    }
+    
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.8s ease;
+    }
+    
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    
+    /* Estilos para el contenido legal */
+    .legal-section {
+      scroll-margin-top: 100px;
+    }
+    
+    .legal-card {
+      transition: all 0.3s ease;
+    }
+    
+    .legal-card:hover {
+      transform: translateY(-2px);
+    }
+    
+    .table-of-contents a {
+      transition: all 0.2s ease;
+    }
+    
+    .table-of-contents a:hover {
+      padding-left: 8px;
+      color: #3BB5AB;
+    }
+  </style>
+</head>
+
+<body class="antialiased">
+
+  <!-- Sticky Navigation -->
+  <header class="fixed top-0 left-0 w-full z-50 transition-all duration-300 glass-nav" id="mainHeader">
+    <div class="container-custom mx-auto flex items-center justify-between py-4 md:py-5">
+      <a href="index.html" class="flex items-center gap-3 z-10">
+        <img src="img/Logo_JedyHealth.png" alt="Logotipo Jedy Health" class="h-10 w-auto">
+        <span class="font-bold text-xl tracking-tight text-primary hidden sm:inline">Jedy<span class="text-secondary">Health</span></span>
+      </a>
+      
+      <nav class="hidden md:flex items-center space-x-8">
+        <a href="index.html" class="text-sm font-medium text-slate-700 hover:text-primary transition">Inicio</a>
+        <a href="Productos.html" class="text-sm font-medium text-slate-700 hover:text-primary transition">Productos</a>
+        <a href="Planes.html" class="text-sm font-medium text-slate-700 hover:text-primary transition">Planes</a>
+        <a href="Testimonios.html" class="text-sm font-medium text-slate-700 hover:text-primary transition">Testimonios</a>
+        <a href="SobreNosotros.html" class="text-sm font-medium text-slate-700 hover:text-primary transition">Nosotros</a>
+        <a href="Contacto.html" class="text-sm font-medium text-slate-700 hover:text-primary transition">Contacto</a>
+      </nav>
+      
+      <div class="flex items-center gap-4">
+        <a href="https://cmo.jedysystems.com/" class="hidden md:inline-flex px-5 py-2 rounded-full border border-primary/20 text-primary font-semibold text-sm hover:bg-primary/5 transition">Acceder</a>
+        <button class="md:hidden text-primary focus:outline-none" id="mobileMenuBtn">
+          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M3 6h18v2H3V6zm0 5h18v2H3v-2zm0 5h18v2H3v-2z"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+    
+    <div id="mobileMenu" class="hidden md:hidden bg-white/95 backdrop-blur-lg border-t border-slate-100 py-4 px-6 flex flex-col space-y-3">
+      <a href="index.html" class="py-2 text-slate-800 font-medium">Inicio</a>
+      <a href="Productos.html" class="py-2 text-slate-800 font-medium">Productos</a>
+      <a href="Planes.html" class="py-2 text-slate-800 font-medium">Planes</a>
+      <a href="Testimonios.html" class="py-2 text-slate-800 font-medium">Testimonios</a>
+      <a href="SobreNosotros.html" class="py-2 text-slate-800 font-medium">Nosotros</a>
+      <a href="Contacto.html" class="py-2 text-slate-800 font-medium">Contacto</a>
+      <a href="https://cmo.jedysystems.com/" class="py-2 text-primary font-semibold">Acceder →</a>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="relative pt-32 md:pt-40 pb-12 md:pb-16 overflow-hidden">
+      <div class="absolute inset-0 bg-gradient-to-br from-primary/5 via-white to-secondary/5 -z-10"></div>
+      <div class="container-custom mx-auto">
+        <div class="text-center max-w-4xl mx-auto reveal">
+          <div class="inline-flex items-center rounded-full bg-secondary/10 px-4 py-1.5 text-secondary text-sm font-semibold mb-6">
+            <span class="w-2 h-2 rounded-full bg-secondary mr-2"></span> Información legal
+          </div>
+          <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight tracking-tight text-primary">Términos y Condiciones</h1>
+          <p class="text-slate-600 text-lg md:text-xl mt-6 leading-relaxed max-w-3xl mx-auto">Política de Privacidad y protección de datos personales de JedySystems C.A.</p>
+          <p class="text-slate-500 text-sm mt-4">Última actualización: Abril 2025</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Índice / Tabla de contenidos -->
+    <section class="py-8 bg-white">
+      <div class="container-custom mx-auto">
+        <div class="max-w-4xl mx-auto reveal">
+          <div class="bg-slate-50 rounded-2xl p-6 table-of-contents">
+            <h2 class="text-xl font-bold text-primary mb-4 flex items-center gap-2">
+              <i class="fas fa-list text-secondary"></i> Contenido
+            </h2>
+            <div class="grid md:grid-cols-2 gap-3 text-sm">
+              <a href="#seccion1" class="text-slate-600 hover:text-secondary transition flex items-center gap-2"><span class="w-1.5 h-1.5 bg-secondary rounded-full"></span>I. Introducción y aceptación</a>
+              <a href="#seccion2" class="text-slate-600 hover:text-secondary transition flex items-center gap-2"><span class="w-1.5 h-1.5 bg-secondary rounded-full"></span>II. Principios rectores</a>
+              <a href="#seccion3" class="text-slate-600 hover:text-secondary transition flex items-center gap-2"><span class="w-1.5 h-1.5 bg-secondary rounded-full"></span>III. Confidencialidad médica</a>
+              <a href="#seccion4" class="text-slate-600 hover:text-secondary transition flex items-center gap-2"><span class="w-1.5 h-1.5 bg-secondary rounded-full"></span>IV. Información recopilada</a>
+              <a href="#seccion5" class="text-slate-600 hover:text-secondary transition flex items-center gap-2"><span class="w-1.5 h-1.5 bg-secondary rounded-full"></span>V. Usos adicionales</a>
+              <a href="#seccion6" class="text-slate-600 hover:text-secondary transition flex items-center gap-2"><span class="w-1.5 h-1.5 bg-secondary rounded-full"></span>VI. Gestión y compartición</a>
+              <a href="#seccion7" class="text-slate-600 hover:text-secondary transition flex items-center gap-2"><span class="w-1.5 h-1.5 bg-secondary rounded-full"></span>VII. Derechos del usuario</a>
+              <a href="#seccion8" class="text-slate-600 hover:text-secondary transition flex items-center gap-2"><span class="w-1.5 h-1.5 bg-secondary rounded-full"></span>VIII. Seguridad y disposiciones</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contenido Legal -->
+    <section class="py-12 bg-white">
+      <div class="container-custom mx-auto">
+        <div class="max-w-4xl mx-auto space-y-8">
+          
+          <!-- Sección I -->
+          <div id="seccion1" class="legal-section reveal legal-card bg-white rounded-2xl p-6 md:p-8 shadow-sm border border-slate-100">
+            <div class="flex items-center gap-3 mb-4">
+              <div class="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center">
+                <span class="text-primary font-bold text-lg">I</span>
+              </div>
+              <h2 class="text-2xl font-bold text-primary">Introducción y Aceptación de la Política de Privacidad</h2>
+            </div>
+            <p class="text-slate-600 leading-relaxed mb-4">Al utilizar la plataforma <span class="font-semibold">Consultorio Médico Online</span> (en adelante, la "Plataforma" o el "Servicio"), propiedad y operada por <span class="font-semibold">JedySystems C.A.</span> (en adelante, la "Empresa"), usted, como usuario, nos confía su información.</p>
+            <p class="text-slate-600 leading-relaxed mb-4">Mediante la presente Política de Privacidad (en adelante, la "Política"), informamos a nuestros usuarios cómo se recopila, procesa y protege su información personal, especialmente la información de salud, y cómo la Empresa trata dicha información.</p>
+            <p class="text-slate-600 leading-relaxed mb-4">Le pedimos que dedique el tiempo suficiente para leer esta Política detenidamente, ya que rige la relación contractual entre usted y JedySystems C.A.</p>
+            
+            <div class="mt-4 p-4 bg-slate-50 rounded-xl">
+              <h3 class="font-semibold text-primary mb-2">Aplicación y Alcance de la Política</h3>
+              <p class="text-slate-600 text-sm mb-2"><span class="font-medium">1. Alcance:</span> Esta Política aplica a todos los Usuarios del Servicio, incluyendo a los Profesionales Médicos y a los Pacientes que utilicen la Plataforma para la gestión de historias, antecedentes, recetas, diagnósticos, citas y cualquier otra funcionalidad ofrecida.</p>
+              <p class="text-slate-600 text-sm mb-2"><span class="font-medium">2. Aceptación y Autorización:</span> Al aceptar esta Política y utilizar el Servicio, el Usuario autoriza a JedySystems C.A. al procesamiento, uso y tratamiento de sus datos personales de conformidad con la normativa vigente y aplicable en la República Bolivariana de Venezuela.</p>
+              <p class="text-slate-600 text-sm"><span class="font-medium">3. Consentimiento Expreso (Datos Sensibles):</span> El Usuario otorga su consentimiento previo, expreso e informado para que los datos de información personal, especialmente los datos de salud, sean recopilados, procesados y protegidos según los términos de esta Política.</p>
+            </div>
+            
+            <div class="mt-4 p-4 bg-amber-50 rounded-xl border-l-4 border-amber-400">
+              <h3 class="font-semibold text-amber-700 mb-2">Veracidad de la Información</h3>
+              <p class="text-amber-700 text-sm">Los Usuarios garantizan y responden por la veracidad, exactitud, vigencia y autenticidad de la información personal facilitada, comprometiéndose a mantenerla debidamente actualizada.</p>
+            </div>
+          </div>
+
+          <!-- Sección II -->
+          <div id="seccion2" class="legal-section reveal legal-card bg-white rounded-2xl p-6 md:p-8 shadow-sm border border-slate-100">
+            <div class="flex items-center gap-3 mb-4">
+              <div class="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center">
+                <span class="text-primary font-bold text-lg">II</span>
+              </div>
+              <h2 class="text-2xl font-bold text-primary">Principios Rectores del Tratamiento de Datos</h2>
+            </div>
+            <div class="grid md:grid-cols-2 gap-4">
+              <div class="p-3 bg-slate-50 rounded-lg"><span class="font-semibold text-primary">Legalidad:</span><p class="text-slate-600 text-sm mt-1">El tratamiento se sujetará a la normativa venezolana vigente.</p></div>
+              <div class="p-3 bg-slate-50 rounded-lg"><span class="font-semibold text-primary">Libertad:</span><p class="text-slate-600 text-sm mt-1">Uso de datos con consentimiento previo, expreso e informado.</p></div>
+              <div class="p-3 bg-slate-50 rounded-lg"><span class="font-semibold text-primary">Finalidad:</span><p class="text-slate-600 text-sm mt-1">Subordinado a una finalidad legítima y explícita (gestión médica).</p></div>
+              <div class="p-3 bg-slate-50 rounded-lg"><span class="font-semibold text-primary">Veracidad y calidad:</span><p class="text-slate-600 text-sm mt-1">Información veraz, completa, exacta y actualizada.</p></div>
+              <div class="p-3 bg-slate-50 rounded-lg"><span class="font-semibold text-primary">Transparencia:</span><p class="text-slate-600 text-sm mt-1">Información clara y auténtica sobre el tratamiento de datos.</p></div>
+              <div class="p-3 bg-slate-50 rounded-lg"><span class="font-semibold text-primary">Acceso restringido:</span><p class="text-slate-600 text-sm mt-1">Acceso controlado a personal autorizado.</p></div>
+              <div class="p-3 bg-slate-50 rounded-lg"><span class="font-semibold text-primary">Seguridad (Cifrado):</span><p class="text-slate-600 text-sm mt-1">Confidencialidad, integridad y disponibilidad de la información.</p></div>
+              <div class="p-3 bg-slate-50 rounded-lg"><span class="font-semibold text-primary">Confidencialidad:</span><p class="text-slate-600 text-sm mt-1">Compromiso de no divulgación sin permiso del propietario.</p></div>
+            </div>
+          </div>
+
+          <!-- Sección III -->
+          <div id="seccion3" class="legal-section reveal legal-card bg-white rounded-2xl p-6 md:p-8 shadow-sm border border-slate-100">
+            <div class="flex items-center gap-3 mb-4">
+              <div class="w-10 h-10 rounded-xl bg-secondary/10 flex items-center justify-center">
+                <i class="fas fa-shield-alt text-secondary text-lg"></i>
+              </div>
+              <h2 class="text-2xl font-bold text-primary">Confidencialidad y Seguridad de la Información Médica</h2>
+            </div>
+            <p class="text-slate-600 leading-relaxed mb-4">Dada la naturaleza del Servicio, JedySystems C.A. prioriza la protección de los datos de salud, que constituyen datos sensibles del Paciente.</p>
+            
+            <div class="mt-4 p-4 bg-green-50 rounded-xl">
+              <h3 class="font-semibold text-green-700 mb-2">Compromiso de Confidencialidad</h3>
+              <p class="text-green-700 text-sm">La Información Médica incluye cualquier dato relacionado con el estado de salud, historial médico, antecedentes, tratamientos, medicamentos, diagnósticos, exámenes e informes gestionados a través de la Plataforma.</p>
+            </div>
+            
+            <div class="mt-4">
+              <h3 class="font-semibold text-primary mb-2">No Divulgación y Excepciones</h3>
+              <ul class="space-y-2 text-slate-600 text-sm list-disc list-inside">
+                <li>Cuando sea requerido por ley o orden judicial legítima.</li>
+                <li>Cuando sea estrictamente necesario para proteger la salud o seguridad del Usuario.</li>
+                <li>Para garantizar la prestación técnica del servicio a través de Socios Vinculados con compromisos de confidencialidad.</li>
+              </ul>
+            </div>
+            
+            <div class="mt-4">
+              <h3 class="font-semibold text-primary mb-2">Medidas de Seguridad Reforzadas</h3>
+              <ul class="space-y-2 text-slate-600 text-sm list-disc list-inside">
+                <li>Mecanismos de cifrado avanzado para datos de salud en tránsito y reposo.</li>
+                <li>Controles de acceso estrictos y autenticación fuerte.</li>
+                <li>Firewalls y protocolos de seguridad.</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Sección IV -->
+          <div id="seccion4" class="legal-section reveal legal-card bg-white rounded-2xl p-6 md:p-8 shadow-sm border border-slate-100">
+            <div class="flex items-center gap-3 mb-4">
+              <div class="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center">
+                <i class="fas fa-database text-primary text-lg"></i>
+              </div>
+              <h2 class="text-2xl font-bold text-primary">Información que JedySystems C.A. Recopila</h2>
+            </div>
+            
+            <div class="space-y-4">
+              <div><span class="font-semibold text-primary">Información de Cuenta:</span><p class="text-slate-600 text-sm mt-1">Nombre completo, fecha de nacimiento, domicilio, teléfono, email, documento de identidad.</p></div>
+              <div><span class="font-semibold text-primary">Información de Acceso:</span><p class="text-slate-600 text-sm mt-1">Email, nombre de usuario, contraseña cifrada, IP, identificación del dispositivo.</p></div>
+              <div><span class="font-semibold text-primary">Información de Ubicación:</span><p class="text-slate-600 text-sm mt-1">Datos GPS, IP o Wi-Fi (con permiso explícito).</p></div>
+              <div><span class="font-semibold text-primary">Información Médica Sensible:</span><p class="text-slate-600 text-sm mt-1">Historial médico, antecedentes, diagnósticos, recetas, citas, exámenes, tratamientos.</p></div>
+            </div>
+          </div>
+
+          <!-- Sección V -->
+          <div id="seccion5" class="legal-section reveal legal-card bg-white rounded-2xl p-6 md:p-8 shadow-sm border border-slate-100">
+            <div class="flex items-center gap-3 mb-4">
+              <div class="w-10 h-10 rounded-xl bg-secondary/10 flex items-center justify-center">
+                <i class="fas fa-chart-line text-secondary text-lg"></i>
+              </div>
+              <h2 class="text-2xl font-bold text-primary">Usos Adicionales de la Información</h2>
+            </div>
+            <ul class="space-y-3 text-slate-600">
+              <li class="flex items-start gap-2"><span class="text-secondary">•</span> Servicio de Atención al Cliente</li>
+              <li class="flex items-start gap-2"><span class="text-secondary">•</span> Protección y Seguridad de la Plataforma</li>
+              <li class="flex items-start gap-2"><span class="text-secondary">•</span> Investigación y Desarrollo (datos anonimizados)</li>
+              <li class="flex items-start gap-2"><span class="text-secondary">•</span> <span class="font-semibold text-red-500">La Información Médica Sensible NO se utilizará para Publicidad o Marketing directo.</span></li>
+            </ul>
+          </div>
+
+          <!-- Sección VI -->
+          <div id="seccion6" class="legal-section reveal legal-card bg-white rounded-2xl p-6 md:p-8 shadow-sm border border-slate-100">
+            <div class="flex items-center gap-3 mb-4">
+              <div class="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center">
+                <i class="fas fa-share-alt text-primary text-lg"></i>
+              </div>
+              <h2 class="text-2xl font-bold text-primary">Gestión y Compartición de Datos</h2>
+            </div>
+            <p class="text-slate-600 leading-relaxed mb-3">Es responsabilidad exclusiva del Usuario mantener actualizada su información personal y credenciales profesionales.</p>
+            <p class="text-slate-600 leading-relaxed mb-3">JedySystems C.A. podrá compartir datos con terceros ubicados en Venezuela o en el extranjero únicamente para los fines especificados en esta Política.</p>
+            <p class="text-slate-600 leading-relaxed">En caso de cambios societarios (venta, fusión, reorganización), la información será transferida a las entidades sucesoras que se comprometan a respetar estos términos.</p>
+          </div>
+
+          <!-- Sección VII -->
+          <div id="seccion7" class="legal-section reveal legal-card bg-white rounded-2xl p-6 md:p-8 shadow-sm border border-slate-100">
+            <div class="flex items-center gap-3 mb-4">
+              <div class="w-10 h-10 rounded-xl bg-secondary/10 flex items-center justify-center">
+                <i class="fas fa-user-shield text-secondary text-lg"></i>
+              </div>
+              <h2 class="text-2xl font-bold text-primary">Derechos del Usuario y Gestión de la Información</h2>
+            </div>
+            <p class="text-slate-600 leading-relaxed mb-4">El Usuario podrá ejercer los derechos de <span class="font-semibold">acceso, rectificación, actualización, cancelación y oposición (Derechos ARCO)</span> al tratamiento de su información personal.</p>
+            <p class="text-slate-600 leading-relaxed">JedySystems C.A. retiene la información del Usuario mientras mantenga su cuenta activa y/o por el plazo que la normativa lo establezca.</p>
+          </div>
+
+          <!-- Sección VIII -->
+          <div id="seccion8" class="legal-section reveal legal-card bg-white rounded-2xl p-6 md:p-8 shadow-sm border border-slate-100">
+            <div class="flex items-center gap-3 mb-4">
+              <div class="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center">
+                <i class="fas fa-gavel text-primary text-lg"></i>
+              </div>
+              <h2 class="text-2xl font-bold text-primary">Seguridad, Menores y Disposiciones Finales</h2>
+            </div>
+            <div class="space-y-4">
+              <div>
+                <h3 class="font-semibold text-primary">Seguridad de la Información</h3>
+                <p class="text-slate-600 text-sm">Toda la información será tratada en cumplimiento de la normativa venezolana.</p>
+              </div>
+              <div>
+                <h3 class="font-semibold text-primary">Uso por Menores de Edad</h3>
+                <p class="text-slate-600 text-sm">La Plataforma no está dirigida a menores de 18 años. En cumplimiento con la LOPNNA, no recopilamos información de menores sin consentimiento parental.</p>
+              </div>
+              <div>
+                <h3 class="font-semibold text-primary">Jurisdicción y Ley Aplicable</h3>
+                <p class="text-slate-600 text-sm">Esta Política se rige por las leyes de la República Bolivariana de Venezuela.</p>
+              </div>
+              <div class="p-4 bg-primary/5 rounded-xl">
+                <p class="text-primary font-semibold text-center">Al utilizar nuestros servicios, usted acepta los términos de esta Política de Privacidad y otorga su consentimiento expreso para el tratamiento de sus datos personales, incluyendo información médica sensible, conforme a lo aquí establecido.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Botón de regreso -->
+    <section class="py-12 bg-white">
+      <div class="container-custom mx-auto text-center reveal">
+        <a href="index.html" class="inline-flex items-center gap-2 text-primary hover:text-secondary transition font-semibold">
+          <i class="fas fa-arrow-left"></i> Volver al inicio
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-slate-900 text-white pt-16 pb-8">
+    <div class="container-custom mx-auto">
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-10">
+        <div>
+          <div class="flex items-center gap-2">
+            <img src="img/Logo_JedyHealth.png" alt="Jedy Health Logo" class="h-8 w-auto">
+            <span class="font-bold text-xl">JedyHealth</span>
+          </div>
+          <p class="text-slate-400 mt-4 text-sm">ERP médico avanzado para el sector salud en Venezuela. Innovación y tecnología al servicio de los profesionales.</p>
+          <div class="flex space-x-4 mt-5">
+            <a href="https://www.instagram.com/jedysystems/" target="_blank" class="text-slate-400 hover:text-white transition"><i class="fab fa-instagram text-xl"></i></a>
+            <a href="https://www.youtube.com/@jedysystems1565" target="_blank" class="text-slate-400 hover:text-white transition"><i class="fab fa-youtube text-xl"></i></a>
+            <a href="https://www.facebook.com/Jedysystemsca" target="_blank" class="text-slate-400 hover:text-white transition"><i class="fab fa-facebook text-xl"></i></a>
+          </div>
+        </div>
+        <div>
+          <h6 class="font-semibold text-white">Navegación</h6>
+          <ul class="mt-3 space-y-2 text-slate-400 text-sm">
+            <li><a href="index.html" class="hover:text-white">Inicio</a></li>
+            <li><a href="Productos.html" class="hover:text-white">Productos</a></li>
+            <li><a href="Planes.html" class="hover:text-white">Planes</a></li>
+            <li><a href="Testimonios.html" class="hover:text-white">Testimonios</a></li>
+          </ul>
+        </div>
+        <div>
+          <h6 class="font-semibold text-white">Enlaces legales</h6>
+          <ul class="mt-3 space-y-2 text-slate-400 text-sm">
+            <li><a href="terminos-condiciones.html" class="hover:text-white">Política de Privacidad</a></li>
+            <li><a href="terminos-condiciones.html" class="hover:text-white">Términos y Condiciones</a></li>
+            <li><a href="Contacto.html" class="hover:text-white">Contacto soporte</a></li>
+          </ul>
+        </div>
+        <div>
+          <h6 class="font-semibold text-white">Contacto directo</h6>
+          <ul class="mt-3 space-y-2 text-slate-400 text-sm">
+            <li>📧 info@jedysystems.com</li>
+            <li>📞 +58 414-0118000</li>
+            <li>📍 Caracas, Venezuela</li>
+          </ul>
+        </div>
+      </div>
+      <hr class="border-slate-800 my-8">
+      <div class="text-center text-slate-500 text-sm">&copy; 2025 Jedy Systems. Todos los derechos reservados. Tecnología de vanguardia para la salud.</div>
+    </div>
+  </footer>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <script src="js/menu-scroll.js"></script>
+  <script>
+    const mobileBtn = document.getElementById('mobileMenuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    if(mobileBtn) {
+      mobileBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+      });
+    }
+    
+    const reveals = document.querySelectorAll('.reveal');
+    function checkReveal() {
+      for(let el of reveals) {
+        const rect = el.getBoundingClientRect();
+        if(rect.top < window.innerHeight - 120) el.classList.add('visible');
+      }
+    }
+    
+    window.addEventListener('scroll', checkReveal);
+    window.addEventListener('load', checkReveal);
+    
+    const header = document.getElementById('mainHeader');
+    window.addEventListener('scroll', () => {
+      if(window.scrollY > 20) {
+        header.classList.add('shadow-sm');
+      } else {
+        header.classList.remove('shadow-sm');
+      }
+    });
+    
+    // Smooth scroll para enlaces internos
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        const targetId = this.getAttribute('href');
+        if(targetId === "#") return;
+        const targetElem = document.querySelector(targetId);
+        if(targetElem) {
+          e.preventDefault();
+          targetElem.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+  </script>
+</body>
+
+</html>

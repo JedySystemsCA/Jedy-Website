@@ -2,359 +2,440 @@
 <html lang="es">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jedy Health | Planes de Software Médico para Clínicas</title>
-    <meta name="description"
-        content="Descubre los planes de Jedy Health, tu solución ERP para clínicas en Venezuela. Ofrecemos planes personalizados de software de gestión médica e historia clínica electrónica integrada para CMO, APS y Centros Médicos.">
-    <link rel="shortcut icon" href="/img/logo_nuevo_jedyhealth-removebg-preview ico ico ico.ico">
-    <link rel="stylesheet" href="css/styles.css">
-<!--Bootstrap-->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" xintegrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous"> 
-  <!-- FontAwesome -->
-  <link rel="stylesheet" href="css/fontawesome-free-6.7.2-web/css/all.css">
-  <link rel="stylesheet" href="css/fontawesome-free-6.7.2-web/css/brands.css">
-  <link rel="stylesheet" href="css/fontawesome-free-6.7.2-web/css/solid.css">
-
-  <!--Alertify-->
-  <!-- JavaScript -->
-  <script src="//cdn.jsdelivr.net/npm/alertifyjs@1.14.0/build/alertify.min.js"></script>
-  <!-- CSS -->
-  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.14.0/build/css/alertify.min.css" />
-  <!-- Default theme -->
-  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.14.0/build/css/themes/default.min.css" />
-  <!-- Semantic UI theme -->
-  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.14.0/build/css/themes/semantic.min.css" />
-  <!-- Bootstrap theme -->
-  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.14.0/build/css/themes/bootstrap.min.css" />
-  <!--RTL version-->
-  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.14.0/build/css/alertify.rtl.min.css" />
-  <!-- Default theme -->
-  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.14.0/build/css/themes/default.rtl.min.css" />
-  <!-- Semantic UI theme -->
-  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.14.0/build/css/themes/semantic.rtl.min.css" />
-  <!-- Bootstrap theme -->
-  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.14.0/build/css/themes/bootstrap.rtl.min.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Planes | Jedy Health - Soluciones ERP para Clínicas y Consultorios</title>
+  <meta name="description" content="Descubre los planes de Jedy Health para gestión médica. Desde consultorios individuales hasta grandes clínicas. Plan Personal, Equipos Médicos y Centros Médicos con historia clínica electrónica integrada.">
+  <meta name="theme-color" content="#1b448c">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="img/Logo_jedyhealth.ico">
+  <link rel="shortcut icon" href="img/Logo_jedyhealth.ico">
+  
+  <!-- Preconnect y fuentes -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Estilos Personalizados -->
+  <link rel="stylesheet" href="css/style.css">
+  
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Montserrat', sans-serif;
+      overflow-x: hidden;
+      background-color: #ffffff;
+    }
+    
+    .container-custom {
+      max-width: 1280px;
+      margin-left: auto;
+      margin-right: auto;
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+    }
+    
+    @media (min-width: 640px) {
+      .container-custom {
+        padding-left: 2rem;
+        padding-right: 2rem;
+      }
+    }
+    
+    #mainHeader {
+      transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      will-change: transform;
+    }
+    
+    .header-hidden {
+      transform: translateY(-100%);
+    }
+    
+    #mainHeader.glass-nav {
+      transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), background 0.2s, backdrop-filter 0.2s;
+    }
+    
+    .glass-nav {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    }
+    
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.8s ease;
+    }
+    
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    
+    .btn-glow {
+      transition: all 0.3s ease;
+    }
+    
+    .btn-glow:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 25px -5px rgba(59, 181, 171, 0.3);
+    }
+    
+    .plan-card {
+      transition: all 0.3s ease;
+    }
+    
+    .plan-card:hover {
+      transform: translateY(-8px);
+    }
+    
+    .plan-card.featured {
+      border: 2px solid #3BB5AB;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .plan-card.featured::before {
+      content: 'MÁS POPULAR';
+      position: absolute;
+      top: 20px;
+      right: -30px;
+      background: #3BB5AB;
+      color: white;
+      font-size: 12px;
+      font-weight: bold;
+      padding: 5px 40px;
+      transform: rotate(45deg);
+      z-index: 1;
+    }
+  </style>
 </head>
 
-<body>
+<body class="antialiased">
 
-    <!-- NAV -->
-    <header>
-        <nav id="navbar" class="navbar navbar-expand-lg navbar-light fixed-top navbar-custom">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="/index.html">
-                    <img src="/img/logo_nuevo_jedyhealth-removebg-preview.png" class="custom-size-top-logo"
-                        alt="Logotipo de Jedy Health, software ERP para clínicas">
-                </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav ms-auto">
-                        <li class="nav-item">
-                            <a class="nav-link custom-color" aria-current="page" href="/index.html">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link custom-color" href="/Productos.html">Productos</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link custom-color" href="/Planes.html">Planes</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link custom-color" href="/Testimonios.html">Testimonios</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link custom-color" href="/SobreNosotros.html">Sobre Nosotros</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link custom-color" href="/Contacto.html">Contacto</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </header>
-
-    <!--bg-->
-    <div class="custom-bg_1">
-
-        <!--Banner-->
-        <div class="custom-bg_3 pb-4">
-            <div class="container my-5">
-                <section class="d-flex justify-content-between align-items-center">
-                    <div>
-                        <h1 class="col-md-8 text-white h1morebig">Planes ERP de Gestión Médica</h1>
-                    </div>
-                    <span>
-                        <div>
-                            <img src="/img/icon-planes-removebg-preview.png" class=" w-150"
-                                alt="Pantalla médica con interfaz de software de gestión, mostrando planes de uso y precios">
-                        </div>
-                    </span>
-                </section>
-            </div>
-        </div>
-
-        <!--Cards of plans-->
-        <div class="container pt-4">
-            <div class="row justify-content-center pt-4">
-                <div class="col-sm-12 col-md-4 mb-4 d-flex align-items-stretch">
-                    <div class="card text-center borderCard bg-card py-4 flex-fill">
-                        <img src="/img/PCardI1.png" class="card-img-top img-small mx-auto d-block"
-                            alt="Icono de plan personal para consultorios médicos, software CMO">
-                        <div class="card-body d-flex flex-column">
-                            <h5 class="card-title pb-3 ls-4 text-white"><b>Plan Personal</b><br>(Aplicado para CMO)
-                            </h5>
-                            <p class="card-text pb-3 flex-grow-1 text-center text-white">Historia clínica avanzada.<br>Hasta
-                                500 pacientes.<br>Consentimiento de pacientes.<br>Hasta 1 usuario.<br>Integración con
-                                Google Calendar.<br>Videoconsulta.</p>
-                            <p class="price-tag mx-auto text-white">Desde USD 40/mes.</p>
-                            <div class="d-flex flex-row justify-content-center gap-3 mt-auto">
-                                <a href="https://cmo.jedysystems.com" class="btn btn-outline-light NBtn" target="_blank">Acceder</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-sm-12 col-md-4 mb-4 d-flex align-items-stretch">
-                    <div class="card text-center borderCard bg-card py-4 flex-fill">
-                        <img src="/img/PCardI2.png" class="card-img-top img-small mx-auto d-block"
-                            alt="Icono de plan para equipos médicos, software de gestión APS para clínicas">
-                        <div class="card-body d-flex flex-column">
-                            <h5 class="card-title pb-3 ls-4 text-white"><b>Equipos Médicos</b><br>(Aplicado para
-                                Clínicas APS)</h5>
-                            <p class="card-text pb-3 flex-grow-1 text-center text-white">Incluye el Plan Personal.<br>Hasta
-                                1500 pacientes.<br>Hasta 5 usuarios. Estadísticas por servicio.<br>Módulo
-                                administrativo.</p>
-                            <p class="price-tag mx-auto text-white">Desde USD 175/mes.</p>
-                            <div>
-                                <!-- Botón APS: Abre el modal de Contacto -->
-                                <a href="#" data-bs-toggle="modal" data-bs-target="#contactModal"
-                                    class="btn btn-outline-light NBtn">Contactar</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-sm-12 col-md-4 mb-4 d-flex align-items-stretch">
-                    <div class="card text-center borderCard bg-card py-4 flex-fill">
-                        <img src="/img/PCardI3.png" class="card-img-top img-small mx-auto d-block"
-                            alt="Icono de plan para centros médicos y clínicas, software ERP integral">
-                        <div class="card-body d-flex flex-column">
-                            <h5 class="card-title pb-3 ls-4 text-white"><b>Centros Médicos</b><br>(Aplicado para
-                                Clínicas)</h5>
-                            <p class="card-text pb-3 flex-grow-1 text-center text-white">Incluye las funcionalidades de
-                                clínicas.<br>Sin límites de pacientes.<br>Hasta 10 usuarios o más.<br>Multicompañía.<br>Customizaciones
-                                especiales.<br>Estadísticas por servicio.<br>Módulo administrativo.</p>
-                            <div>
-                                <a href="#" data-bs-toggle="modal" data-bs-target="#contactModal"
-                                    class="btn btn-outline-light mt-auto">Contactar</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+  <!-- Sticky Navigation -->
+  <header class="fixed top-0 left-0 w-full z-50 transition-all duration-300 glass-nav" id="mainHeader">
+    <div class="container-custom mx-auto flex items-center justify-between py-4 md:py-5">
+      <a href="index.html" class="flex items-center gap-3 z-10">
+        <img src="img/Logo_JedyHealth.png" alt="Logotipo Jedy Health" class="h-10 w-auto">
+        <span class="font-bold text-xl tracking-tight text-primary hidden sm:inline">Jedy<span class="text-secondary">Health</span></span>
+      </a>
+      
+      <nav class="hidden md:flex items-center space-x-8">
+        <a href="index.html" class="text-sm font-medium text-slate-700 hover:text-primary transition">Inicio</a>
+        <a href="Productos.html" class="text-sm font-medium text-slate-700 hover:text-primary transition">Productos</a>
+        <a href="Planes.html" class="text-sm font-medium text-primary border-b-2 border-secondary transition">Planes</a>
+        <a href="Testimonios.html" class="text-sm font-medium text-slate-700 hover:text-primary transition">Testimonios</a>
+        <a href="SobreNosotros.html" class="text-sm font-medium text-slate-700 hover:text-primary transition">Nosotros</a>
+        <a href="Contacto.html" class="text-sm font-medium text-slate-700 hover:text-primary transition">Contacto</a>
+      </nav>
+      
+      <div class="flex items-center gap-4">
+        <a href="https://cmo.jedysystems.com/" class="hidden md:inline-flex px-5 py-2 rounded-full border border-primary/20 text-primary font-semibold text-sm hover:bg-primary/5 transition">Acceder</a>
+        <button class="md:hidden text-primary focus:outline-none" id="mobileMenuBtn">
+          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M3 6h18v2H3V6zm0 5h18v2H3v-2zm0 5h18v2H3v-2z"/>
+          </svg>
+        </button>
+      </div>
     </div>
-
-    <!-- Modal: Formulario de Suscripción -->
-        <div class="modal fade" id="subscriptionModal" tabindex="-1" aria-labelledby="subscriptionModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="subscriptionModalLabel">Formulario de Suscripción</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body ">
-                <form id="subscriptionForm">
-                <div class="mb-3">
-                    <label for="login" class="form-label">Login</label>
-                    <input type="text" class="form-control" id="login" required>
-                </div>
-                <div class="mb-3">
-                    <label for="apellido" class="form-label">Apellido</label>
-                    <input type="text" class="form-control" id="apellido" required>
-                </div>
-                <div class="mb-3">
-                    <label for="nombre" class="form-label">Nombre</label>
-                    <input type="text" class="form-control" id="nombre" required>
-                </div>
-                <div class="mb-3">
-                    <label for="cedula" class="form-label">Cédula</label>
-                    <input type="number" class="form-control" id="cedula" required>
-                </div>
-                <div class="mb-3">
-                    <label for="telefono" class="form-label">Teléfono</label>
-                    <input type="tel" class="form-control" id="telefono" required>
-                </div>
-                <div class="mb-3">
-                    <label for="correo" class="form-label">Correo Electrónico</label>
-                    <input type="email" class="form-control" id="correo" required>
-                </div>
-                <div class="mb-3">
-                    <label for="rol" class="form-label">Rol</label>
-                    <select class="form-select" id="rol" required>
-                    <option value="medico">Médico</option>
-                    <option value="odontologo">Odontólogo</option>
-                    </select>
-                </div>
-                <div class="mb-3">
-                    <label for="contrasena" class="form-label">Contraseña</label>
-                    <input type="password" class="form-control" id="contrasena" required>
-                </div>
-                <div class="mb-3">
-                    <label for="confirmarContrasena" class="form-label">Confirmar Contraseña</label>
-                    <input type="password" class="form-control" id="confirmarContrasena" required>
-                </div>
-                </form>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                <button type="submit" id="submitSuscripcion" class="btn btn-primary">Enviar</button>
-            </div>
-            </div>
-        </div>
-        </div>
-
-    <!-- Modal de Contacto Existente  -->
-    <div class="modal fade bg-dark bg-opacity-50" id="contactModal" tabindex="-1" aria-labelledby="contactModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content custom-bg_2"> 
-                <div class="modal-header">
-                    <h5 class="modal-title text-black" id="contactModalLabel"><b>¡Comienza hoy mismo!</b></h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <div class="container my-5">
-                        <div class="form-container">
-                            <form>
-                                <div class="mb-3">
-                                    <label for="email" class="form-label text-black">Correo</label>
-                                    <input type="email" class="form-control" id="emailCorreo"
-                                        placeholder="nombre@ejemplo.com" required>
-                                </div>
-                                <div class="mb-3">
-                                    <label for="empresa" class="form-label text-black">Nombre de la empresa</label>
-                                    <input type="text" class="form-control" id="empresaCorreo"
-                                        placeholder="Nombre de la empresa" required>
-                                </div>
-                                <div class="mb-3">
-                                    <label for="producto" class="form-label text-black">Productos</label>
-                                    <select class="form-select" id="productoCorreo" required>
-                                        <option value="APS">APS</option>
-                                        <option value="CLINICO">CLÍNICO</option>
-                                        <option value="CMO">CMO</option>
-                                    </select>
-                                </div>
-                                <div class="mb-3">
-                                    <label for="mensaje" class="form-label text-black">Mensaje</label>
-                                    <textarea class="form-control" id="mensajeCorreo" rows="3"
-                                        placeholder="Escribe tu mensaje aquí (opcional)"></textarea>
-                                </div>
-                                <div class="mb-3">
-                                    <label class="form-label text-black">Solicite su demo o la versión
-                                        completa</label>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="version" id="demo"
-                                            value="demo" required>
-                                        <label class="form-check-label text-black" for="demo">
-                                            Versión demo
-                                        </label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="version" id="completa"
-                                            value="completa" required>
-                                        <label class="form-check-label text-black" for="completa">
-                                            Versión completa
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="text-center">
-                                    <button type="submit" id="submitEmailCorreo" class="btn btn-primary btn-lg">Enviar</button>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+    
+    <div id="mobileMenu" class="hidden md:hidden bg-white/95 backdrop-blur-lg border-t border-slate-100 py-4 px-6 flex flex-col space-y-3">
+      <a href="index.html" class="py-2 text-slate-800 font-medium">Inicio</a>
+      <a href="Productos.html" class="py-2 text-slate-800 font-medium">Productos</a>
+      <a href="Planes.html" class="py-2 text-primary font-semibold">Planes</a>
+      <a href="Testimonios.html" class="py-2 text-slate-800 font-medium">Testimonios</a>
+      <a href="SobreNosotros.html" class="py-2 text-slate-800 font-medium">Nosotros</a>
+      <a href="Contacto.html" class="py-2 text-slate-800 font-medium">Contacto</a>
+      <a href="https://cmo.jedysystems.com/" class="py-2 text-primary font-semibold">Acceder →</a>
     </div>
+  </header>
 
-    <!--Footer-->
-    <footer class="bg-light text-dark py-4 mt-5">
-        <div class="container">
-            <div class="row align-items-center">
-
-                <!--Logo and Social medias-->
-                <div class="col-md-4">
-                    <a class="navbar-brand" href="/index.html">
-                        <img src="/img/logo_nuevo_jedyhealth-removebg-preview.png" class="custom-size-botom-logo pb-4"
-                            alt="Logotipo de Jedy Health">
-                    </a>
-                    <div class="d-flex align-items-center">
-                        <p class="mb-0 ms-3">Síguenos en todas nuestras redes sociales:</p>
-                    </div>
-                    <ul class="list-inline mt-2">
-                        <li class="list-inline-item">
-                            <a href="https://www.instagram.com/jedysystems/" target="_blank">
-                                <i class="fab fa-instagram social-icon"></i>
-                            </a>
-                        </li>
-                        <li class="list-inline-item">
-                            <a href="https://www.youtube.com/@jedysystems1565" target="_blank">
-                                <i class="fab fa-youtube social-icon"></i>
-                            </a>
-                        </li>
-                        <li class="list-inline-item">
-                            <a href="https://www.facebook.com/Jedysystemsca" target="_blank">
-                                <i class="fab fa-facebook social-icon"></i>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-
-                <!--Nav footer and Nav enlaces-->
-                <div class="col-md-6 d-flex justify-content-end">
-                    <div class="me-5 ls-3">
-                        <h6>Navegación</h6>
-                        <ul class="list-unstyled">
-                            <li><a href="/index.html" class="nav-link text-primary">Home</a></li>
-                            <li><a href="/Productos.html" class="nav-link text-primary">Productos</a></li>
-                            <li><a href="/Planes.html" class="nav-link text-primary">Planes</a></li>
-                            <li><a href="/Testimonios.html" class="nav-link text-primary">Testimonios</a></li>
-                            <li><a href="/html/Contacto.html" class="nav-link text-primary">Contacto</a></li>
-                        </ul>
-                    </div>
-                    <div class="ls-3">
-                        <h6>Enlaces</h6>
-                        <ul class="list-unstyled">
-                            <li><a href="/html/Contacto.html" class="nav-link text-primary">Contacta con nosotros</a>
-                            </li>
-                            <li><a href="#" class="nav-link text-primary">Política de privacidad</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <hr>
-            <div class="row">
-                <div class="col text-center">
-                    <p>© Jedy Systems. Todos los derechos reservados.</p>
-                </div>
-            </div>
+  <main>
+    <!-- Hero Section -->
+    <section class="relative pt-32 md:pt-40 pb-16 md:pb-20 overflow-hidden">
+      <div class="absolute inset-0 bg-gradient-to-br from-primary/5 via-white to-secondary/5 -z-10"></div>
+      <div class="container-custom mx-auto">
+        <div class="text-center max-w-4xl mx-auto reveal">
+          <div class="inline-flex items-center rounded-full bg-secondary/10 px-4 py-1.5 text-secondary text-sm font-semibold mb-6">
+            <span class="w-2 h-2 rounded-full bg-secondary mr-2"></span> Soluciones flexibles
+          </div>
+          <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight tracking-tight text-primary">Planes <span class="text-secondary">diseñados</span> para tu institución</h1>
+          <p class="text-slate-600 text-lg md:text-xl mt-6 leading-relaxed max-w-3xl mx-auto">Desde consultorios individuales hasta grandes centros médicos. Encuentra el plan perfecto que se adapte a las necesidades de tu práctica clínica.</p>
         </div>
-    </footer>
+      </div>
+    </section>
 
-<!--JS Files-->
-  <script src="js/nav_hiden.js"></script>
-  <script src="js/envio.js"></script>
-  <script src="js/send_file.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" xintegrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-<!-- Alertify JS -->
-<script src="//cdn.jsdelivr.net/npm/alertifyjs@1.14.0/build/alertify.min.js"></script>
+    <!-- Planes (Tarjetas de precios) -->
+    <section class="py-12 bg-white">
+      <div class="container-custom mx-auto">
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          
+          <!-- Plan 1: Personal (MedSuite) -->
+          <div class="reveal">
+            <div class="plan-card bg-white rounded-2xl shadow-lg overflow-hidden border border-slate-100 hover:shadow-2xl transition-all duration-300 h-full flex flex-col">
+              <div class="p-8 text-center bg-gradient-to-br from-slate-50 to-white">
+                <div class="w-20 h-20 rounded-2xl bg-primary/10 flex items-center justify-center mx-auto mb-4">
+                  <img src="img/logo_medsuite.png" alt="Plan Personal MedSuite" class="w-12 h-12">
+                </div>
+                <h3 class="text-2xl font-bold text-primary">Plan Personal</h3>
+                <p class="text-slate-500 text-sm mt-1">Aplicado para Consultorios Médicos</p>
+                <div class="mt-4">
+                  <span class="text-4xl font-bold text-primary">USD 40</span>
+                  <span class="text-slate-500">/mes</span>
+                </div>
+              </div>
+              
+              <div class="p-8 flex-grow">
+                <ul class="space-y-3">
+                  <li class="flex items-center gap-3 text-slate-600"><svg class="w-5 h-5 text-secondary flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>Historia clínica avanzada</li>
+                  <li class="flex items-center gap-3 text-slate-600"><svg class="w-5 h-5 text-secondary flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>Pacientes ilimitados</li>
+                  <li class="flex items-center gap-3 text-slate-600"><svg class="w-5 h-5 text-secondary flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>Consentimiento de pacientes</li>
+                  <li class="flex items-center gap-3 text-slate-600"><svg class="w-5 h-5 text-secondary flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>Hasta 2 usuarios</li>
+                  <li class="flex items-center gap-3 text-slate-600"><svg class="w-5 h-5 text-secondary flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>Optimización de Tiempos</li>
+                  <li class="flex items-center gap-3 text-slate-600"><svg class="w-5 h-5 text-secondary flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>Videoconsulta integrada</li>
+                </ul>
+              </div>
+              
+              <div class="p-8 pt-0">
+                <a href="https://cmo.jedysystems.com/" class="block w-full text-center py-3 rounded-xl border-2 border-primary/20 text-primary font-semibold transition hover:bg-primary/5">Acceder al sistema →</a>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Plan 2: Equipos Médicos (APS) - DESTACADO -->
+          <div class="reveal">
+            <div class="plan-card featured bg-white rounded-2xl shadow-xl overflow-hidden border-2 border-secondary h-full flex flex-col">
+              <div class="p-8 text-center bg-gradient-to-br from-secondary/5 to-white">
+                <div class="w-20 h-20 rounded-2xl bg-secondary/10 flex items-center justify-center mx-auto mb-4">
+                  <img src="img/Logo_JedyHealth.png" alt="Plan Equipos Médicos APS" class="w-12 h-12">
+                </div>
+                <h3 class="text-2xl font-bold text-primary">Equipos Médicos</h3>
+                <p class="text-slate-500 text-sm mt-1">Aplicado para Clínicas APS</p>
+                <div class="mt-4">
+                  <span class="text-4xl font-bold text-primary">USD 175</span>
+                  <span class="text-slate-500">/mes</span>
+                </div>
+              </div>
+              
+              <div class="p-8 flex-grow">
+                <ul class="space-y-3">
+                  <li class="flex items-center gap-3 text-slate-600"><svg class="w-5 h-5 text-secondary flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg><span class="font-semibold">Incluye el Plan Personal</span></li>
+                  <li class="flex items-center gap-3 text-slate-600"><svg class="w-5 h-5 text-secondary flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>Pacientes ilimitados</li>
+                  <li class="flex items-center gap-3 text-slate-600"><svg class="w-5 h-5 text-secondary flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>Hasta 25 usuarios</li>
+                  <li class="flex items-center gap-3 text-slate-600"><svg class="w-5 h-5 text-secondary flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>Estadísticas por servicio</li>
+                  <li class="flex items-center gap-3 text-slate-600"><svg class="w-5 h-5 text-secondary flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>Módulo administrativo completo</li>
+                </ul>
+              </div>
+              
+              <div class="p-8 pt-0">
+                <a href="Contacto.html" class="block w-full text-center py-3 rounded-xl bg-secondary text-white font-semibold hover:bg-secondary-dark transition btn-glow">Contactar para demo →</a>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Plan 3: Centros Médicos (Clínicas) -->
+          <div class="reveal">
+            <div class="plan-card bg-white rounded-2xl shadow-lg overflow-hidden border border-slate-100 hover:shadow-2xl transition-all duration-300 h-full flex flex-col">
+              <div class="p-8 text-center bg-gradient-to-br from-slate-50 to-white">
+                <div class="w-20 h-20 rounded-2xl bg-primary/10 flex items-center justify-center mx-auto mb-4">
+                  <img src="img/Logo_JedyHealth.png" alt="Plan Centros Médicos" class="w-12 h-12">
+                </div>
+                <h3 class="text-2xl font-bold text-primary">Centros Médicos</h3>
+                <p class="text-slate-500 text-sm mt-1">Aplicado para Clínicas y Hospitales</p>
+                <div class="mt-4">
+                  <span class="text-4xl font-bold text-primary">Personalizado</span>
+                </div>
+              </div>
+              
+              <div class="p-8 flex-grow">
+                <ul class="space-y-3">
+                  <li class="flex items-center gap-3 text-slate-600"><svg class="w-5 h-5 text-secondary flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg><span class="font-semibold">Incluye funcionalidades de clínicas</span></li>
+                  <li class="flex items-center gap-3 text-slate-600"><svg class="w-5 h-5 text-secondary flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>Pacientes ilimitados</li>
+                  <li class="flex items-center gap-3 text-slate-600"><svg class="w-5 h-5 text-secondary flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>Usuarios ilimitados</li>
+                  <li class="flex items-center gap-3 text-slate-600"><svg class="w-5 h-5 text-secondary flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>Multicompañía</li>
+                  <li class="flex items-center gap-3 text-slate-600"><svg class="w-5 h-5 text-secondary flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>Customizaciones especiales</li>
+                  <li class="flex items-center gap-3 text-slate-600"><svg class="w-5 h-5 text-secondary flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>Estadísticas avanzadas</li>
+                </ul>
+              </div>
+              
+              <div class="p-8 pt-0">
+                <a href="Contacto.html" class="block w-full text-center py-3 rounded-xl border-2 border-primary/20 text-primary font-semibold transition hover:bg-primary/5">Contactar asesor →</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
+    <!-- Comparación de características - ACTUALIZADA -->
+    <section class="py-20 bg-slate-50">
+      <div class="container-custom mx-auto">
+        <div class="text-center max-w-3xl mx-auto mb-12 reveal">
+          <span class="text-secondary font-semibold text-sm uppercase tracking-wider">Compara funciones</span>
+          <h2 class="text-3xl md:text-4xl font-bold text-primary mt-2">Encuentra el plan ideal para ti</h2>
+          <p class="text-slate-600 mt-4">Todos nuestros planes incluyen soporte técnico y actualizaciones constantes</p>
+        </div>
+        
+        <div class="overflow-x-auto reveal">
+          <table class="w-full bg-white rounded-2xl shadow-lg overflow-hidden">
+            <thead class="bg-primary text-white">
+              <tr>
+                <th class="p-4 text-left">Características</th>
+                <th class="p-4 text-center">MedSuite</th>
+                <th class="p-4 text-center bg-secondary">APS</th>
+                <th class="p-4 text-center">Clinico</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-100">
+              <tr class="hover:bg-slate-50 transition"><td class="p-4 font-medium text-slate-700">Historia Clínica Electrónica</td><td class="p-4 text-center"><span class="text-secondary text-xl">✓</span></td><td class="p-4 text-center bg-secondary/5"><span class="text-secondary text-xl">✓</span></td><td class="p-4 text-center"><span class="text-secondary text-xl">✓</span></td></tr>
+              <tr class="hover:bg-slate-50 transition"><td class="p-4 font-medium text-slate-700">Facturación fiscal</td><td class="p-4 text-center"><span class="text-slate-300 text-xl">—</span></td><td class="p-4 text-center bg-secondary/5"><span class="text-secondary text-xl">✓</span></td><td class="p-4 text-center"><span class="text-secondary text-xl">✓</span></td></tr>
+              <tr class="hover:bg-slate-50 transition"><td class="p-4 font-medium text-slate-700">Videoconsulta / Telemedicina</td><td class="p-4 text-center"><span class="text-secondary text-xl">✓</span></td><td class="p-4 text-center bg-secondary/5"><span class="text-secondary text-xl">✓</span></td><td class="p-4 text-center"><span class="text-secondary text-xl">✓</span></td></tr>
+              <tr class="hover:bg-slate-50 transition"><td class="p-4 font-medium text-slate-700">Módulo administrativo</td><td class="p-4 text-center"><span class="text-slate-300 text-xl">—</span></td><td class="p-4 text-center bg-secondary/5"><span class="text-secondary text-xl">✓</span></td><td class="p-4 text-center"><span class="text-secondary text-xl">✓</span></td></tr>
+              <tr class="hover:bg-slate-50 transition"><td class="p-4 font-medium text-slate-700">Múltiples usuarios</td><td class="p-4 text-center">2 usuarios</td><td class="p-4 text-center bg-secondary/5"><span class="p-4 text-center">Hasta 25 usuarios</span></td><td class="p-4 text-center"><span class="p-4 text-center">Usuarios ilimitados</span></td></tr>
+              <tr class="hover:bg-slate-50 transition"><td class="p-4 font-medium text-slate-700">Pacientes</td><td class="p-4 text-center"><span class="p-4 text-center">Ilimitados</span></td><td class="p-4 text-center bg-secondary/5"><span class="p-4 text-center">Ilimitados</span></td><td class="p-4 text-center"><span class="p-4 text-center">Ilimitados</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ específico de planes -->
+    <section class="py-20 bg-white">
+      <div class="container-custom mx-auto max-w-4xl">
+        <div class="text-center mb-12 reveal">
+          <span class="text-secondary font-semibold text-sm uppercase tracking-wider">Preguntas frecuentes</span>
+          <h2 class="text-3xl md:text-4xl font-bold text-primary mt-2">Todo lo que necesitas saber</h2>
+        </div>
+        
+        <div class="space-y-4 reveal">
+          <div class="bg-slate-50 rounded-xl p-6 hover:shadow-md transition">
+            <h3 class="font-semibold text-lg text-primary mb-2">¿Puedo cambiar de plan en cualquier momento?</h3>
+            <p class="text-slate-600">Sí, puedes actualizar o cambiar tu plan según las necesidades de tu institución. Nuestro equipo de soporte te ayudará en la migración sin pérdida de datos.</p>
+          </div>
+          <div class="bg-slate-50 rounded-xl p-6 hover:shadow-md transition">
+            <h3 class="font-semibold text-lg text-primary mb-2">¿Ofrecen descuentos por pago anual?</h3>
+            <p class="text-slate-600">Sí, ofrecemos un 15% de descuento en todos los planes al contratar el servicio anual. Contáctanos para más detalles.</p>
+          </div>
+          <div class="bg-slate-50 rounded-xl p-6 hover:shadow-md transition">
+            <h3 class="font-semibold text-lg text-primary mb-2">¿Incluye capacitación para el personal?</h3>
+            <p class="text-slate-600">Todos los planes incluyen capacitación inicial y acceso a nuestra biblioteca de tutoriales. Para planes empresariales ofrecemos capacitación presencial personalizada.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Final -->
+    <section id="contacto" class="py-20 relative">
+      <div class="absolute inset-0 gradient-soft -z-10"></div>
+      <div class="container-custom mx-auto text-center max-w-4xl reveal">
+        <h2 class="text-3xl md:text-4xl font-bold text-primary">¿Necesitas un plan <span class="text-secondary">personalizado</span>?</h2>
+        <p class="text-slate-600 text-lg mt-4 mb-8">Contáctanos y nuestro equipo diseñará una solución a la medida de tu institución médica</p>
+        <a href="Contacto.html" class="cta-btn px-8 py-4 rounded-xl font-bold text-white text-lg inline-block btn-glow">Solicitar asesoría personalizada →</a>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-slate-900 text-white pt-16 pb-8">
+    <div class="container-custom mx-auto">
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-10">
+        <div>
+          <div class="flex items-center gap-2">
+            <img src="img/Logo_JedyHealth.png" alt="Jedy Health Logo" class="h-8 w-auto">
+            <span class="font-bold text-xl">JedyHealth</span>
+          </div>
+          <p class="text-slate-400 mt-4 text-sm">ERP médico avanzado para el sector salud en Venezuela. Innovación y tecnología al servicio de los profesionales.</p>
+          <div class="flex space-x-4 mt-5">
+            <a href="https://www.instagram.com/jedysystems/" target="_blank" class="text-slate-400 hover:text-white transition"><i class="fab fa-instagram text-xl"></i></a>
+            <a href="https://www.youtube.com/@jedysystems1565" target="_blank" class="text-slate-400 hover:text-white transition"><i class="fab fa-youtube text-xl"></i></a>
+            <a href="https://www.facebook.com/Jedysystemsca" target="_blank" class="text-slate-400 hover:text-white transition"><i class="fab fa-facebook text-xl"></i></a>
+          </div>
+        </div>
+        <div>
+          <h6 class="font-semibold text-white">Navegación</h6>
+          <ul class="mt-3 space-y-2 text-slate-400 text-sm">
+            <li><a href="index.html" class="hover:text-white">Inicio</a></li>
+            <li><a href="Productos.html" class="hover:text-white">Productos</a></li>
+            <li><a href="Planes.html" class="hover:text-white">Planes</a></li>
+            <li><a href="Testimonios.html" class="hover:text-white">Testimonios</a></li>
+          </ul>
+        </div>
+        <div>
+          <h6 class="font-semibold text-white">Enlaces legales</h6>
+          <ul class="mt-3 space-y-2 text-slate-400 text-sm">
+            <li><a href="terminos-condiciones.html" class="hover:text-white">Política de privacidad</a></li>
+            <li><a href="terminos-condiciones.html" class="hover:text-white">Términos de uso</a></li>
+            <li><a href="Contacto.html" class="hover:text-white">Contacto soporte</a></li>
+          </ul>
+        </div>
+        <div>
+          <h6 class="font-semibold text-white">Contacto directo</h6>
+          <ul class="mt-3 space-y-2 text-slate-400 text-sm">
+            <li>📧 info@jedysystems.com</li>
+            <li>📞 +58 414-0118000</li>
+            <li>📍 Caracas, Venezuela</li>
+          </ul>
+        </div>
+      </div>
+      <hr class="border-slate-800 my-8">
+      <div class="text-center text-slate-500 text-sm">&copy; 2025 Jedy Systems. Todos los derechos reservados. Tecnología de vanguardia para la salud.</div>
+    </div>
+  </footer>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <script src="js/menu-scroll.js"></script>
+  <script>
+    const mobileBtn = document.getElementById('mobileMenuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    if(mobileBtn) {
+      mobileBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+      });
+    }
+    
+    const reveals = document.querySelectorAll('.reveal');
+    function checkReveal() {
+      for(let el of reveals) {
+        const rect = el.getBoundingClientRect();
+        if(rect.top < window.innerHeight - 120) el.classList.add('visible');
+      }
+    }
+    
+    window.addEventListener('scroll', checkReveal);
+    window.addEventListener('load', checkReveal);
+    checkReveal();
+    
+    const header = document.getElementById('mainHeader');
+    window.addEventListener('scroll', () => {
+      if(window.scrollY > 20) {
+        header.classList.add('shadow-sm');
+      } else {
+        header.classList.remove('shadow-sm');
+      }
+    });
+    
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        const targetId = this.getAttribute('href');
+        if(targetId === "#") return;
+        const targetElem = document.querySelector(targetId);
+        if(targetElem) {
+          e.preventDefault();
+          targetElem.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+  </script>
 </body>
 
 </html>

@@ -3,256 +3,490 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jedy Health | Testimonios de Clientes</title>
-  <meta name="description" content="Descubre los testimonios de nuestros clientes satisfechos con el software de gestión médica y ERP de Jedy Health. Conoce las historias de éxito de clínicas y profesionales de la salud en Venezuela que confían en nuestras soluciones.">
-  <link rel="shortcut icon" href="/img/logo_nuevo_jedyhealth-removebg-preview ico ico ico.ico">
-  <link rel="stylesheet" href="css/styles.css">
-  <!--Bootstrap-->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" xintegrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous"> 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" xintegrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-  <!-- FontAwesome -->
-  <link rel="stylesheet" href="css/fontawesome-free-6.7.2-web/css/all.css">
-  <link rel="stylesheet" href="css/fontawesome-free-6.7.2-web/css/brands.css">
-  <link rel="stylesheet" href="css/fontawesome-free-6.7.2-web/css/solid.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Testimonios | Jedy Health - Clínicas y Médicos que confían en nosotros</title>
+  <meta name="description" content="Descubre los testimonios de nuestros clientes satisfechos con el software de gestión médica y ERP de Jedy Health. Conoce las historias de éxito de clínicas y profesionales de la salud en Venezuela.">
+  <meta name="theme-color" content="#1b448c">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="img/Logo_jedyhealth.ico">
+  <link rel="shortcut icon" href="img/Logo_jedyhealth.ico">
+  
+  <!-- Preconnect y fuentes -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Estilos Personalizados -->
+  <link rel="stylesheet" href="css/style.css">
+  
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Montserrat', sans-serif;
+      overflow-x: hidden;
+      background-color: #ffffff;
+    }
+    
+    .container-custom {
+      max-width: 1280px;
+      margin-left: auto;
+      margin-right: auto;
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+    }
+    
+    @media (min-width: 640px) {
+      .container-custom {
+        padding-left: 2rem;
+        padding-right: 2rem;
+      }
+    }
+    
+    /* Estilos específicos para la animación del menú */
+    #mainHeader {
+      transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      will-change: transform;
+    }
+    
+    .header-hidden {
+      transform: translateY(-100%);
+    }
+    
+    #mainHeader.glass-nav {
+      transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), background 0.2s, backdrop-filter 0.2s;
+    }
+    
+    /* Estilos para efecto glass-nav */
+    .glass-nav {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    }
+    
+    /* Estilos para los reveals */
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.8s ease;
+    }
+    
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    
+    .btn-glow {
+      transition: all 0.3s ease;
+    }
+    
+    .btn-glow:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 25px -5px rgba(59, 181, 171, 0.3);
+    }
+    
+    /* Estilos para tarjetas de testimonio */
+    .testimonial-card {
+      transition: all 0.3s ease;
+    }
+    
+    .testimonial-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 20px 25px -12px rgba(0, 0, 0, 0.15);
+    }
+  </style>
 </head>
-<body>
 
-<!-- NAV -->
-<header>
-  <nav id="navbar" class="navbar navbar-expand-lg navbar-light fixed-top navbar-custom">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="/index.html">
-        <img src="/img/logo_nuevo_jedyhealth-removebg-preview.png" class="custom-size-top-logo" alt="Logotipo de Jedy Health, software ERP para clínicas">
+<body class="antialiased">
+
+  <!-- Sticky Navigation con efecto Glassmorphism y ocultamiento al scroll -->
+  <header class="fixed top-0 left-0 w-full z-50 transition-all duration-300 glass-nav" id="mainHeader">
+    <div class="container-custom mx-auto flex items-center justify-between py-4 md:py-5">
+      <!-- Logo -->
+      <a href="index.html" class="flex items-center gap-3 z-10">
+        <img src="img/Logo_JedyHealth.png" alt="Logotipo Jedy Health" class="h-10 w-auto">
+        <span class="font-bold text-xl tracking-tight text-primary hidden sm:inline">Jedy<span class="text-secondary">Health</span></span>
       </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item">
-            <a class="nav-link custom-color" aria-current="page" href="/index.html">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link custom-color" href="/Productos.html">Productos</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link custom-color" href="/Planes.html">Planes</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link custom-color" href="/Testimonios.html">Testimonios</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link custom-color" href="/SobreNosotros.html">Sobre Nosotros</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link custom-color" href="/Contacto.html">Contacto</a>
-          </li>
-        </ul>
+      
+      <!-- Desktop Navigation -->
+      <nav class="hidden md:flex items-center space-x-8">
+        <a href="index.html" class="text-sm font-medium text-slate-700 hover:text-primary transition">Inicio</a>
+        <a href="Productos.html" class="text-sm font-medium text-slate-700 hover:text-primary transition">Productos</a>
+        <a href="Planes.html" class="text-sm font-medium text-slate-700 hover:text-primary transition">Planes</a>
+        <a href="Testimonios.html" class="text-sm font-medium text-primary border-b-2 border-secondary transition">Testimonios</a>
+        <a href="SobreNosotros.html" class="text-sm font-medium text-slate-700 hover:text-primary transition">Nosotros</a>
+        <a href="Contacto.html" class="text-sm font-medium text-slate-700 hover:text-primary transition">Contacto</a>
+      </nav>
+      
+      <div class="flex items-center gap-4">
+        <a href="https://cmo.jedysystems.com/" class="hidden md:inline-flex px-5 py-2 rounded-full border border-primary/20 text-primary font-semibold text-sm hover:bg-primary/5 transition">Acceder</a>
+        <button class="md:hidden text-primary focus:outline-none" id="mobileMenuBtn">
+          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M3 6h18v2H3V6zm0 5h18v2H3v-2zm0 5h18v2H3v-2z"/>
+          </svg>
+        </button>
       </div>
     </div>
-  </nav>
-</header>
+    
+    <!-- Mobile menu -->
+    <div id="mobileMenu" class="hidden md:hidden bg-white/95 backdrop-blur-lg border-t border-slate-100 py-4 px-6 flex flex-col space-y-3">
+      <a href="index.html" class="py-2 text-slate-800 font-medium">Inicio</a>
+      <a href="Productos.html" class="py-2 text-slate-800 font-medium">Productos</a>
+      <a href="Planes.html" class="py-2 text-slate-800 font-medium">Planes</a>
+      <a href="Testimonios.html" class="py-2 text-primary font-semibold">Testimonios</a>
+      <a href="SobreNosotros.html" class="py-2 text-slate-800 font-medium">Nosotros</a>
+      <a href="Contacto.html" class="py-2 text-slate-800 font-medium">Contacto</a>
+      <a href="https://cmo.jedysystems.com/" class="py-2 text-primary font-semibold">Acceder →</a>
+    </div>
+  </header>
 
-<!--Banner--> 
-<div class="custom-bg_3">
-    <div class="container my-5">
-        <section class="d-flex justify-content-between align-items-center">
-          <div>
-            <h1 class="col-md-8 text-white h1morebig">Testimonios de Clientes Jedy Health</h1>
+  <main>
+    <!-- Hero Section -->
+    <section class="relative pt-32 md:pt-40 pb-16 md:pb-20 overflow-hidden">
+      <div class="absolute inset-0 bg-gradient-to-br from-primary/5 via-white to-secondary/5 -z-10"></div>
+      <div class="container-custom mx-auto">
+        <div class="text-center max-w-4xl mx-auto reveal">
+          <div class="inline-flex items-center rounded-full bg-secondary/10 px-4 py-1.5 text-secondary text-sm font-semibold mb-6">
+            <span class="w-2 h-2 rounded-full bg-secondary mr-2"></span> Historias de éxito
           </div>
-          <span>
-            <div>
-              <img src="/img/icon-testimonios-removebg-preview.png" class=" w-150" alt="Teléfono con iconos de servicios médicos, representando testimonios de salud digital">
+          <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight tracking-tight text-primary">Lo que dicen <span class="text-secondary">nuestros clientes</span></h1>
+          <p class="text-slate-600 text-lg md:text-xl mt-6 leading-relaxed max-w-3xl mx-auto">Descubre cómo Jedy Health ha transformado la gestión médica de clínicas y consultorios en toda Venezuela.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Introducción -->
+    <section class="py-12 bg-white">
+      <div class="container-custom mx-auto">
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+          <div class="reveal order-2 lg:order-1">
+            <h2 class="text-3xl md:text-4xl font-bold text-primary mb-6">Implementaciones exitosas de nuestro software médico ERP</h2>
+            <p class="text-slate-600 text-lg leading-relaxed mb-6">
+              En esta sección, presentamos una lista destacada de empresas que han confiado en nuestras soluciones de software de gestión médica y ERP para clínicas en Venezuela. Nuestra experiencia y compromiso con la excelencia nos han permitido brindar soluciones efectivas que se adaptan a las necesidades específicas de cada cliente.
+            </p>
+            <div class="flex items-center gap-4 mt-8">
+              <div class="flex -space-x-2">
+                <div class="w-10 h-10 rounded-full bg-secondary/20 flex items-center justify-center text-secondary font-bold border-2 border-white">+</div>
+              </div>
+              <p class="text-slate-500"><span class="font-bold text-primary">+3</span> centros de salud confían en nosotros</p>
             </div>
-          </span>
-        </section>
-    </div>
-</div>
-
-<!--bg--> 
-<div class="pb-4 custom-bg_1-1">
-
-<!-- Text Introduccion -->
-    <div class="pt-4 pb-5">
-      <main class="container my-5">
-        <div class="row pt-4">
-          <div class="col-12 col-md-6">
-            <h1 class="text-primary text-opacity-50 ls-4"><b>Implementaciones Exitosas de Nuestro Software Médico ERP</b></h1>
-            <p class="text-white fs-5">En esta sección, presentamos una lista destacada de empresas que han confiado en nuestras soluciones de software de gestión médica y ERP para clínicas en Venezuela. Nuestra experiencia y compromiso con la excelencia nos han permitido brindar soluciones efectivas que se adaptan a las necesidades específicas de cada cliente. A continuación, te presentamos algunas empresas que han implementado nuestros productos y ofrecen sus testimonios de satisfacción.</p>
           </div>
-          <div class="col-md-6">
-            <img src="img/image-implementaciones-introduccion.png" class="img-fluid" alt="Equipo de profesionales de la salud y empresarios celebrando implementaciones exitosas de software Jedy Health">
-          </div>
-        </div>
-      </main>
-    </div>
-
-<!-- Card enterprise -->
-  <div class="container pb-4">
-    <div class="row justify-content-center">
-      <div class="col-md-4 d-flex justify-content-center pb-2">
-        <div class="card text-center" style="max-width: 15rem;">
-          <img src="img/B.O.Medical.png" class="card-img-top img-fluid w-50 mx-auto pt-3" alt="Logotipo B.O. Medical, cliente de Jedy Health software APS">
-          <div class="card-body">
-            <h5 class="card-title">B.O.Medical</h5>
-            <p class="card-text">Implementó la solución Jedy Health APS.</p>
-            <a class="btn btn-outline-primary" href="/implementation/Imple1.html">Ver más</a>
+          <div class="reveal order-1 lg:order-2 flex justify-center">
+            <img src="img/Equipo_Programacion.jpg" alt="Equipo celebrando implementaciones exitosas" class="rounded-2xl shadow-xl max-w-full h-auto">
           </div>
         </div>
       </div>
-      <div class="col-md-4 d-flex justify-content-center">
-        <div class="card text-center" style="max-width: 15rem;">
-          <img src="img/logo Medymed.jpg" class="card-img-top img-fluid w-50 mx-auto pt-3" alt="Logotipo Medymed, cliente de Jedy Health software APS">
-          <div class="card-body">
-            <h5 class="card-title">Medymed</h5>
-            <p class="card-text">Implementó la solución Jedy Health APS.</p>
-            <a class="btn btn-outline-primary" href="/implementation/Imple2.html">Ver más</a>
-          </div>
+    </section>
+
+    <!-- Testimonios destacados -->
+    <section class="py-20 bg-slate-50">
+      <div class="container-custom mx-auto">
+        <div class="text-center max-w-3xl mx-auto mb-12 reveal">
+          <span class="text-secondary font-semibold text-sm uppercase tracking-wider">Casos de éxito</span>
+          <h2 class="text-3xl md:text-4xl font-bold text-primary mt-2">Nuestros clientes nos respaldan</h2>
+          <p class="text-slate-600 mt-4">Conoce las experiencias de instituciones que han transformado su gestión con Jedy Health</p>
         </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!--Open Popop -->
-<div class="custom-bg_4">
-  <div class="bg-dark bg-opacity-25 p-5">
-    <div class="text-center">
-      <h2 class="text-center text-white pb-2 px-3 rounded d-inline-block">¿Interesado en adquirir alguno de nuestros productos de software médico o ERP para clínicas?</h2>
-    </div>
-    <div class="d-flex justify-content-center">
-      <button type="button" class="btn btn-outline-light ls-3" data-bs-toggle="modal" data-bs-target="#contactModal"><b>Contactanos</b></button>
-    </div>
-  </div>
-</div>
-
-
-<!-- Modal -->
-<div class="modal fade bg-dark bg-opacity-50" id="contactModal" tabindex="-1" aria-labelledby="contactModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content custom-bg_2">
-      <div class=" bg-dark bg-opacity-50 py-2">
-      <div class="modal-header">
-        <h5 class="modal-title text-white" id="contactModalLabel"><b>¡Comienza hoy mismo!</b></h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <div class="container my-5">
-          <div class="form-container">
-            <!--Direccion envio Formulario-->
-            <form action="mailto:gamerzolorzano53@gmail.com" method="post" enctype="text/plain">
-              <div class="mb-3">
-                <label for="email" class="form-label text-white">Correo</label>
-                <input type="email" class="form-control" id="email" placeholder="nombre@ejemplo.com" required>
-              </div>
-              <div class="mb-3">
-                <label for="empresa" class="form-label text-white">Nombre de la empresa</label>
-                <input type="text" class="form-control" id="empresa" placeholder="Nombre de la empresa" required>
-              </div>
-              <div class="mb-3">
-                <label for="producto" class="form-label text-white">Productos</label>
-                <select class="form-select" id="producto" required>
-                  <option value="APS">APS</option>
-                  <option value="CLINICO">CLÍNICO</option>
-                  <option value="CMO">CMO</option>
-                </select>
-              </div>
-              <div class="mb-3">
-                <label for="mensaje" class="form-label text-white">Mensaje</label>
-                <textarea class="form-control" id="mensaje" rows="3" placeholder="Escribe tu mensaje aquí (opcional)"></textarea>
-              </div>
-              <div class="mb-3">
-                <label class="form-label text-white">Solicite su demo o la versión completa</label>
-                <div class="form-check">
-                  <input class="form-check-input" type="radio" name="version" id="demo" value="demo" required>
-                  <label class="form-check-label text-white" for="demo">
-                    Versión demo
-                  </label>
-                </div>
-                <div class="form-check">
-                  <input class="form-check-input" type="radio" name="version" id="completa" value="completa" required>
-                  <label class="form-check-label text-white" for="completa">
-                    Versión completa
-                  </label>
+        
+        <div class="grid md:grid-cols-2 gap-8">
+          <!-- Testimonio 1 - B.O. Medical -->
+          <div class="testimonial-card bg-white rounded-2xl shadow-lg overflow-hidden reveal">
+            <div class="p-8">
+              <div class="flex items-center gap-4 mb-6">
+                <img src="img/Logo_B.O.Medical.png" alt="Logo B.O. Medical" class="w-16 h-16 rounded-xl object-cover">
+                <div>
+                  <h3 class="text-xl font-bold text-primary">B.O. Medical</h3>
+                  <p class="text-slate-500 text-sm">Solución implementada: Jedy Health APS</p>
                 </div>
               </div>
-              <div class="text-center">
-                <button type="submit" class="btn btn-primary btn-lg">Enviar</button>
+              <div class="relative">
+                <div class="absolute -top-2 -left-2 text-6xl text-secondary/10">"</div>
+                <p class="text-slate-600 leading-relaxed pl-6">
+                  La implementación de Jedy Health APS ha optimizado completamente nuestros procesos administrativos y clínicos. La historia clínica electrónica integrada nos ha permitido brindar una atención más eficiente y segura a nuestros pacientes.
+                </p>
               </div>
-            </form>
+              <div class="flex items-center justify-between mt-6 pt-4 border-t border-slate-100">
+                <div class="flex items-center gap-2">
+                  <div class="flex text-secondary">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                  </div>
+                  <span class="text-slate-500 text-sm">5.0</span>
+                </div>
+                <a href="implementation/implementacion-bo-medical.html" class="text-secondary hover:text-primary transition text-sm font-semibold">Ver más →</a>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Testimonio 2 - Medymed -->
+          <div class="testimonial-card bg-white rounded-2xl shadow-lg overflow-hidden reveal">
+            <div class="p-8">
+              <div class="flex items-center gap-4 mb-6">
+                <img src="img/Logo_Medymed.jpg" alt="Logo Medymed" class="w-16 h-16 rounded-xl object-cover">
+                <div>
+                  <h3 class="text-xl font-bold text-primary">Medymed</h3>
+                  <p class="text-slate-500 text-sm">Solución implementada: Jedy Health APS</p>
+                </div>
+              </div>
+              <div class="relative">
+                <div class="absolute -top-2 -left-2 text-6xl text-secondary/10">"</div>
+                <p class="text-slate-600 leading-relaxed pl-6">
+                  La gestión de pacientes y citas ha mejorado notablemente con Jedy Health. El soporte técnico es excelente y la plataforma es muy intuitiva para todo nuestro personal médico y administrativo.
+                </p>
+              </div>
+              <div class="flex items-center justify-between mt-6 pt-4 border-t border-slate-100">
+                <div class="flex items-center gap-2">
+                  <div class="flex text-secondary">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                  </div>
+                  <span class="text-slate-500 text-sm">5.0</span>
+                </div>
+                <a href="implementation/implementacion-medymed.html" class="text-secondary hover:text-primary transition text-sm font-semibold">Ver más →</a>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </div>
-</div>
+    </section>
 
-<!--Footer-->
-<footer class="bg-light text-dark py-4 mt-5">
-    <div class="container">
-      <div class="row align-items-center">
-
-<!--Logo and Social medias-->
-    <div class="col-md-4">
-      <a class="navbar-brand" href="/index.html">
-        <img src="/img/logo_nuevo_jedyhealth-removebg-preview.png" class="custom-size-botom-logo pb-4" alt="Logotipo de Jedy Health">
-      </a>
-      <div class="d-flex align-items-center">
-        <p class="mb-0 ms-3">Síguenos en todas nuestras redes sociales:</p>
-      </div>
-      <ul class="list-inline mt-2">
-        <li class="list-inline-item">
-          <a href="https://www.instagram.com/jedysystems/" target="_blank">
-            <i class="fab fa-instagram social-icon"></i>
-          </a>
-        </li>
-        <li class="list-inline-item">
-          <a href="https://www.youtube.com/@jedysystems1565" target="_blank">
-            <i class="fab fa-youtube social-icon"></i>
-          </a>
-        </li>
-        <li class="list-inline-item">
-          <a href="https://www.facebook.com/Jedysystemsca" target="_blank">
-            <i class="fab fa-facebook social-icon"></i>
-          </a>
-        </li>
-      </ul>
-    </div>
-
-<!--Nav footer and Nav enlaces-->
-        <div class="col-md-6 d-flex justify-content-end">
-          <div class="me-5 ls-3">
-            <h6>Navegación</h6>
-            <ul class="list-unstyled">
-              <li><a href="/index.html" class="nav-link text-primary">Home</a></li>
-              <li><a href="/Productos.html" class="nav-link text-primary">Productos</a></li>
-              <li><a href="/Planes.html" class="nav-link text-primary">Planes</a></li>
-              <li><a href="/Testimonios.html" class="nav-link text-primary">Testimonios</a></li>
-              <li><a href="/Contacto.html" class="nav-link text-primary">Contacto</a></li>
-            </ul>
+    <!-- Testimonios adicionales en formato carrusel / grid -->
+    <section class="py-20 bg-white">
+      <div class="container-custom mx-auto">
+        <div class="text-center max-w-3xl mx-auto mb-12 reveal">
+          <h2 class="text-3xl md:text-4xl font-bold text-primary">Más <span class="text-secondary">testimonios</span></h2>
+          <p class="text-slate-600 mt-4">La satisfacción de nuestros clientes es nuestra mejor carta de presentación</p>
+        </div>
+        
+        <div class="grid md:grid-cols-3 gap-6">
+          <!-- Testimonio corto 1 -->
+          <div class="bg-slate-50 rounded-xl p-6 reveal">
+            <div class="flex text-secondary mb-4">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+            <p class="text-slate-600 italic mb-4">"La mejor inversión que hicimos para nuestra clínica. La facturación fiscal integrada nos ha ahorrado horas de trabajo."</p>
+            <div class="flex items-center gap-3">
+              <img src="https://placehold.co/40x40/1b448c/FFF?text=DR" alt="Doctor" class="w-10 h-10 rounded-full">
+              <div>
+                <p class="font-semibold text-primary">Dr. Roberto Méndez</p>
+                <p class="text-slate-400 text-xs">Centro Médico Oriental</p>
+              </div>
+            </div>
           </div>
-          <div class="ls-3">
-            <h6>Enlaces</h6>
-            <ul class="list-unstyled">
-              <li><a href="/Contacto.html" class="nav-link text-primary">Contacta con nosotros</a></li>
-              <li><a href="#" class="nav-link text-primary">Política de privacidad</a></li>
-            </ul>
+          
+          <!-- Testimonio corto 2 -->
+          <div class="bg-slate-50 rounded-xl p-6 reveal">
+            <div class="flex text-secondary mb-4">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+            <p class="text-slate-600 italic mb-4">"El módulo de telemedicina nos permitió seguir atendiendo pacientes durante la pandemia. Una herramienta fundamental."</p>
+            <div class="flex items-center gap-3">
+              <img src="https://placehold.co/40x40/3BB5AB/FFF?text=MG" alt="Médico" class="w-10 h-10 rounded-full">
+              <div>
+                <p class="font-semibold text-primary">Dra. María González</p>
+                <p class="text-slate-400 text-xs">Consultorio Médico Integral</p>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Testimonio corto 3 -->
+          <div class="bg-slate-50 rounded-xl p-6 reveal">
+            <div class="flex text-secondary mb-4">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+            <p class="text-slate-600 italic mb-4">"La historia clínica electrónica es increíblemente completa y fácil de usar. Mis pacientes están más satisfechos."</p>
+            <div class="flex items-center gap-3">
+              <img src="https://placehold.co/40x40/1b448c/FFF?text=CP" alt="Cardiólogo" class="w-10 h-10 rounded-full">
+              <div>
+                <p class="font-semibold text-primary">Dr. Carlos Pérez</p>
+                <p class="text-slate-400 text-xs">Cardiocentro Plus</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-      <hr>
-      <div class="row">
-        <div class="col text-center">
-          <p>&copy; Jedy Systems. Todos los derechos reservados.</p>
+    </section>
+
+    <!-- Estadísticas de satisfacción -->
+    <section class="py-20 bg-primary">
+      <div class="container-custom mx-auto">
+        <div class="grid md:grid-cols-3 gap-8 text-center text-white">
+          <div class="reveal">
+            <div class="text-5xl font-bold text-secondary mb-3">100%</div>
+            <p class="text-white/90">de clientes recomiendan nuestras soluciones</p>
+          </div>
+          <div class="reveal">
+            <div class="text-5xl font-bold text-secondary mb-3">+3</div>
+            <p class="text-white/90">implementaciones exitosas en Venezuela</p>
+          </div>
+          <div class="reveal">
+            <div class="text-5xl font-bold text-secondary mb-3">24/7</div>
+            <p class="text-white/90">soporte técnico especializado</p>
+          </div>
         </div>
       </div>
+    </section>
+
+    <!-- Sección de confianza - logos de clientes -->
+    <section class="py-16 bg-white">
+      <div class="container-custom mx-auto text-center">
+        <div class="reveal">
+          <h3 class="text-secondary font-semibold text-sm uppercase tracking-wider mb-4">Ellos confían en nosotros</h3>
+          <p class="text-2xl font-bold text-primary mb-8">Empresas que ya transformaron su gestión</p>
+          <div class="flex flex-wrap justify-center gap-8 md:gap-12 items-center">
+            <div class="grayscale hover:grayscale-0 transition-all duration-300">
+              <img src="img/Logo_BoMedical_Largo.png" class="h-12 md:h-14 w-auto" alt="Logo B.O Medical">
+            </div>
+            <div class="grayscale hover:grayscale-0 transition-all">
+              <img src="img/Logo_Medymed_Largo.png" class="h-12 md:h-14 w-auto" alt="Logo Medymed">
+            </div>
+            <div class="grayscale hover:grayscale-0 transition-all">
+              <img src="img/Logo_Policlinica.jpg" class="h-12 md:h-14 w-auto" alt="Policlinica">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Final -->
+    <section class="py-20 relative">
+      <div class="absolute inset-0 gradient-soft -z-10"></div>
+      <div class="container-custom mx-auto text-center max-w-4xl reveal">
+        <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4">¿Interesado en adquirir alguno de nuestros productos?</h2>
+        <p class="text-slate-600 text-lg mb-8 max-w-2xl mx-auto">
+          Únete a nuestra lista de clientes satisfechos y transforma la gestión de tu institución médica con Jedy Health.
+        </p>
+        <a href="Contacto.html" class="cta-btn px-8 py-4 rounded-xl font-bold text-white text-lg inline-flex items-center gap-2 btn-glow">
+          <i class="fas fa-envelope"></i> Contactar asesor
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer moderno -->
+  <footer class="bg-slate-900 text-white pt-16 pb-8">
+    <div class="container-custom mx-auto">
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-10">
+        <div>
+          <div class="flex items-center gap-2">
+            <img src="img/Logo_JedyHealth.png" alt="Jedy Health Logo" class="h-8 w-auto">
+            <span class="font-bold text-xl">JedyHealth</span>
+          </div>
+          <p class="text-slate-400 mt-4 text-sm">ERP médico avanzado para el sector salud en Venezuela. Innovación y tecnología al servicio de los profesionales.</p>
+          <div class="flex space-x-4 mt-5">
+            <a href="https://www.instagram.com/jedysystems/" target="_blank" class="text-slate-400 hover:text-white transition"><i class="fab fa-instagram text-xl"></i></a>
+            <a href="https://www.youtube.com/@jedysystems1565" target="_blank" class="text-slate-400 hover:text-white transition"><i class="fab fa-youtube text-xl"></i></a>
+            <a href="https://www.facebook.com/Jedysystemsca" target="_blank" class="text-slate-400 hover:text-white transition"><i class="fab fa-facebook text-xl"></i></a>
+          </div>
+        </div>
+        <div>
+          <h6 class="font-semibold text-white">Navegación</h6>
+          <ul class="mt-3 space-y-2 text-slate-400 text-sm">
+            <li><a href="index.html" class="hover:text-white">Inicio</a></li>
+            <li><a href="Productos.html" class="hover:text-white">Productos</a></li>
+            <li><a href="Planes.html" class="hover:text-white">Planes</a></li>
+            <li><a href="Testimonios.html" class="hover:text-white">Testimonios</a></li>
+          </ul>
+        </div>
+        <div>
+          <h6 class="font-semibold text-white">Enlaces legales</h6>
+          <ul class="mt-3 space-y-2 text-slate-400 text-sm">
+            <li><a href="terminos-condiciones.html" class="hover:text-white">Política de privacidad</a></li>
+            <li><a href="terminos-condiciones.html" class="hover:text-white">Términos de uso</a></li>
+            <li><a href="Contacto.html" class="hover:text-white">Contacto soporte</a></li>
+          </ul>
+        </div>
+        <div>
+          <h6 class="font-semibold text-white">Contacto directo</h6>
+          <ul class="mt-3 space-y-2 text-slate-400 text-sm">
+            <li>📧 info@jedysystems.com</li>
+            <li>📞 +58 414-0118000</li>
+            <li>📍 Caracas, Venezuela</li>
+          </ul>
+        </div>
+      </div>
+      <hr class="border-slate-800 my-8">
+      <div class="text-center text-slate-500 text-sm">&copy; 2025 Jedy Systems. Todos los derechos reservados. Tecnología de vanguardia para la salud.</div>
     </div>
   </footer>
 
-<!--JS Files-->
-  <script src="js/nav_hiden.js"></script>
-
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <script src="js/menu-scroll.js"></script>
+  <script>
+    // Mobile menu toggle
+    const mobileBtn = document.getElementById('mobileMenuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    if(mobileBtn) {
+      mobileBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+      });
+    }
+    
+    // ScrollReveal manual
+    const reveals = document.querySelectorAll('.reveal');
+    function checkReveal() {
+      for(let el of reveals) {
+        const windowHeight = window.innerHeight;
+        const rect = el.getBoundingClientRect();
+        const revealPoint = 120;
+        if(rect.top < windowHeight - revealPoint) {
+          el.classList.add('visible');
+        }
+      }
+    }
+    
+    window.addEventListener('scroll', checkReveal);
+    window.addEventListener('load', checkReveal);
+    checkReveal();
+    
+    // Navbar sticky shadow
+    const header = document.getElementById('mainHeader');
+    window.addEventListener('scroll', () => {
+      if(window.scrollY > 20) {
+        header.classList.add('shadow-sm');
+      } else {
+        header.classList.remove('shadow-sm');
+      }
+    });
+    
+    // Smooth scroll para enlaces internos
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        const targetId = this.getAttribute('href');
+        if(targetId === "#") return;
+        const targetElem = document.querySelector(targetId);
+        if(targetElem) {
+          e.preventDefault();
+          targetElem.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+  </script>
 </body>
+
 </html>

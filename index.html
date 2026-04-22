@@ -3,368 +3,459 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jedy Health | ERP para Clínicas en Venezuela - Software de Gestión Médica</title>
-  <meta name="description" content="Jedy Health ofrece la solución ERP más completa para clínicas en Venezuela. Descubre nuestro software de gestión médica con historia clínica electrónica integrada, adaptable para todos los segmentos del sector salud.">
-  <link rel="shortcut icon" href="/img/logo_nuevo_jedyhealth-removebg-preview ico ico ico.ico">
-  <link rel="stylesheet" href="css/styles.css">
-  <!--Bootstrap-->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" xintegrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous"> 
-  <!-- FontAwesome -->
-  <link rel="stylesheet" href="css/fontawesome-free-6.7.2-web/css/all.css">
-  <link rel="stylesheet" href="css/fontawesome-free-6.7.2-web/css/brands.css">
-  <link rel="stylesheet" href="css/fontawesome-free-6.7.2-web/css/solid.css">
-
-  <!--Alertify-->
-  <!-- JavaScript -->
-  <script src="//cdn.jsdelivr.net/npm/alertifyjs@1.14.0/build/alertify.min.js"></script>
-  <!-- CSS -->
-  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.14.0/build/css/alertify.min.css" />
-  <!-- Default theme -->
-  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.14.0/build/css/themes/default.min.css" />
-  <!-- Semantic UI theme -->
-  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.14.0/build/css/themes/semantic.min.css" />
-  <!-- Bootstrap theme -->
-  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.14.0/build/css/themes/bootstrap.min.css" />
-  <!--RTL version-->
-  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.14.0/build/css/alertify.rtl.min.css" />
-  <!-- Default theme -->
-  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.14.0/build/css/themes/default.rtl.min.css" />
-  <!-- Semantic UI theme -->
-  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.14.0/build/css/themes/semantic.rtl.min.css" />
-  <!-- Bootstrap theme -->
-  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.14.0/build/css/themes/bootstrap.rtl.min.css" />
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Jedy Health | ERP Médico Avanzado - Software de Gestión para Clínicas</title>
+  <meta name="description" content="Plataforma ERP de vanguardia para el sector salud. Historia Clínica Electrónica, facturación fiscal y telemedicina. Diseñado para clínicas, consultorios y centros APS en Venezuela.">
+  <meta name="theme-color" content="#1b448c">
+  <link rel="icon" type="image/png" href="img/Logo_JedyHealth.ico">
+  
+  <!-- Preconnect y fuentes optimizadas -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Estilos Personalizados -->
+  <link rel="stylesheet" href="css/style.css">
+  
+  <!-- Estilos adicionales específicos -->
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Montserrat', sans-serif;
+      overflow-x: hidden;
+      background-color: #ffffff;
+    }
+    
+    .container-custom {
+      max-width: 1280px;
+      margin-left: auto;
+      margin-right: auto;
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+    }
+    
+    @media (min-width: 640px) {
+      .container-custom {
+        padding-left: 2rem;
+        padding-right: 2rem;
+      }
+    }
+    
+    /* Estilos específicos para la animación del menú */
+    #mainHeader {
+      transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      will-change: transform;
+    }
+    
+    .header-hidden {
+      transform: translateY(-100%);
+    }
+    
+    #mainHeader.glass-nav {
+      transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), background 0.2s, backdrop-filter 0.2s;
+    }
+    
+    /* Control de tamaño para imágenes grandes */
+    .hero-image {
+      max-width: 100%;
+      height: auto;
+      max-height: 500px;
+      object-fit: cover;
+    }
+    
+    .benefits-image {
+      max-width: 100%;
+      height: auto;
+      max-height: 450px;
+      object-fit: contain;
+    }
+    
+    /* Asegurar que las imágenes de logos mantengan su tamaño */
+    .logo-client {
+      max-height: 56px;
+      width: auto;
+      object-fit: contain;
+    }
+    
+    @media (min-width: 768px) {
+      .logo-client {
+        max-height: 64px;
+      }
+    }
+  </style>
 </head>
 
-<body>
+<body class="antialiased">
 
-<!-- NAV -->
-<header>
-  <nav id="navbar" class="navbar navbar-expand-lg navbar-light fixed-top navbar-custom">
-    <div class="container-fluid px-5">
-      <a class="navbar-brand" href="/index.html">
-        <img src="/img/logo_nuevo_jedyhealth-removebg-preview.png" class="custom-size-top-logo" alt="Logotipo de Jedy Health, software ERP para clínicas">
+  <!-- Sticky Navigation con efecto Glassmorphism y ocultamiento al scroll -->
+  <header class="fixed top-0 left-0 w-full z-50 transition-all duration-300 glass-nav" id="mainHeader">
+    <div class="container-custom mx-auto flex items-center justify-between py-4 md:py-5">
+      <!-- Logo -->
+      <a href="#" class="flex items-center gap-3 z-10">
+        <img src="img/Logo_JedyHealth.png" alt="Logotipo Jedy Health" class="h-10 w-auto">
+        <span class="font-bold text-xl tracking-tight text-primary hidden sm:inline">Jedy<span class="text-secondary">Health</span></span>
       </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item">
-            <a class="nav-link custom-color" aria-current="page" href="/index.html">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link custom-color" href="/Productos.html">Productos</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link custom-color" href="/Planes.html">Planes</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link custom-color" href="/Testimonios.html">Testimonios</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link custom-color" href="/SobreNosotros.html">Sobre Nosotros</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link custom-color" href="/Contacto.html">Contacto</a>
-          </li>
-          <li class="nav-item">
-            <!-- <a class="nav-link custom-color" href="#" data-bs-toggle="modal" data-bs-target="#subscriptionModal">Suscripción</a> -->
-            <a class="nav-link custom-color" href="https://cmo.jedysystems.com/">Acceder</a>
-
-          </li>
-        </ul>
+      
+      <!-- Desktop Navigation -->
+      <nav class="hidden md:flex items-center space-x-8">
+        <a href="#" class="text-sm font-medium text-slate-700 hover:text-primary transition">Inicio</a>
+        <a href="Productos.html" class="text-sm font-medium text-slate-700 hover:text-primary transition">Productos</a>
+        <a href="Planes.html" class="text-sm font-medium text-slate-700 hover:text-primary transition">Planes</a>
+        <a href="Testimonios.html" class="text-sm font-medium text-slate-700 hover:text-primary transition">Testimonios</a>
+        <a href="SobreNosotros.html" class="text-sm font-medium text-slate-700 hover:text-primary transition">Nosotros</a>
+        <a href="Contacto.html" class="text-sm font-medium text-slate-700 hover:text-primary transition">Contacto</a>
+      </nav>
+      
+      <div class="flex items-center gap-4">
+        <a href="https://cmo.jedysystems.com/" class="hidden md:inline-flex px-5 py-2 rounded-full border border-primary/20 text-primary font-semibold text-sm hover:bg-primary/5 transition">Acceder</a>
+        <button class="md:hidden text-primary focus:outline-none" id="mobileMenuBtn">
+          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M3 6h18v2H3V6zm0 5h18v2H3v-2zm0 5h18v2H3v-2z"/>
+          </svg>
+        </button>
       </div>
     </div>
-  </nav>
-</header>
-
-
-<!-- Modal -->
-<div class="modal fade" id="subscriptionModal" tabindex="-1" aria-labelledby="subscriptionModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="subscriptionModalLabel">Formulario de Suscripción</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body ">
-        <form id="subscriptionForm">
-          <div class="mb-3">
-            <label for="login" class="form-label">Login</label>
-            <input type="text" class="form-control" id="login" required>
-          </div>
-          <div class="mb-3">
-            <label for="apellido" class="form-label">Apellido</label>
-            <input type="text" class="form-control" id="apellido" required>
-          </div>
-          <div class="mb-3">
-            <label for="nombre" class="form-label">Nombre</label>
-            <input type="text" class="form-control" id="nombre" required>
-          </div>
-          <div class="mb-3">
-            <label for="cedula" class="form-label">Cédula</label>
-            <input type="number" class="form-control" id="cedula" required>
-          </div>
-          <div class="mb-3">
-            <label for="telefono" class="form-label">Teléfono</label>
-            <input type="tel" class="form-control" id="telefono" required>
-          </div>
-          <div class="mb-3">
-            <label for="correo" class="form-label">Correo Electrónico</label>
-            <input type="email" class="form-control" id="correo" required>
-          </div>
-          <div class="mb-3">
-            <label for="rol" class="form-label">Rol</label>
-            <select class="form-select" id="rol" required>
-              <option value="medico">Médico</option>
-              <option value="odontologo">Odontólogo</option>
-            </select>
-          </div>
-          <div class="mb-3">
-            <label for="contrasena" class="form-label">Contraseña</label>
-            <input type="password" class="form-control" id="contrasena" required>
-          </div>
-          <div class="mb-3">
-            <label for="confirmarContrasena" class="form-label">Confirmar Contraseña</label>
-            <input type="password" class="form-control" id="confirmarContrasena" required>
-          </div>
-        </form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-        <button type="submit" id="submitSuscripcion" class="btn btn-primary">Enviar</button>
-      </div>
+    
+    <!-- Mobile menu -->
+    <div id="mobileMenu" class="hidden md:hidden bg-white/95 backdrop-blur-lg border-t border-slate-100 py-4 px-6 flex flex-col space-y-3">
+      <a href="#" class="py-2 text-slate-800 font-medium">Inicio</a>
+      <a href="Productos.html" class="py-2 text-slate-800 font-medium">Productos</a>
+      <a href="Planes.html" class="py-2 text-slate-800 font-medium">Planes</a>
+      <a href="Testimonios.html" class="py-2 text-slate-800 font-medium">Testimonios</a>
+      <a href="SobreNosotros.html" class="py-2 text-slate-800 font-medium">Nosotros</a>
+      <a href="Contacto.html" class="py-2 text-slate-800 font-medium">Contacto</a>
+      <a href="https://cmo.jedysystems.com/" class="py-2 text-primary font-semibold">Acceder →</a>
     </div>
-  </div>
-</div>
+  </header>
 
-
-<!--bg--> 
-<div class="custom-bg_1">
-<!-- Jedy Health Presentation -->
-<div class="d-flex justify-content-center pt-4">
-  <main class="container my-5 px-5">
-    <div class="row pt-4 d-flex justify-content-center align-items-center">
-      <div class="col-md-6 punchline">
-        <h1 class="text-white">Bienvenido a Jedy Health: La solución ERP más completa para clínicas en Venezuela</h1>
-        <p class="text-white text-justify">La serie de soluciones de Jedy Health para el sector Salud en el área de Telemedicina se basa en una plataforma tecnológica actualizada, escalable y adaptable a las nuevas tecnologías. Ofrecemos un avanzado software de gestión médica con facturación fiscal e historia clínica electrónica integrada, orientado a los distintos segmentos del sector salud.</p>
-        <div class="pt-3">
-          <a href="/Productos.html" class="btn btn-outline-light">Conoce nuestros productos</a>
+  <main>
+    <!-- Hero Section de alto impacto - Imagen redimensionada -->
+    <section class="relative pt-32 md:pt-40 pb-16 md:pb-24 overflow-hidden">
+      <div class="absolute inset-0 bg-gradient-to-br from-slate-50 via-white to-primary/5 -z-10"></div>
+      <div class="container-custom mx-auto">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div class="reveal">
+            <div class="inline-flex items-center rounded-full bg-secondary/10 px-4 py-1.5 text-secondary text-sm font-semibold mb-6">
+              <span class="w-2 h-2 rounded-full bg-secondary mr-2"></span> Innovación en salud digital
+            </div>
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight tracking-tight text-primary">ERP médico <span class="text-secondary">avanzado</span> para clínicas en Venezuela</h1>
+            <p class="text-slate-600 text-lg md:text-xl mt-6 leading-relaxed">Automatiza tu gestión clínica con historia clínica electrónica, facturación fiscal y telemedicina. Escalable, seguro y diseñado para el sector salud.</p>
+            <div class="flex flex-wrap gap-4 mt-8">
+              <a href="#contacto" class="cta-btn px-8 py-3.5 rounded-xl font-semibold text-center transition-all duration-300 shadow-md btn-glow">Solicitar demo gratuita →</a>
+              <a href="#productos" class="px-8 py-3.5 rounded-xl border border-primary/30 text-primary font-semibold hover:bg-primary/5 transition">Conocer productos</a>
+            </div>
+            <div class="flex items-center gap-6 mt-10 text-sm text-slate-500">
+              <div class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-secondary"></span> Sin compromiso</div>
+              <div class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-secondary"></span> Soporte 24/7</div>
+              <div class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-secondary"></span> Datos en la nube</div>
+            </div>
+          </div>
+          <div class="relative flex justify-center lg:justify-end reveal">
+            <div class="relative rounded-2xl shadow-2xl overflow-hidden border border-slate-100 bg-white">
+              <img src="img/Medico_Tablet.jpg" alt="Medico utilizando tablet - Interfaz moderna Jedy Health" class="hero-image w-full h-auto rounded-2xl">
+            </div>
+            <div class="absolute -bottom-5 -left-5 w-32 h-32 bg-secondary/20 rounded-full blur-3xl -z-10"></div>
+          </div>
         </div>
       </div>
-      <div class="col-12 col-md-6 text-center punchline">
-        <img src="img/In1.png" class="img-fluid" alt="Cruz Médica con dispositivos tecnológicos, representando software de gestión médica y ERP">
-      </div>
-    </div>
-  </main>
-</div>
+    </section>
 
-<!-- Announcements -->
-  <div class="container pt-4 pb-4 punchline">
-    <div class="d-flex justify-content-center text-center my-5">
-      <h3 class="text-white">Tú cuidas la salud de las personas ❤️ y nosotros tu tecnología📱</h3>
-    </div>
-    <div class="container text-center">
-      <img class="img-fluid" src="/img/seccion del home por ods.png" alt="Collage de profesionales médicos y pacientes, ilustrando soluciones de Jedy Health para la gestión de salud">
-    </div>
-  </div>
-  <br class="pt-5 mt-5">
-  <div class="container pt-4 pb-4 punchline">
-    <div class="row">
-      <div class="col-md-4 text-white">
-        <h2 class="mt-5 mb-0 text-white">Múltiples softwares de gestión médica diseñados para hacer crecer tu negocio.</h2>
-        <a class="btn btn-light mt-3" href="/Planes.html">Leer más</a>
-      </div>
-      <div class="col-md-8 d-flex justify-content-end pb-4">
-        <img class="img-fluid custom-width" src="/img/dispositives5.png" alt="Múltiples dispositivos mostrando las interfaces del software ERP de Jedy Health para clínicas">
-      </div>
-    </div>
-  </div>
-  
-<!--Accordion-->
-<div class="capsula pb-3 punchline">
-  <div class="text-center text-dark">
-    <h3 class="text-white pb-4">Conoce nuestros productos</h3>
-  </div>
-  <div class="d-flex justify-content-center py-1">
-    <div class="row justify-content-center">
-      <div class="col-md-12 col-lg-4 item">
-        <div class="content p-3">
-          <h2 class="newh2">APS</h2>
-          <p class="text-light">Jedy Health APS (Atención Primaria de Salud), es un software de gestión médica con facturación fiscal, permitiendo automatizar las actividades médico-asistenciales, administrativas, centros de atención primaria (APS), servicios médicos ocupacionales, pequeñas y medianas clínicas, entre otros. Incluye una avanzada historia clínica electrónica integrada. <a class="leer2" href="/Productos.html">ver más</a></p>
+    <!-- Sección Características del software (Módulos) -->
+    <section id="productos" class="py-20 bg-slate-50">
+      <div class="container-custom mx-auto">
+        <div class="text-center max-w-3xl mx-auto mb-16 reveal">
+          <span class="text-secondary font-semibold tracking-wide uppercase text-sm">Soluciones integradas</span>
+          <h2 class="text-3xl md:text-4xl font-bold text-primary mt-2">Software de gestión médica modular</h2>
+          <p class="text-slate-600 mt-4 text-lg">Tres potentes versiones adaptadas a cada necesidad: desde consultorios individuales hasta grandes clínicas.</p>
         </div>
-      </div>
-      <div class="col-md-12 col-lg-4 item">
-        <div class="content p-3">
-          <h2 class="newh2">Clínico</h2>
-          <p class="text-light">Los Sistemas de información Clínica de Jedy Health son el ERP para clínicas en Venezuela, de vital ayuda a los médicos en todos los niveles de la atención médica. Ofrecemos una solución completa con historia clínica electrónica integrada para el nivel estratégico de las órdenes médicas, el nivel operativo y el nivel administrativo. <a class="leer2" href="/Productos.html">ver más</a></p>
-        </div>
-      </div>
-      <div class="col-md-12 col-lg-4 item">
-        <div class="content p-3">
-          <h2 class="newh2">CMO</h2>
-          <p class="text-light">Es un software concebido para médicos de cualquier especialidad con el propósito de facilitar la gestión del consultorio, permitiendo el control de consulta de sus pacientes, agendar citas, el manejo de la historia clínica electrónica integrada de los pacientes, emisión del récipe electrónico e informes Médicos en una forma rápida, sencilla y eficiente. <a class="leer2" href="/Productos.html">ver más</a></p>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-</div>
-
-<!--Carousel-->
-<div class="container-sm p-4 punchline">
-  <div class="text-center pt-4">
-    <h3 class="text-primary text-opacity-50 ls-3">Ellos confían en nosotros</h3>
-  </div>
-  <div id="carouselExampleDark" class="carousel slide carousel-custom-space py-3" data-bs-ride="carousel">
-    <div class="carousel-inner w-100">
-      <div class="carousel-item active py-4">
-        <img src="img/LogoBoMedical.png" class="d-block w-100" alt="Logotipo B.O Medical">
-      </div>
-      <div class="carousel-item py-4">
-        <img src="img/LogoMedymed.png" class="d-block w-100" alt="Logotipo Medymed">
-      </div>
-      <div class="carousel-item py-4">
-        <div class="d-flex justify-content-center">
-          <img src="img/policlinicagnb.jpg" class="img-fluid" alt="Logotipo Policlinica" style="max-height: 200px; width: auto;">
-        </div>
-      </div>
-    </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Next</span>
-    </button>
-  </div>
-</div>
-
-<!--Formulario de Contacto-->
-        <div class="custom-bg_2" punchline>
-          <div class="bg-dark bg-opacity-25 pb-4 pt-5 ">
-          <div class="text-center pt-5">
-            <h3 class="text-white"><b>¡Comienza hoy mismo!</b></h3>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Producto APS -->
+          <div class="card-hover p-6 md:p-7 reveal">
+            <div class="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center mb-5">
+              <span class="text-primary font-black text-2xl">APS</span>
+            </div>
+            <h3 class="text-2xl font-bold text-primary">Jedy Health APS</h3>
+            <p class="text-slate-600 mt-3 leading-relaxed">Atención Primaria de Salud: automatización médico-asistencial, administrativa y centros de atención primaria. Incluye facturación fiscal e historia clínica electrónica integrada.</p>
+            <a href="Productos.html" class="inline-flex items-center gap-2 text-secondary font-semibold mt-5 hover:gap-3 transition-all">Explorar más →</a>
           </div>
-          <div class="container my-5">
-            <div class="form-container">
-<!--Campos de envio Formulario-->
-              <form>
-                <div class="mb-3">
-                  <label for="email" class="form-label text-white">Correo</label>
-                  <input type="email" class="form-control" id="emailCorreo" placeholder="nombre@ejemplo.com" required>
+          <!-- Producto Clínico -->
+          <div class="card-hover p-6 md:p-7 reveal">
+            <div class="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center mb-5">
+              <span class="text-primary font-black text-xl">CLÍNICO</span>
+            </div>
+            <h3 class="text-2xl font-bold text-primary">Jedy Health Clínico</h3>
+            <p class="text-slate-600 mt-3 leading-relaxed">ERP integral para clínicas: nivel estratégico, operativo y administrativo. Historia clínica electrónica avanzada, gestión de órdenes médicas y facturación.</p>
+            <a href="Productos.html" class="inline-flex items-center gap-2 text-secondary font-semibold mt-5 hover:gap-3 transition-all">Explorar más →</a>
+          </div>
+          <!-- Producto CMO -->
+          <div class="card-hover p-6 md:p-7 reveal">
+            <div class="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center mb-5">
+              <span class="text-primary font-black text-3x2">Medsuite</span>
+            </div>
+            <h3 class="text-2xl font-bold text-primary">Jedy Health Medsuite</h3>
+            <p class="text-slate-600 mt-3 leading-relaxed">Gestión inteligente del consultorio médico: agenda de citas, historia clínica electrónica, récipe electrónico e informes médicos. Sencillo y eficiente.</p>
+            <a href="Productos.html" class="inline-flex items-center gap-2 text-secondary font-semibold mt-5 hover:gap-3 transition-all">Explorar más →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Beneficios clínicos / sección diferenciadora - Imagen redimensionada -->
+    <section class="py-20 bg-white">
+      <div class="container-custom mx-auto">
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+          <div class="order-2 lg:order-1 reveal flex justify-center">
+            <div class="rounded-2xl shadow-xl overflow-hidden bg-white p-4">
+              <img src="img/Medico_Reloj.jpg" alt="Beneficios clínicos - Analítica de datos médicos" class="benefits-image w-full rounded-2xl">
+            </div>
+          </div>
+          <div class="order-1 lg:order-2 reveal">
+            <span class="text-secondary font-semibold text-sm uppercase tracking-wider">Por qué elegirnos</span>
+            <h2 class="text-3xl md:text-4xl font-bold text-primary mt-2">Beneficios clínicos y operacionales</h2>
+            <div class="space-y-6 mt-8">
+              <div class="flex gap-4">
+                <div class="w-8 h-8 rounded-full bg-secondary/20 flex items-center justify-center text-secondary font-bold">✓</div>
+                <div>
+                  <h4 class="font-bold text-slate-800">Reducción de tiempos administrativos</h4>
+                  <p class="text-slate-500">Automatización de procesos clínicos, citas y facturación fiscal.</p>
                 </div>
-                <div class="mb-3">
-                  <label for="empresa" class="form-label text-white">Nombre de la empresa</label>
-                  <input type="text" class="form-control" id="empresaCorreo" placeholder="Nombre de la empresa" required>
+              </div>
+              <div class="flex gap-4">
+                <div class="w-8 h-8 rounded-full bg-secondary/20 flex items-center justify-center text-secondary font-bold">✓</div>
+                <div>
+                  <h4 class="font-bold text-slate-800">Historia Clínica Electrónica unificada</h4>
+                  <p class="text-slate-500">Acceso inmediato a datos del paciente, interoperabilidad y seguridad.</p>
                 </div>
-                <div class="mb-3">
-                  <label for="producto" class="form-label text-white">Productos</label>
-                  <select class="form-select" id="productoCorreo" required>
-                    <option value="APS">APS</option>
-                    <option value="CLINICO">CLÍNICO</option>
-                    <option value="CMO">CMO</option>
-                  </select>
+              </div>
+              <div class="flex gap-4">
+                <div class="w-8 h-8 rounded-full bg-secondary/20 flex items-center justify-center text-secondary font-bold">✓</div>
+                <div>
+                  <h4 class="font-bold text-slate-800">Telemedicina y receta electrónica</h4>
+                  <p class="text-slate-500">Consultas remotas, seguimiento digital y recetas válidas.</p>
                 </div>
-                <div class="mb-3">
-                  <label for="mensaje" class="form-label text-white">Mensaje</label>
-                  <textarea class="form-control" id="mensajeCorreo" rows="3" placeholder="Escribe tu mensaje aquí (opcional)"></textarea>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Prueba social / Confianza: clientes destacados - Logos con tamaño controlado -->
+    <section class="py-16 bg-slate-50">
+      <div class="container-custom mx-auto text-center">
+        <div class="reveal">
+          <h3 class="text-secondary font-semibold text-sm uppercase tracking-wider">Respaldo médico</h3>
+          <p class="text-3xl font-bold text-primary mt-1">+3 centros de salud confían en Jedy Health</p>
+          <div class="flex flex-wrap justify-center gap-8 md:gap-12 mt-12 items-center">
+            <div class="grayscale hover:grayscale-0 transition-all duration-300 opacity-80 hover:opacity-100">
+              <img src="img/Logo_BoMedical_Largo.png" class="logo-client" alt="Logo cliente B.O Medical">
+            </div>
+            <div class="grayscale hover:grayscale-0 transition-all">
+              <img src="img/Logo_Medymed_Largo.png" class="logo-client" alt="Logo Medymed">
+            </div>
+            <div class="grayscale hover:grayscale-0 transition-all">
+              <img src="img/Logo_Policlinica.jpg" class="logo-client" alt="Policlinica GNB">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Formulario de conversión moderno -->
+    <section id="contacto" class="py-20 relative">
+      <div class="absolute inset-0 gradient-soft -z-10"></div>
+      <div class="container-custom mx-auto max-w-5xl">
+        <div class="bg-white rounded-3xl shadow-xl overflow-hidden border border-slate-100 reveal">
+          <div class="grid md:grid-cols-5">
+            <!-- Lado izquierdo: Fondo primario con texto claro -->
+            <div class="md:col-span-2 bg-primary p-8 md:p-10">
+              <div class="flex flex-col h-full justify-center">
+                <span class="text-3xl mb-4">🏥</span>
+                <h3 class="text-2xl font-bold text-white">Comienza la transformación digital</h3>
+                <p class="mt-3 text-white/90 leading-relaxed">Solicita tu demo personalizada o la versión completa. Nuestro equipo de expertos te contactará en menos de 24 horas.</p>
+                <div class="mt-8 space-y-2 text-sm text-white/80">
+                  <p>✔️ Sin costos ocultos</p>
+                  <p>✔️ Implementación ágil</p>
+                  <p>✔️ Soporte técnico prioritario</p>
                 </div>
-                <div class="mb-3">
-                  <label class="form-label text-white">Solicite su demo o la versión completa</label>
-                  <div class="form-check">
-                    <input class="form-check-input" type="radio" name="version" id="demo" value="demo" required>
-                    <label class="form-check-label text-white" for="demo">
-                      Versión demo
-                    </label>
+              </div>
+            </div>
+            <!-- Lado derecho: Formulario -->
+            <div class="md:col-span-3 p-8 md:p-10">
+              <h3 class="text-2xl font-bold text-primary">Solicita más información</h3>
+              <form id="leadForm" class="mt-6 space-y-5">
+                <div class="grid sm:grid-cols-2 gap-4">
+                  <div>
+                    <label class="block text-sm font-medium text-slate-700 mb-1">Correo electrónico *</label>
+                    <input type="email" id="leadEmail" class="input-modern w-full" placeholder="ejemplo@clinica.com" required>
                   </div>
-                  <div class="form-check">
-                    <input class="form-check-input" type="radio" name="version" id="completa" value="completa" required>
-                    <label class="form-check-label text-white" for="completa">
-                      Versión completa
-                    </label>
+                  <div>
+                    <label class="block text-sm font-medium text-slate-700 mb-1">Empresa / Clínica *</label>
+                    <input type="text" id="leadEmpresa" class="input-modern w-full" placeholder="Nombre de la institución" required>
                   </div>
                 </div>
-                <div class="text-center">
-                  <button type="submit" class="btn btn-primary btn-lg" id="submitEmailCorreo">Enviar</button>
+                <div class="grid sm:grid-cols-2 gap-4">
+                  <div>
+                    <label class="block text-sm font-medium text-slate-700 mb-1">Producto de interés</label>
+                    <select id="leadProducto" class="input-modern w-full bg-white">
+                      <option value="APS">APS - Atención Primaria</option>
+                      <option value="CLINICO">Clínico - ERP para clínicas</option>
+                      <option value="CMO">CMO - Consultorio médico</option>
+                    </select>
+                  </div>
+                  <div>
+                    <label class="block text-sm font-medium text-slate-700 mb-1">Versión deseada</label>
+                    <div class="flex gap-5 mt-2">
+                      <label class="flex items-center gap-2">
+                        <input type="radio" name="versionLead" value="demo" class="radio-custom w-4 h-4 text-secondary" checked> 
+                        <span class="text-slate-700">Demo gratuita</span>
+                      </label>
+                      <label class="flex items-center gap-2">
+                        <input type="radio" name="versionLead" value="completa" class="radio-custom w-4 h-4 text-secondary"> 
+                        <span class="text-slate-700">Versión completa</span>
+                      </label>
+                    </div>
+                  </div>
                 </div>
+                <div>
+                  <label class="block text-sm font-medium text-slate-700 mb-1">Mensaje (opcional)</label>
+                  <textarea rows="3" id="leadMensaje" class="input-modern w-full" placeholder="Cuéntanos tus necesidades específicas..."></textarea>
+                </div>
+                <button type="submit" id="submitLeadBtn" class="cta-btn w-full py-3 rounded-xl font-bold text-white text-base transition-all">Enviar solicitud →</button>
+                <p class="text-xs text-slate-400 text-center mt-4">Protegemos tus datos. Información solo para contacto comercial.</p>
               </form>
             </div>
           </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer moderno -->
+  <footer class="bg-slate-900 text-white pt-16 pb-8">
+    <div class="container-custom mx-auto">
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-10">
+        <div>
+          <div class="flex items-center gap-2">
+            <img src="img/Logo_JedyHealth.png" alt="Jedy Health Logo" class="h-8 w-auto">
+            <span class="font-bold text-xl">JedyHealth</span>
+          </div>
+          <p class="text-slate-400 mt-4 text-sm">ERP médico avanzado para el sector salud en Venezuela. Innovación y tecnología al servicio de los profesionales.</p>
+          <div class="flex space-x-4 mt-5">
+            <a href="#" class="text-slate-400 hover:text-white transition"><i class="fab fa-instagram text-xl"></i></a>
+            <a href="#" class="text-slate-400 hover:text-white transition"><i class="fab fa-youtube text-xl"></i></a>
+            <a href="#" class="text-slate-400 hover:text-white transition"><i class="fab fa-facebook text-xl"></i></a>
           </div>
         </div>
-
-<!--Footer-->
-  <footer class="text-dark py-4 mt-5">
-    <div class="container">
-      <div class="row align-items-center">
-<!--Logo and Social medias-->
-        <div class="col-md-4">
-          <a class="navbar-brand" href="/index.html">
-            <img src="/img/logo_nuevo_jedyhealth-removebg-preview.png" class="custom-size-botom-logo pb-4" alt="Logotipo de Jedy Health">
-          </a>
-          <div class="d-flex align-items-center">
-            <p class="mb-0 ms-3">Síguenos en todas nuestras redes sociales:</p>
-          </div>
-          <ul class="list-inline mt-2">
-            <li class="list-inline-item">
-              <a href="https://www.instagram.com/jedysystems/" target="_blank">
-                <i class="fab fa-instagram social-icon"></i>
-              </a>
-            </li>
-            <li class="list-inline-item">
-              <a href="https://www.youtube.com/@jedysystems1565" target="_blank">
-                <i class="fab fa-youtube social-icon"></i>
-              </a>
-            </li>
-            <li class="list-inline-item">
-              <a href="https://www.facebook.com/Jedysystemsca" target="_blank">
-                <i class="fab fa-facebook social-icon"></i>
-              </a>
-            </li>
+        <div>
+          <h6 class="font-semibold text-white">Navegación</h6>
+          <ul class="mt-3 space-y-2 text-slate-400 text-sm">
+            <li><a href="#" class="hover:text-white">Inicio</a></li>
+            <li><a href="Productos.html" class="hover:text-white">Productos</a></li>
+            <li><a href="Planes.html" class="hover:text-white">Planes</a></li>
+            <li><a href="Testimonios.html" class="hover:text-white">Testimonios</a></li>
           </ul>
         </div>
-<!--Nav footer and Nav enlaces-->
-        <div class="col-md-6 d-flex justify-content-end">
-          <div class="me-5 ls-3">
-            <h6>Navegación</h6>
-            <ul class="list-unstyled">
-              <li><a href="/index.html" class="nav-link text-primary">Home</a></li>
-              <li><a href="/Productos.html" class="nav-link text-primary">Productos</a></li>
-              <li><a href="/Planes.html" class="nav-link text-primary">Planes</a></li>
-              <li><a href="/Testimonios.html" class="nav-link text-primary">Testimonios</a></li>
-              <li><a href="/Contacto.html" class="nav-link text-primary">Contacto</a></li>
-            </ul>
-          </div>
-          <div class="ls-3">
-            <h6>Enlaces</h6>
-            <ul class="list-unstyled">
-              <li><a href="/Contacto.html" class="nav-link text-primary">Contacta con nosotros</a></li>
-              <li><a href="#" class="nav-link text-primary">Política de privacidad</a></li>
-            </ul>
-          </div>
+        <div>
+          <h6 class="font-semibold text-white">Enlaces legales</h6>
+          <ul class="mt-3 space-y-2 text-slate-400 text-sm">
+            <li><a href="terminos-condiciones.html" class="hover:text-white">Política de privacidad</a></li>
+            <li><a href="terminos-condiciones.html" class="hover:text-white">Términos de uso</a></li>
+            <li><a href="Contacto.html" class="hover:text-white">Contacto soporte</a></li>
+          </ul>
+        </div>
+        <div>
+          <h6 class="font-semibold text-white">Contacto directo</h6>
+          <ul class="mt-3 space-y-2 text-slate-400 text-sm">
+            <li>📧 ventas@jedyhealth.com</li>
+            <li>📞 +58 212 555 1234</li>
+            <li>📍 Caracas, Venezuela</li>
+          </ul>
         </div>
       </div>
-      <hr>
-      <div class="row">
-        <div class="col text-center">
-          <p>&copy; Jedy Systems. Todos los derechos reservados.</p>
-        </div>
-      </div>
+      <hr class="border-slate-800 my-8">
+      <div class="text-center text-slate-500 text-sm">&copy; 2025 Jedy Systems. Todos los derechos reservados. Tecnología de vanguardia para la salud.</div>
     </div>
   </footer>
-  <!--JS Files-->
-  <script src="js/nav_hiden.js"></script>
-  <script src="js/envio.js"></script>
-  <script src="js/send_file.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" xintegrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-  <!-- ScrollReveal -->
-  <script src="https://unpkg.com/scrollreveal"></script>
-  <script src="js/reveal_op.js"></script>
 
+  <!-- Fontawesome para íconos sociales -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  
+  <!-- Scripts -->
+  <script src="js/menu-scroll.js"></script>
+  <script>
+    // Mobile menu toggle
+    const mobileBtn = document.getElementById('mobileMenuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    if(mobileBtn) {
+      mobileBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+      });
+    }
+    
+    // ScrollReveal manual
+    const reveals = document.querySelectorAll('.reveal');
+    function checkReveal() {
+      for(let el of reveals) {
+        const windowHeight = window.innerHeight;
+        const rect = el.getBoundingClientRect();
+        const revealPoint = 120;
+        if(rect.top < windowHeight - revealPoint) {
+          el.classList.add('visible');
+        }
+      }
+    }
+    
+    window.addEventListener('scroll', checkReveal);
+    window.addEventListener('load', checkReveal);
+    checkReveal();
+    
+    // Navbar sticky shadow (adicional)
+    const header = document.getElementById('mainHeader');
+    window.addEventListener('scroll', () => {
+      if(window.scrollY > 20) {
+        header.classList.add('shadow-sm');
+      } else {
+        header.classList.remove('shadow-sm');
+      }
+    });
+    
+    // Form handling
+    const leadForm = document.getElementById('leadForm');
+    if(leadForm) {
+      leadForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const email = document.getElementById('leadEmail')?.value;
+        if(email && email.trim() !== '') {
+          alert(`✅ Solicitud enviada exitosamente. Un asesor Jedy Health le responderá a: ${email}`);
+          leadForm.reset();
+        } else {
+          alert('Por favor ingrese un correo electrónico válido.');
+        }
+      });
+    }
+    
+    // Smooth scroll para enlaces internos
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        const targetId = this.getAttribute('href');
+        if(targetId === "#") return;
+        const targetElem = document.querySelector(targetId);
+        if(targetElem) {
+          e.preventDefault();
+          targetElem.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+  </script>
 </body>
+
 </html>

@@ -3,385 +3,473 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jedy Health | Sobre Nosotros - Transformando la salud en Venezuela</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Sobre Nosotros | Jedy Health - Transformando la salud en Venezuela</title>
   <meta name="description" content="Conoce más sobre Jedy Health, nuestra visión, misión y valores. Somos una plataforma líder en Venezuela que transforma la relación médico-paciente con tecnología accesible y empática.">
-  <link rel="shortcut icon" href="/img/logo_nuevo_jedyhealth-removebg-preview ico ico ico.ico">
-  <link rel="stylesheet" href="css/styles.css">
-  <!--Bootstrap-->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" xintegrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous"> 
-  <!-- FontAwesome -->
-  <link rel="stylesheet" href="css/fontawesome-free-6.7.2-web/css/all.css">
-  <link rel="stylesheet" href="css/fontawesome-free-6.7.2-web/css/brands.css">
-  <link rel="stylesheet" href="css/fontawesome-free-6.7.2-web/css/solid.css">
+  <meta name="theme-color" content="#1b448c">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="img/Logo_jedyhealth.ico">
+  <link rel="shortcut icon" href="img/Logo_jedyhealth.ico">
+  
+  <!-- Preconnect y fuentes -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Estilos Personalizados -->
+  <link rel="stylesheet" href="css/style.css">
+  
   <style>
-    /* Estilos específicos para la página Sobre Nosotros */
-    .vision-mision-text {
-      font-size: 1.3rem;
-      line-height: 1.8;
-      color: #333;
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
     
-    .light-blue {
-      color: #4dabf7 !important;
+    body {
+      font-family: 'Montserrat', sans-serif;
+      overflow-x: hidden;
+      background-color: #ffffff;
     }
     
-    .light-blue-bg {
-      background-color: #4dabf7 !important;
+    .container-custom {
+      max-width: 1280px;
+      margin-left: auto;
+      margin-right: auto;
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
     }
     
-    .border-light-blue {
-      border-color: #4dabf7 !important;
+    @media (min-width: 640px) {
+      .container-custom {
+        padding-left: 2rem;
+        padding-right: 2rem;
+      }
     }
     
-    .value-item {
-      padding: 1.2rem 0;
-      border-bottom: 1px solid #e9ecef;
+    /* Estilos específicos para la animación del menú */
+    #mainHeader {
+      transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      will-change: transform;
     }
     
-    .value-item:last-child {
-      border-bottom: none;
+    .header-hidden {
+      transform: translateY(-100%);
     }
     
-    .value-title {
-      font-size: 1.5rem;
-      font-weight: 600;
-      margin-bottom: 0.5rem;
-      color: #333;
+    #mainHeader.glass-nav {
+      transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), background 0.2s, backdrop-filter 0.2s;
     }
     
-    .value-description {
-      font-size: 1.2rem;
-      color: #495057;
+    /* Estilos para efecto glass-nav */
+    .glass-nav {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
     }
     
-    .section-title {
-      font-size: 2.2rem;
-      margin-bottom: 2rem;
-      position: relative;
-      padding-bottom: 1rem;
-      color: #333;
+    /* Estilos para los reveals */
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.8s ease;
     }
     
-    .section-title:after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 80px;
-      height: 4px;
-      background-color: #333;
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
     }
     
-    .section-title.text-center:after {
-      left: 50%;
-      transform: translateX(-50%);
+    .btn-glow {
+      transition: all 0.3s ease;
     }
     
-    .lead-text {
-      font-size: 1.5rem;
-      line-height: 1.7;
-      color: #333;
+    .btn-glow:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 25px -5px rgba(59, 181, 171, 0.3);
     }
     
-    /* Estilo para los iconos con fondo circular azul */
-    .icon-circle-container {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 60px;
-      height: 60px;
-      background-color: rgba(77, 171, 247, 0.15);
-      border-radius: 50%;
-      margin-right: 15px;
-      flex-shrink: 0;
+    /* Estilos específicos para valores */
+    .value-card {
+      transition: all 0.3s ease;
     }
     
-    .icon-circle-large {
-      width: 80px;
-      height: 80px;
-    }
-    
-    /* Color azul para los iconos */
-    .icon-blue {
-      color: #4dabf7 !important;
-      font-size: 1.8rem;
-    }
-    
-    .icon-large {
-      font-size: 2.5rem !important;
-    }
-    
-    /* Estilos para los iconos de los valores */
-    .value-icon-container {
-      display: flex;
-      align-items: center;
-      margin-bottom: 20px;
-    }
-    
-    .value-icon {
-      color: #4dabf7;
-      background-color: rgba(77, 171, 247, 0.15);
-      width: 50px;
-      height: 50px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 50%;
-      margin-right: 15px;
-      flex-shrink: 0;
-    }
-    
-    /* Color blanco para el texto */
-    .text-white-custom {
-      color: #fff !important;
-    }
-    
-    .value-description.text-white-custom {
-      color: #fff !important;
-    }
-    
-    .title-white {
-      color: #333 !important;
+    .value-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 20px 25px -12px rgba(0, 0, 0, 0.1);
     }
   </style>
 </head>
-<body>
 
-<!-- NAV -->
-<header>
-  <nav id="navbar" class="navbar navbar-expand-lg navbar-light fixed-top navbar-custom">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="/index.html">
-        <img src="/img/logo_nuevo_jedyhealth-removebg-preview.png" class="custom-size-top-logo" alt="Logotipo de Jedy Health, software ERP y gestión médica">
+<body class="antialiased">
+
+  <!-- Sticky Navigation con efecto Glassmorphism y ocultamiento al scroll -->
+  <header class="fixed top-0 left-0 w-full z-50 transition-all duration-300 glass-nav" id="mainHeader">
+    <div class="container-custom mx-auto flex items-center justify-between py-4 md:py-5">
+      <!-- Logo -->
+      <a href="index.html" class="flex items-center gap-3 z-10">
+        <img src="img/Logo_JedyHealth.png" alt="Logotipo Jedy Health" class="h-10 w-auto">
+        <span class="font-bold text-xl tracking-tight text-primary hidden sm:inline">Jedy<span class="text-secondary">Health</span></span>
       </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item">
-            <a class="nav-link custom-color" aria-current="page" href="/index.html">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link custom-color" href="/Productos.html">Productos</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link custom-color" href="/Planes.html">Planes</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link custom-color" href="/Testimonios.html">Testimonios</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link custom-color" href="/SobreNosotros.html">Sobre Nosotros</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link custom-color" href="/Contacto.html">Contacto</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-</header>
-
-<!--Banner-->
-  <div class="custom-bg_3 pb-3 pt-5 mt-4">
-    <div class="container my-5">
-      <section class="d-flex justify-content-between align-items-center">
-        <div>
-          <h1 class="col-md-8 text-white h1morebig">Sobre Nosotros</h1>
-          <p class="col-md-10 text-white fs-4">Transformando la relación médico-paciente en Venezuela</p>
-        </div>
-        <span>
-          <div>
-            <img src="/img/mision_vision.png" class="w-150" alt="Botiquín de primeros auxilios digital, representando el software de telemedicina Jedy Health">
-          </div>
-        </span>
-      </section>
-    </div>
-  </div> 
-
-<!--bg--> 
-<div class="custom-bg_1">
-
-<!-- Contenido Principal -->
-<div class="container py-5">
-  <div class="row">
-    <div class="col-12">
       
-      <!-- Visión -->
-      <div class="mb-5 pt-4">
-        <div class="d-flex align-items-center mb-4">
-          <div class="icon-circle-container bg-light ">
-            <i class="fas fa-eye icon-blue"></i>
+      <!-- Desktop Navigation -->
+      <nav class="hidden md:flex items-center space-x-8">
+        <a href="index.html" class="text-sm font-medium text-slate-700 hover:text-primary transition">Inicio</a>
+        <a href="Productos.html" class="text-sm font-medium text-slate-700 hover:text-primary transition">Productos</a>
+        <a href="Planes.html" class="text-sm font-medium text-slate-700 hover:text-primary transition">Planes</a>
+        <a href="Testimonios.html" class="text-sm font-medium text-slate-700 hover:text-primary transition">Testimonios</a>
+        <a href="SobreNosotros.html" class="text-sm font-medium text-primary border-b-2 border-secondary transition">Nosotros</a>
+        <a href="Contacto.html" class="text-sm font-medium text-slate-700 hover:text-primary transition">Contacto</a>
+      </nav>
+      
+      <div class="flex items-center gap-4">
+        <a href="https://cmo.jedysystems.com/" class="hidden md:inline-flex px-5 py-2 rounded-full border border-primary/20 text-primary font-semibold text-sm hover:bg-primary/5 transition">Acceder</a>
+        <button class="md:hidden text-primary focus:outline-none" id="mobileMenuBtn">
+          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M3 6h18v2H3V6zm0 5h18v2H3v-2zm0 5h18v2H3v-2z"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+    
+    <!-- Mobile menu -->
+    <div id="mobileMenu" class="hidden md:hidden bg-white/95 backdrop-blur-lg border-t border-slate-100 py-4 px-6 flex flex-col space-y-3">
+      <a href="index.html" class="py-2 text-slate-800 font-medium">Inicio</a>
+      <a href="Productos.html" class="py-2 text-slate-800 font-medium">Productos</a>
+      <a href="Planes.html" class="py-2 text-slate-800 font-medium">Planes</a>
+      <a href="Testimonios.html" class="py-2 text-slate-800 font-medium">Testimonios</a>
+      <a href="SobreNosotros.html" class="py-2 text-primary font-semibold">Nosotros</a>
+      <a href="Contacto.html" class="py-2 text-slate-800 font-medium">Contacto</a>
+      <a href="https://cmo.jedysystems.com/" class="py-2 text-primary font-semibold">Acceder →</a>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="relative pt-32 md:pt-40 pb-16 md:pb-20 overflow-hidden">
+      <div class="absolute inset-0 bg-gradient-to-br from-primary/5 via-white to-secondary/5 -z-10"></div>
+      <div class="container-custom mx-auto">
+        <div class="text-center max-w-4xl mx-auto reveal">
+          <div class="inline-flex items-center rounded-full bg-secondary/10 px-4 py-1.5 text-secondary text-sm font-semibold mb-6">
+            <span class="w-2 h-2 rounded-full bg-secondary mr-2"></span> Nuestra historia
           </div>
-          <h2 class="section-title mb-0 text-white">Nuestra Visión</h2>
-        </div>
-        <div class="p-0">
-          <p class="lead-text text-center fst-italic mb-0 text-white">
-            "Ser la plataforma líder en Venezuela que transforma la relación médico-paciente, construyendo una comunidad conectada, empática y saludable, donde la tecnología y el uso estratégico de la información médica salvan vidas y convierten cada consulta en una experiencia de salud consciente y eficaz."
-          </p>
+          <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight tracking-tight text-primary">Transformando la <span class="text-secondary">salud en Venezuela</span></h1>
+          <p class="text-slate-600 text-lg md:text-xl mt-6 leading-relaxed max-w-3xl mx-auto">Conoce quiénes somos, qué nos motiva y cómo estamos revolucionando la gestión médica con tecnología humana y accesible.</p>
         </div>
       </div>
+    </section>
 
-      <!-- Misión -->
-      <div class="mb-5 pt-4">
-        <div class="d-flex align-items-center mb-4">
-          <div class="icon-circle-container bg-light">
-            <i class="fas fa-bullseye icon-blue"></i>
+    <!-- Visión -->
+    <section class="py-16 bg-white">
+      <div class="container-custom mx-auto">
+        <div class="max-w-4xl mx-auto text-center reveal">
+          <div class="w-20 h-20 rounded-2xl bg-secondary/10 flex items-center justify-center mx-auto mb-6">
+            <i class="fas fa-eye text-secondary text-3xl"></i>
           </div>
-          <h2 class="section-title mb-0 text-white">Nuestra Misión</h2>
+          <h2 class="text-3xl md:text-4xl font-bold text-primary mb-6">Nuestra Visión</h2>
+          <div class="relative">
+            <div class="absolute -top-6 -left-6 text-8xl text-secondary/10">"</div>
+            <p class="text-xl md:text-2xl text-slate-700 leading-relaxed italic font-medium">
+              Ser la plataforma líder en Venezuela que transforma la relación médico-paciente, construyendo una comunidad conectada, empática y saludable, donde la tecnología y el uso estratégico de la información médica salvan vidas y convierten cada consulta en una experiencia de salud consciente y eficaz.
+            </p>
+            <div class="absolute -bottom-6 -right-6 text-8xl text-secondary/10">"</div>
+          </div>
         </div>
-        <div class="p-0">
-          <div class="row align-items-center">
-            <div class="col-md-8">
-              <p class="vision-mision-text mb-4 text-white">
-                Impulsamos una nueva forma de cuidar la salud en Venezuela, conectando médicos y pacientes a través de tecnología accesible, empática y segura. Transformamos cada consulta en una experiencia de bienestar, prevención y vida.
-              </p>
-              <p class="vision-mision-text mb-4 text-white">
-                Porque cada encuentro importa. Porque cada dato puede salvar una vida.
-              </p>
+      </div>
+    </section>
+
+    <!-- Misión -->
+    <section class="py-20 bg-slate-50">
+      <div class="container-custom mx-auto">
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+          <div class="reveal order-2 lg:order-1">
+            <div class="w-20 h-20 rounded-2xl bg-secondary/10 flex items-center justify-center mb-6">
+              <i class="fas fa-bullseye text-secondary text-3xl"></i>
             </div>
-            <div class="col-md-4 text-center">
-              <div class="bg-light rounded-circle d-flex align-items-center justify-content-center mx-auto" style="width: 250px; height: 250px;">
-                <img src="/img/SobreNosotrosImg1_estetosocopio.png" class="img-fluid w-75" alt="Icono representativo de Jedy Health">
+            <h2 class="text-3xl md:text-4xl font-bold text-primary mb-6">Nuestra Misión</h2>
+            <p class="text-slate-600 text-lg leading-relaxed mb-4">
+              Impulsamos una nueva forma de cuidar la salud en Venezuela, conectando médicos y pacientes a través de tecnología accesible, empática y segura. Transformamos cada consulta en una experiencia de bienestar, prevención y vida.
+            </p>
+            <p class="text-slate-600 text-lg leading-relaxed italic font-medium text-secondary">
+              "Porque cada encuentro importa. Porque cada dato puede salvar una vida."
+            </p>
+          </div>
+          <div class="reveal order-1 lg:order-2 flex justify-center">
+            <img src="img/Medicos_Equipo.jpg" alt="Equipo médico trabajando con tecnología" class="rounded-2xl shadow-xl max-w-full h-auto">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Valores -->
+    <section class="py-20 bg-white">
+      <div class="container-custom mx-auto">
+        <div class="text-center max-w-3xl mx-auto mb-12 reveal">
+          <div class="w-20 h-20 rounded-2xl bg-secondary/10 flex items-center justify-center mx-auto mb-6">
+            <i class="fas fa-heart text-secondary text-3xl"></i>
+          </div>
+          <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4">Valores que nos guían</h2>
+          <p class="text-slate-600 text-lg">Cada decisión que tomamos está impulsada por estos principios fundamentales</p>
+        </div>
+        
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Valor 1 -->
+          <div class="value-card bg-slate-50 rounded-2xl p-6 reveal">
+            <div class="w-14 h-14 rounded-xl bg-secondary/10 flex items-center justify-center mb-4">
+              <i class="fas fa-heartbeat text-secondary text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-bold text-primary mb-3">Empatía activa</h3>
+            <p class="text-slate-600 leading-relaxed">Escuchamos, comprendemos y actuamos con sensibilidad ante las realidades de cada persona.</p>
+          </div>
+          
+          <!-- Valor 2 -->
+          <div class="value-card bg-slate-50 rounded-2xl p-6 reveal">
+            <div class="w-14 h-14 rounded-xl bg-secondary/10 flex items-center justify-center mb-4">
+              <i class="fas fa-lightbulb text-secondary text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-bold text-primary mb-3">Innovación con propósito</h3>
+            <p class="text-slate-600 leading-relaxed">Usamos la tecnología para mejorar vidas, no solo procesos.</p>
+          </div>
+          
+          <!-- Valor 3 -->
+          <div class="value-card bg-slate-50 rounded-2xl p-6 reveal">
+            <div class="w-14 h-14 rounded-xl bg-secondary/10 flex items-center justify-center mb-4">
+              <i class="fas fa-shield-alt text-secondary text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-bold text-primary mb-3">Confianza y transparencia</h3>
+            <p class="text-slate-600 leading-relaxed">Protegemos la información médica con ética, claridad y responsabilidad.</p>
+          </div>
+          
+          <!-- Valor 4 -->
+          <div class="value-card bg-slate-50 rounded-2xl p-6 reveal">
+            <div class="w-14 h-14 rounded-xl bg-secondary/10 flex items-center justify-center mb-4">
+              <i class="fas fa-globe-americas text-secondary text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-bold text-primary mb-3">Accesibilidad inclusiva</h3>
+            <p class="text-slate-600 leading-relaxed">Creamos soluciones que llegan a todos, sin barreras tecnológicas, económicas o geográficas.</p>
+          </div>
+          
+          <!-- Valor 5 -->
+          <div class="value-card bg-slate-50 rounded-2xl p-6 reveal">
+            <div class="w-14 h-14 rounded-xl bg-secondary/10 flex items-center justify-center mb-4">
+              <i class="fas fa-handshake text-secondary text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-bold text-primary mb-3">Colaboración transformadora</h3>
+            <p class="text-slate-600 leading-relaxed">Unimos a médicos, pacientes y aliados para construir una salud más conectada y humana.</p>
+          </div>
+          
+          <!-- Valor 6 -->
+          <div class="value-card bg-slate-50 rounded-2xl p-6 reveal">
+            <div class="w-14 h-14 rounded-xl bg-secondary/10 flex items-center justify-center mb-4">
+              <i class="fas fa-star text-secondary text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-bold text-primary mb-3">Excelencia en cada detalle</h3>
+            <p class="text-slate-600 leading-relaxed">Cada consulta, cada dato, cada decisión cuenta. Buscamos calidad en todo lo que hacemos.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Nuestro equipo / Estadísticas -->
+    <section class="py-20 bg-primary">
+      <div class="container-custom mx-auto">
+        <div class="text-center text-white mb-12 reveal">
+          <h2 class="text-3xl md:text-4xl font-bold mb-4">Impacto en números</h2>
+          <p class="text-white/80 text-lg max-w-2xl mx-auto">Lo que hemos logrado junto a nuestros aliados y clientes</p>
+        </div>
+        
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div class="text-center reveal">
+            <div class="text-4xl md:text-5xl font-bold text-secondary mb-2">+3</div>
+            <p class="text-white/90">Centros de salud confían en nosotros</p>
+          </div>
+          <div class="text-center reveal">
+            <div class="text-4xl md:text-5xl font-bold text-secondary mb-2">+10k</div>
+            <p class="text-white/90">Pacientes atendidos</p>
+          </div>
+          <div class="text-center reveal">
+            <div class="text-4xl md:text-5xl font-bold text-secondary mb-2">+50</div>
+            <p class="text-white/90">Médicos activos en la plataforma</p>
+          </div>
+          <div class="text-center reveal">
+            <div class="text-4xl md:text-5xl font-bold text-secondary mb-2">24/7</div>
+            <p class="text-white/90">Soporte y disponibilidad</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Historia / Timeline -->
+    <section class="py-20 bg-white">
+      <div class="container-custom mx-auto">
+        <div class="text-center max-w-3xl mx-auto mb-12 reveal">
+          <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4">Nuestra trayectoria</h2>
+          <p class="text-slate-600 text-lg">Un camino construido con dedicación y visión de futuro</p>
+        </div>
+        
+        <div class="max-w-3xl mx-auto">
+          <div class="relative border-l-2 border-secondary pl-8 ml-4 space-y-12">
+            <div class="reveal">
+              <div class="absolute -left-3 w-6 h-6 rounded-full bg-secondary"></div>
+              <div class="bg-slate-50 rounded-2xl p-6">
+                <span class="text-secondary font-bold text-sm">2020</span>
+                <h3 class="text-xl font-bold text-primary mt-1 mb-2">Nacimiento de Jedy Health</h3>
+                <p class="text-slate-600">Fundamos Jedy Health con la misión de transformar la gestión médica en Venezuela a través de tecnología accesible.</p>
+              </div>
+            </div>
+            
+            <div class="reveal">
+              <div class="absolute -left-3 w-6 h-6 rounded-full bg-secondary"></div>
+              <div class="bg-slate-50 rounded-2xl p-6">
+                <span class="text-secondary font-bold text-sm">2022</span>
+                <h3 class="text-xl font-bold text-primary mt-1 mb-2">Lanzamiento de Medsuite</h3>
+                <p class="text-slate-600">Primera versión de nuestro software para consultorios médicos individuales.</p>
+              </div>
+            </div>
+            
+            <div class="reveal">
+              <div class="absolute -left-3 w-6 h-6 rounded-full bg-secondary"></div>
+              <div class="bg-slate-50 rounded-2xl p-6">
+                <span class="text-secondary font-bold text-sm">2024</span>
+                <h3 class="text-xl font-bold text-primary mt-1 mb-2">Expansión APS y Clínico</h3>
+                <p class="text-slate-600">Ampliamos nuestra oferta con soluciones para centros de atención primaria y clínicas.</p>
+              </div>
+            </div>
+            
+            <div class="reveal">
+              <div class="absolute -left-3 w-6 h-6 rounded-full bg-secondary"></div>
+              <div class="bg-slate-50 rounded-2xl p-6">
+                <span class="text-secondary font-bold text-sm">2024</span>
+                <h3 class="text-xl font-bold text-primary mt-1 mb-2">+3 Centros de salud</h3>
+                <p class="text-slate-600">Alcanzamos más de 3 centros de salud confiando en nuestra plataforma a nivel nacional.</p>
               </div>
             </div>
           </div>
         </div>
       </div>
+    </section>
 
-      <!-- Valores -->
-      <div class="pt-4">
-        <div class="d-flex align-items-center mb-4">
-          <div class="icon-circle-container bg-light">
-            <i class="fas fa-heart icon-blue"></i>
-          </div>
-          <h2 class="section-title mb-0 text-white">Valores que nos guían</h2>
+    <!-- CTA Final -->
+    <section class="py-20 relative">
+      <div class="absolute inset-0 gradient-soft -z-10"></div>
+      <div class="container-custom mx-auto text-center max-w-4xl reveal">
+        <div class="w-20 h-20 rounded-2xl bg-secondary/10 flex items-center justify-center mx-auto mb-6">
+          <i class="fas fa-hands-helping text-secondary text-3xl"></i>
         </div>
-        <div class="p-0">
-          
-          <!-- Valores para todas las pantallas -->
-          <div>
-            <div class="value-item">
-              <div class="value-title text-white">Empatía activa</div>
-              <div class="value-description text-dark-custom"><strong>Escuchamos, comprendemos y actuamos con sensibilidad ante las realidades de cada persona.</strong></div>
-            </div>
-            
-            <div class="value-item">
-              <div class="value-title text-white">Innovación con propósito</div>
-              <div class="value-description text-dark-custom"><strong>Usamos la tecnología para mejorar vidas, no solo procesos.</strong></div>
-            </div>
-            
-            <div class="value-item">
-              <div class="value-title text-white">Confianza y transparencia</div>
-              <div class="value-description text-dark-custom"><strong>Protegemos la información médica con ética, claridad y responsabilidad.</strong></div>
-            </div>
-            
-            <div class="value-item">
-              <div class="value-title text-white">Accesibilidad inclusiva</div>
-              <div class="value-description text-dark-custom"><strong>Creamos soluciones que llegan a todos, sin barreras tecnológicas, económicas o geográficas.</strong></div>
-            </div>
-            
-            <div class="value-item">
-              <div class="value-title text-white">Colaboración transformadora</div>
-              <div class="value-description text-dark-custom"><strong>Unimos a médicos, pacientes y aliados para construir una salud más conectada y humana.</strong></div>
-            </div>
-            
-            <div class="value-item">
-              <div class="value-title text-white">Excelencia en cada detalle</div>
-              <div class="value-description text-dark-custom"><strong>Cada consulta, cada dato, cada decisión cuenta. Buscamos calidad en todo lo que hacemos.</strong></div>
-            </div>
-          </div>
-          
-        </div>
-      </div>
-      
-      <!-- Mensaje final -->
-      <div class="text-center mt-5 pt-5">
-        <div class="icon-circle-container icon-circle-large d-inline-flex mb-4 bg-light">
-          <i class="fas fa-hands-helping icon-blue icon-large"></i>
-        </div>
-        <h3 class="text-white mb-4">Juntos construimos el futuro de la salud en Venezuela</h3>
-        <p class="vision-mision-text mt-3 mb-4 text-white">
-          En Jedy Health, creemos que la tecnología médica debe ser humana, accesible y transformadora. 
-          Trabajamos cada día para acercar la salud de calidad a todos los venezolanos.
+        <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4">Juntos construimos el futuro de la salud en Venezuela</h2>
+        <p class="text-slate-600 text-lg mb-8 max-w-2xl mx-auto">
+          En Jedy Health, creemos que la tecnología médica debe ser humana, accesible y transformadora. Trabajamos cada día para acercar la salud de calidad a todos los venezolanos.
         </p>
-        <a href="/Contacto.html" class="btn light-blue-bg text-white btn-lg mt-3 px-5 py-3 border-0">
-          <i class="fas fa-envelope me-2"></i>Contáctanos
+        <a href="Contacto.html" class="cta-btn px-8 py-4 rounded-xl font-bold text-white text-lg inline-flex items-center gap-2 btn-glow">
+          <i class="fas fa-envelope"></i> Contáctanos
         </a>
       </div>
-      
-    </div>
-  </div>
-</div>
+    </section>
+  </main>
 
-<!--Footer-->
-<footer class="bg-light py-4">
-  <div class="container">
-    <div class="row align-items-center">
-
-<!--Logo and Social medias-->
-    <div class="col-md-4">
-      <a class="navbar-brand" href="/index.html">
-        <img src="/img/logo_nuevo_jedyhealth-removebg-preview.png" class="custom-size-botom-logo pb-4" alt="Logotipo de Jedy Health">
-      </a>
-      <div class="d-flex align-items-center">
-        <p class="mb-0 ms-3">Síguenos en todas nuestras redes sociales:</p>
-      </div>
-      <ul class="list-inline mt-2">
-        <li class="list-inline-item">
-          <a href="https://www.instagram.com/jedysystems/" target="_blank">
-            <i class="fab fa-instagram social-icon"></i>
-          </a>
-        </li>
-        <li class="list-inline-item">
-          <a href="https://www.youtube.com/@jedysystems1565" target="_blank">
-            <i class="fab fa-youtube social-icon"></i>
-          </a>
-        </li>
-        <li class="list-inline-item">
-          <a href="https://www.facebook.com/Jedysystemsca" target="_blank">
-            <i class="fab fa-facebook social-icon"></i>
-          </a>
-        </li>
-      </ul>
-    </div>
-
-<!--Nav footer and Nav enlaces-->
-      <div class="col-md-6 d-flex justify-content-end">
-        <div class="me-5 ls-3">
-          <h6>Navegación</h6>
-          <ul class="list-unstyled">
-            <li><a href="/index.html" class="nav-link text-primary">Home</a></li>
-            <li><a href="/Productos.html" class="nav-link text-primary">Productos</a></li>
-            <li><a href="/Planes.html" class="nav-link text-primary">Planes</a></li>
-            <li><a href="/Testimonios.html" class="nav-link text-primary">Testimonios</a></li>
-            <li><a href="/Contacto.html" class="nav-link text-primary">Contacto</a></li>
+  <!-- Footer moderno -->
+  <footer class="bg-slate-900 text-white pt-16 pb-8">
+    <div class="container-custom mx-auto">
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-10">
+        <div>
+          <div class="flex items-center gap-2">
+            <img src="img/Logo_JedyHealth.png" alt="Jedy Health Logo" class="h-8 w-auto">
+            <span class="font-bold text-xl">JedyHealth</span>
+          </div>
+          <p class="text-slate-400 mt-4 text-sm">ERP médico avanzado para el sector salud en Venezuela. Innovación y tecnología al servicio de los profesionales.</p>
+          <div class="flex space-x-4 mt-5">
+            <a href="https://www.instagram.com/jedysystems/" target="_blank" class="text-slate-400 hover:text-white transition"><i class="fab fa-instagram text-xl"></i></a>
+            <a href="https://www.youtube.com/@jedysystems1565" target="_blank" class="text-slate-400 hover:text-white transition"><i class="fab fa-youtube text-xl"></i></a>
+            <a href="https://www.facebook.com/Jedysystemsca" target="_blank" class="text-slate-400 hover:text-white transition"><i class="fab fa-facebook text-xl"></i></a>
+          </div>
+        </div>
+        <div>
+          <h6 class="font-semibold text-white">Navegación</h6>
+          <ul class="mt-3 space-y-2 text-slate-400 text-sm">
+            <li><a href="index.html" class="hover:text-white">Inicio</a></li>
+            <li><a href="Productos.html" class="hover:text-white">Productos</a></li>
+            <li><a href="Planes.html" class="hover:text-white">Planes</a></li>
+            <li><a href="Testimonios.html" class="hover:text-white">Testimonios</a></li>
           </ul>
         </div>
-        <div class="ls-3">
-          <h6>Enlaces</h6>
-          <ul class="list-unstyled">
-            <li><a href="/Contacto.html" class="nav-link text-primary">Contacta con nosotros</a></li>
-            <li><a href="#" class="nav-link text-primary">Política de privacidad</a></li>
+        <div>
+          <h6 class="font-semibold text-white">Enlaces legales</h6>
+          <ul class="mt-3 space-y-2 text-slate-400 text-sm">
+            <li><a href="terminos-condiciones.html" class="hover:text-white">Política de privacidad</a></li>
+            <li><a href="terminos-condiciones.html" class="hover:text-white">Términos de uso</a></li>
+            <li><a href="Contacto.html" class="hover:text-white">Contacto soporte</a></li>
+          </ul>
+        </div>
+        <div>
+          <h6 class="font-semibold text-white">Contacto directo</h6>
+          <ul class="mt-3 space-y-2 text-slate-400 text-sm">
+            <li>📧 info@jedysystems.com</li>
+            <li>📞 +58 414-0118000</li>
+            <li>📍 Caracas, Venezuela</li>
           </ul>
         </div>
       </div>
+      <hr class="border-slate-800 my-8">
+      <div class="text-center text-slate-500 text-sm">&copy; 2025 Jedy Systems. Todos los derechos reservados. Tecnología de vanguardia para la salud.</div>
     </div>
-    <hr>
-    <div class="row">
-      <div class="col text-center">
-        <p>&copy; Jedy Systems. Todos los derechos reservados.</p>
-      </div>
-    </div>
-  </div>
-</footer>
+  </footer>
 
-      <!--JS Files-->
-  <script src="js/nav_hiden.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" xintegrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-
-
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <script src="js/menu-scroll.js"></script>
+  <script>
+    // Mobile menu toggle
+    const mobileBtn = document.getElementById('mobileMenuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    if(mobileBtn) {
+      mobileBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+      });
+    }
+    
+    // ScrollReveal manual
+    const reveals = document.querySelectorAll('.reveal');
+    function checkReveal() {
+      for(let el of reveals) {
+        const windowHeight = window.innerHeight;
+        const rect = el.getBoundingClientRect();
+        const revealPoint = 120;
+        if(rect.top < windowHeight - revealPoint) {
+          el.classList.add('visible');
+        }
+      }
+    }
+    
+    window.addEventListener('scroll', checkReveal);
+    window.addEventListener('load', checkReveal);
+    checkReveal();
+    
+    // Navbar sticky shadow
+    const header = document.getElementById('mainHeader');
+    window.addEventListener('scroll', () => {
+      if(window.scrollY > 20) {
+        header.classList.add('shadow-sm');
+      } else {
+        header.classList.remove('shadow-sm');
+      }
+    });
+    
+    // Smooth scroll para enlaces internos
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        const targetId = this.getAttribute('href');
+        if(targetId === "#") return;
+        const targetElem = document.querySelector(targetId);
+        if(targetElem) {
+          e.preventDefault();
+          targetElem.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+  </script>
 </body>
+
 </html>
